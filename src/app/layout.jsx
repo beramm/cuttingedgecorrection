@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
         <Navbar />
-        <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full text-gray-900">
+        <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
           {children}
         </main>
         <Footer />
