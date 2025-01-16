@@ -18,7 +18,7 @@ const Footer = () => {
                 placeholder="Enter your email..."
                 className="p-2 bg-primary border border-foreground h-8 w-72 text-xs"
               />
-              <button className="bg-highlight text-primary px-2 h-8 text-xs">
+              <button className="bg-highlight text-primary px-2 h-8 text-xs font-bold">
                 JOIN NOW
               </button>
             </div>
@@ -32,22 +32,22 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-10 p-2">
             {/* Email */}
             <div>
-              <h3 className="text-sm">Email</h3>
+              <h3 className="text-xs font-light">Email</h3>
               <p className="text-sm font-extrabold">cuttingedgecorrection@gmail.com</p>
             </div>
             {/* Phone */}
             <div>
-              <h3 className="text-sm">Phone</h3>
+              <h3 className="text-xs font-light">Phone</h3>
               <p className="text-sm font-extrabold">0450 649 257</p>
             </div>
             {/* Address */}
             <div>
-              <h3 className="text-sm">Address</h3>
+              <h3 className="text-xs font-light">Address</h3>
               <p className="text-sm font-extrabold">67 Walsgott Street, North Geelong, VIC 3215</p>
             </div>
             {/* Open Hours */}
             <div>
-              <h3 className="text-sm">Open 7 Days a Week</h3>
+              <h3 className="text-xs font-light">Open 7 Days a Week</h3>
               <p className="text-sm font-extrabold">Monday to Sunday<br />07:00 - 06:00 PM</p>
             </div>
           </div>
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex justify-between items-center mt-4 text-sm">
+        <div className="flex justify-between items-center mt-4 font-light text-xs">
           {/* Privacy Links */}
           <div className="flex space-x-4">
             <a href="#" className="hover:underline">
