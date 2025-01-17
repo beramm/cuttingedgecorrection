@@ -4,45 +4,40 @@ import { FacebookIcon, InstagramIcon } from '../icon';
 import Link from 'next/link';
 import ContactUsButton from '../button/ContactUsButton';
 
-
 const Footer = () => {
   return (
-    <div className="w-full h-[400px]  text-foreground absolute bottom-0 bg-primary">
-
-
-      <div className="max-w-screen-xl m-auto h-full flex flex-col justify-between p-10">
+    <div className="w-full h-[400px] text-foreground absolute bottom-0 bg-primary">
+      <div className="max-w-screen-xl m-auto h-full flex flex-col justify-between p-12">
 
         {/* Top Section */}
-        <div className="flex border-t-2 border-b-2 border-foreground py-10 h-[95%] relative">
+        <div className="flex flex-col md:flex-row justify-between border-y-2 border-foreground py-10 relative">
 
           {/* Stay Informed Section */}
           <div className="flex flex-col">
-            <h2 className="text-4xl font-bold">STAY INFORMED.</h2>
+            <h2 className="text-5xl font-bold">STAY INFORMED.</h2>
             <div className="flex mt-4">
               <input
                 type="email"
                 placeholder="Enter your email..."
-                className="p-2 bg-primary border border-foreground h-8 w-72 text-xs"
+                className="p-2 bg-primary border-t border-l border-b border-foreground h-8 w-72 text-xs focus:outline-none"
               />
-              <button className="bg-highlight text-primary px-2 h-8 text-xs font-bold w-20">
-                JOIN NOW
-              </button>
+              <button className="bg-accent text-primary hover:bg-highlight hover:text-accent duration-200 px-2 h-8 text-xs font-bold w-28 md:w-24">JOIN NOW</button>
             </div>
             <div className="mt-8 text-foreground flex flex-col">
-                <h2>Follow Us</h2>
+                <h2 className="text-xl font-bold">FOLLOW US</h2>
                 <div className='flex gap-2 mt-2'>
-                <Link href={"https://web.facebook.com/CuttingEdgeCorrection"} target="_blank">
-                <FacebookIcon size={30} hexColor={"#E8E6DE"}/>
-                </Link>
-                <Link href={"https://www.instagram.com/cuttingedgecorrection"} target="_blank">
-                <InstagramIcon size={30} hexColor={"#E8E6DE"}/>
-                </Link>  
+                  <Link href={"https://web.facebook.com/CuttingEdgeCorrection"} target="_blank">
+                    <FacebookIcon size={40} hexColor={"#E8E6DE"}/>
+                  </Link>
+                  <Link href={"https://www.instagram.com/cuttingedgecorrection"} target="_blank">
+                    <InstagramIcon size={40} hexColor={"#E8E6DE"}/>
+                  </Link>  
                 </div>
             </div>
           </div>
 
-         {/* Contact Info Section */}
-          <div className="grid grid-cols-2 gap-10 p-2 pl-24 w-[50%] gap-x-40">
+          {/* Contact Info Section */}
+          <div className="flex flex-col justify-center md:grid md:grid-cols-[280px_auto] mt-12 md:mt-0 md:p-2 items-start gap-4 md:gap-2">
             {/* Email */}
             <div>
               <h3 className="text-xs font-light">Email</h3>
@@ -54,47 +49,45 @@ const Footer = () => {
               <p className="text-l font-extrabold">0450 649 257</p>
             </div>
             {/* Address */}
-            <div  >
+            <div className="row-start-2">
               <h3 className="text-xs font-light">Address</h3>
               <p className="text-l font-extrabold">67 Walsgott Street, North Geelong, VIC 3215</p>
             </div>
             {/* Open Hours */}
-            <div>
+            <div className="row-start-2">
               <h3 className="text-xs font-light">Open 7 Days a Week</h3>
-              <p className="text-l font-extrabold">Monday to Sunday<br />07:00 - 06:00 PM</p>
+              <p className="hidden md:block text-l font-extrabold">Monday to Sunday<br />07:00 - 06:00 PM</p>
+              <p className="block md:hidden text-l font-extrabold">Monday to Sunday / 07:00 - 06:00 PM</p>
             </div>
           </div>
 
-
-        {/* Logo Section */}
-          <div className="flex flex-col justify-start -mt-8 items-center">
+          {/* Logo Section */}
+          <div className="relative md:w-auto flex flex-col md:-mt-8 items-center w-full md:max-w-[240px]">
             <Image 
               src={"/cec_nocolor_logo.png"} 
-              width={200} 
-              height={200} 
-              alt="CEC" 
-              className="h-48 w-60 object-center"
+              width={260} 
+              height={260} 
+              alt="CEC"
             />
-          
-            <ContactUsButton/>
-            
+            <div className="absolute bottom-0">
+              <ContactUsButton borderColor={"#00A2FF"} />
+            </div>
           </div>
-
-
         </div>
 
         {/* Bottom Section */}
         <div className="flex justify-between items-center mt-4 font-light text-xs">
           {/* Privacy Links */}
           <div className="flex space-x-4">
-            <a href="#" className="hover:underline">
+            <Link href={"/privacy-policy-tos"} className="hover:underline">
               Privacy Policy & TOS
-            </a>
-            <a href="#" className="hover:underline">
+            </Link>
+            <Link href={"/faq"} className="hover:underline">
               Frequently Asked Questions
-            </a>
+            </Link>
           </div>
         </div>
+
       </div>
     </div>
   );
