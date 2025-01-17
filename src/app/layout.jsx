@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased`}>
+      <body className={`${roboto.className} antialiased relative`}>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
           {children}

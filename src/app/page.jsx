@@ -1,9 +1,16 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="">
-      <h1>HELLO WORLD!</h1>
-    </div>
+    <div className="w-full h-[1200px]">
+  {/* Video Background */}
+  <video
+    className="absolute top-0 left-0 object-contain"
+    src="/videoplayback.webm"
+    autoPlay
+    loop
+    muted
+  ></video>
+
+</div>
+
   );
 }
