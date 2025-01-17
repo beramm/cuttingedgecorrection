@@ -36,3 +36,35 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/*Caraosels arrow styling */
+/* Custom Swiper Navigation Arrows */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  background-color: white; /* White background */
+  color: black; /* Black arrow color */
+  border-radius: 50%; /* Make the buttons circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.custom-swiper .swiper-button-next::after,
+.custom-swiper .swiper-button-prev::after {
+  font-size: 14px; /* Adjust arrow size */
+  font-weight: bold;
+}
+
+/* Custom Pagination */
+.custom-swiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5); /* Default white with transparency */
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: white; /* Fully white for active bullet */
+}
+
