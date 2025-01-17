@@ -3,14 +3,14 @@ import Link from 'next/link'
 import React from 'react'
 import { NavArrowDown } from '../icon'
 
-const NavbarLinks = ({ open }) => {
+const NavbarLinks = () => {
   return (
     <>
       <ul className="flex items-center justify-center gap-x-8">
         {navbarMenu.map((eachMenu, index) => {
           return (
             <li key={index} className="py-4 flex gap-x-1 items-center justify-center cursor-pointer group">
-              {eachMenu.name}
+              {eachMenu.name === 'Subscription Plans' ? <Link href={"/subscription-plans"}>{eachMenu.name}</Link> : eachMenu.name}
               {eachMenu.showArrow && <span className="group-hover:transition-transform group-hover:rotate-180 duration-300 group-hover:duration-300">
                 <NavArrowDown size={24} hexColor={"#E8E6DE"} />
               </span>}

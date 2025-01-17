@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="w-full h-full px-8 md:px-4 xl:px-0 flex items-center justify-between">
           <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" />
           <div className="hidden md:block">
-            <NavbarLinks open={open} />
+            <NavbarLinks />
           </div>
           <div className="hidden md:block">
             <ContactUsButton />
