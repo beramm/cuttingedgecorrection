@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import { FacebookIcon, InstagramIcon } from '../icon';
 import Link from 'next/link';
+import ContactUsButton from '../button/ContactUsButton';
 
 
 const Footer = () => {
@@ -66,7 +67,7 @@ const Footer = () => {
 
 
         {/* Logo Section */}
-          <div className="flex flex-col justify-start items-start -mt-8">
+          <div className="flex flex-col justify-start -mt-8 items-center">
             <Image 
               src={"/cec_nocolor_logo.png"} 
               width={200} 
@@ -74,9 +75,9 @@ const Footer = () => {
               alt="CEC" 
               className="h-48 w-60 object-center"
             />
-            <button>
-              button cui
-            </button>
+          
+            <ContactUsButton/>
+            
           </div>
 
 
