@@ -20,7 +20,7 @@ const ServicesCarousel = () => {
       image: "/randomServices.webp",
     },
     {
-      title: "Swirl Removal",
+      title: "Paint Correction",
       description: "Eliminates scratches, brings back a smooth, glossy finish.",
       image: "/randomServices.webp",
     },
@@ -50,11 +50,27 @@ const ServicesCarousel = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto h-[500px] relative">
+    <div className="w-full mx-auto h-[500px] relative max-w-[1700px]">
       <Swiper
         modules={[Navigation, Pagination, A11y, Parallax]}
-        spaceBetween={8}
-        slidesPerView={2.5}
+        spaceBetween={16}
+        breakpoints={{
+          // For mobile
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          // For tablets
+          640: {
+            slidesPerView: 1.5,
+            spaceBetween: 12,
+          },
+          // For desktops
+          1024: {
+            slidesPerView: 2.5,
+            spaceBetween: 42,
+          },
+        }}
         centeredSlides={false}
         navigation
         pagination={{
@@ -68,7 +84,7 @@ const ServicesCarousel = () => {
             <div className="relative w-full h-full overflow-hidden">
               {/* Parallax Image */}
               <div
-                data-swiper-parallax="-300" // Parallax effect only on the image
+                data-swiper-parallax="-300"
                 className="relative w-full h-full cursor-pointer"
               >
                 <Image
@@ -80,9 +96,13 @@ const ServicesCarousel = () => {
                 />
               </div>
               {/* Content Box */}
-              <div className="absolute bottom-8 left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 max-w-[280px] text-foreground border-t-highlight border-t-4 h-[130px]">
-                <h2 className="text-3xl font-bold mb-2">{service.title}</h2>
-                <p className="text-xs font-light">{service.description}</p>
+              <div className="absolute bottom-8 left-4 sm:left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 max-w-[240px] sm:max-w-[280px] text-foreground border-t-highlight border-t-4 h-[130px]">
+                <h2 className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">
+                  {service.title}
+                </h2>
+                <p className="text-xs sm:text-sm font-light">
+                  {service.description}
+                </p>
               </div>
             </div>
           </SwiperSlide>
