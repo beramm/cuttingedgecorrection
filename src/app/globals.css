@@ -38,7 +38,6 @@ body {
 }
 
 
-/*Caraosels arrow styling */
 /* Custom Swiper Navigation Arrows */
 .custom-swiper .swiper-button-next,
 .custom-swiper .swiper-button-prev {
@@ -61,13 +60,31 @@ body {
 
 /* Custom Pagination */
 .custom-swiper .swiper-pagination-bullet {
-  background-color: rgba(255, 255, 255, 0.5); /* Default white with transparency */
+  background-color: rgba(255, 255, 255, 1); /* White for all bullets */
+  width: 12px; /* Adjust bullet size */
+  height: 12px;
+  margin: 0 6px; /* Space between bullets */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .custom-swiper .swiper-pagination-bullet-active {
-  background-color: white; /* Fully white for active bullet */
+  opacity: 1; /* Fully visible for active bullet */
 }
 
-.custom-box-shadow {
-  box-shadow: 0 0 4px 2px rgba(0, 162, 255, .5);
+.swiper-pagination-bullet {
+  background-color: white !important;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+/* Align pagination to center */
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between bullets */
+}
+

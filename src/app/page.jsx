@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="h-[550px] w-full bg-white">
+      <div className="h-[550px] w-full bg-white ">
         <div>
           <video
-            className="absolute top-0 left-0 right-0 object-contain block mx-auto z-0 min-h-screen w-full"
+            className="absolute top-0 left-0 right-0 object-contain block mx-auto z-0 min-h-screen w-full "
             src="/videoplayback.webm"
             autoPlay
             loop
@@ -60,10 +60,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/** Transition between sections */}
-      <div className="w-full h-96 relative bg-transparent">
+      {/** Transition to Service */}
+      <div className="relative w-full h-96">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-0"
           style={{
             background:
               "linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1))",
@@ -71,10 +71,9 @@ export default function Home() {
         ></div>
       </div>
 
-
-      {/**Our Services */}
-      <div className="w-full h-[900px] mt-96 relative bg-black">
-        <div className="w-full text-center text-5xl lg:text-7xl font-extrabold mb-12">
+      {/** Our Services */}
+      <div className="relative w-full bg-black pt-96">
+        <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12">
           <h1>
             OUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
@@ -86,7 +85,7 @@ export default function Home() {
       </div>
 
       {/** Transition between sections */}
-      <div className="w-full h-20 relative -mt-40 bg-black z-20 opacity-80">
+      <div className="w-full h-20 relative -pt-40 bg-black z-20 opacity-80">
         <div
           className="absolute inset-0"
           style={{
@@ -112,7 +111,7 @@ export default function Home() {
           {/* Text Side */}
           <div className="flex-1 flex flex-col items-center lg:items-start justify-center px-6 py-12 lg:py-0 lg:ml-44">
             {/* Title */}
-            <div className="text-center lg:text-left text-5xl lg:text-7xl font-extrabold mb-4 lg:mb-8">
+            <div className="text-center lg:text-left text-5xl lg:text-[60px] font-extrabold mb-4 lg:mb-8">
               <h1>
                 OUR{" "}
                 <span className="bg-radial-gradient bg-clip-text text-transparent">
