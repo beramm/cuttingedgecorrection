@@ -1,3 +1,5 @@
+import ServicesCarousel from "./components/caraosels/ServicesCaraosel";
+
 export default function Home() {
   return (
     <div className="w-full max-w-screen-xl">
@@ -12,8 +14,13 @@ export default function Home() {
       ></video>
       </div>
      
-      <div className="w-full bg-red-800 h-[1200px]">
-        asdsd
+      <div className="w-full  h-[1200px] mt-32">
+        <div className="w-full text-center text-5xl font-extrabold mb-12">
+        <h1>Our <span className="bg-radial-gradient bg-clip-text text-transparent">Services</span>
+        </h1>
+        </div>
+
+        <ServicesCarousel/>
       </div>
     </div>
   );
