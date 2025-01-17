@@ -5,7 +5,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="h-[800px] w-full">
+      <div className="h-[1000px] w-full">
+
         <div>
           <video
             className="absolute top-0 left-0 right-0 object-contain block mx-auto z-0 max-w-screen-3xl"
@@ -27,18 +28,18 @@ export default function Home() {
             <ContactUsButton />
           </div>
         </div>
-      </div>
 
-      <div className="w-full h-auto flex flex-col items-center mt-32">
+
+        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[600px]">
         <div className="w-full flex flex-row justify-between items-start px-10 mb-16">
           <div className="w-1/2 pr-5">
-            <h2 className="text-[30px] font-bold">
+            <h2 className="text-[40px] font-bold">
               PASSION FOR CARS,
               <br />
               EXCELLENCE IN DETAILING.
             </h2>
             <br />
-            <h2 className="text-[30px] font-bold">
+            <h2 className="text-[40px] font-bold">
               EXPERIENCE THE CUTTING EDGE
             </h2>
           </div>
@@ -59,7 +60,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
 
+    
+    
+  
 
 
       {/**Our Services */}
