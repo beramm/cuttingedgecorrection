@@ -5,11 +5,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="h-[1000px] w-full">
-
+      <div className="h-[550px] w-full bg-white">
         <div>
           <video
-            className="absolute top-0 left-0 right-0 object-contain block mx-auto z-0 max-w-screen-3xl"
+            className="absolute top-0 left-0 right-0 object-contain block mx-auto z-0 min-h-screen w-full"
             src="/videoplayback.webm"
             autoPlay
             loop
@@ -29,46 +28,52 @@ export default function Home() {
           </div>
         </div>
 
-
-        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[600px]">
-        <div className="w-full flex flex-row justify-between items-start px-10 mb-16">
-          <div className="w-1/2 pr-5">
-            <h2 className="text-[40px] font-bold">
-              PASSION FOR CARS,
+        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[900px]">
+          <div className="w-full flex flex-row justify-between items-start px-10 mb-16">
+            <div className="w-1/2 pr-5">
+              <h2 className="text-[40px] font-bold">
+                PASSION FOR CARS,
+                <br />
+                EXCELLENCE IN DETAILING.
+              </h2>
               <br />
-              EXCELLENCE IN DETAILING.
-            </h2>
-            <br />
-            <h2 className="text-[40px] font-bold">
-              EXPERIENCE THE CUTTING EDGE
-            </h2>
-          </div>
-          <div className="w-1/2 pl-5">
-            <p>
-              Delivering a 5-star finish is our standard, and we never settle
-              for less. Our unwavering dedication means your car&apos;s
-              brilliance will stand the test of time.
+              <h2 className="text-[40px] font-bold">
+                EXPERIENCE THE CUTTING EDGE
+              </h2>
+            </div>
+            <div className="w-1/2 pl-5">
+              <p>
+                Delivering a 5-star finish is our standard, and we never settle
+                for less. Our unwavering dedication means your car&apos;s
+                brilliance will stand the test of time.
+                <br />
+                <br />
+                Want to see what all the hype&apos;s about? Tap the button and
+                let&apos;s chat.
+              </p>
               <br />
-              <br />
-              Want to see what all the hype&apos;s about? Tap the button and
-              let&apos;s chat.
-            </p>
-            <br />
-            <div className="w-fit">
-              <ContactUsButton />
+              <div className="w-fit">
+                <ContactUsButton />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
 
-    
-    
-  
+      {/** Transition between sections */}
+      <div className="w-full h-96 relative bg-transparent">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1))",
+          }}
+        ></div>
+      </div>
 
 
       {/**Our Services */}
-      <div className="w-full h-[900px] mt-32 relative bg-black">
+      <div className="w-full h-[900px] mt-96 relative bg-black">
         <div className="w-full text-center text-5xl lg:text-7xl font-extrabold mb-12">
           <h1>
             OUR{" "}
