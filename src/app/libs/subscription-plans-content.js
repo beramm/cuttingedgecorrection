@@ -8,7 +8,7 @@ export const subscriptionPlansContent = [
       'thorough interior vacuuming',
       'free air fresher with every wash'
     ],
-    bgColor: 'bg-gradient-to-tr from-fuchsia-600 to-purple-600',
+    bgColor: 'bg-gradient-to-tr from-[#B34D9C] to-[#5F3E6B]',
     highlightTextColor: 'text-[#B34D9C]'
   },
   {
@@ -20,7 +20,7 @@ export const subscriptionPlansContent = [
       '1 full interior detail per month',
       'free air fresher with every wash'
     ],
-    bgColor: 'bg-gradient-to-tr from-indigo-500 to-blue-500',
+    bgColor: 'bg-gradient-to-tr from-[#379CB7] to-[#3C5397]',
     highlightTextColor: 'text-[#379CB7]'
   },
   {
@@ -34,7 +34,7 @@ export const subscriptionPlansContent = [
       'free air fresher with every wash',
       '15% off for any additional services'
     ],
-    bgColor: 'bg-gradient-to-tr from-red-500 to-orange-500',
+    bgColor: 'bg-gradient-to-tr from-[#DAA550] to-[#B53534]',
     highlightTextColor: 'text-[#DAA550]'
   },
 ]

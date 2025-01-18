@@ -4,8 +4,11 @@ import SubscriptionPlansCard from '../components/card/subscription-plans-card/Su
 
 const SubscriptionPlans = () => {
   return (
-    <div className="h-[1200px] w-full max-w-screen-xl px-8 md:px-4 xl:px-0">
-      <div className="relative w-full bg-black mt-12">
+    <div
+      style={{ backgroundImage: `url(carbon_background.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
+    >
+      <div className="relative w-full mt-12">
         <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12">
           <h1>
             CURATE YOUR{" "}
