@@ -18,14 +18,19 @@ const SubscriptionPlans = () => {
           </h1>
           <p className="text-sm font-light mt-8">
             Introducing our exclusive subscription service!
-            <br/> Our subscription plans are designed to provide you with consistent, high-quality care for your vehicle, ensuring it always looks its best.
-            <br/> With convenient monthly payments and exclusive benefits, maintaining your car has never been easier.
+            <br /> Our subscription plans are designed to provide you with consistent, high-quality care for your vehicle, ensuring it always looks its best.
+            <br /> With convenient monthly payments and exclusive benefits, maintaining your car has never been easier.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {subscriptionPlansContent.map((eachPlan, index) => {
             return (
-              <SubscriptionPlansCard key={index} data={eachPlan} />
+              <div
+                key={index}
+                className="transform transition-all duration-300 hover:scale-105"
+              >
+                <SubscriptionPlansCard data={eachPlan} />
+              </div>
             )
           })}
         </div>
