@@ -36,9 +36,9 @@ export default function Home() {
           <h1>EXPERIENCE THE CUTTING EDGE.</h1>
         </div>
         <div className="flex flex-col justify-between mt-10 md:mt-0">
-          <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car's brilliance will stand the test of time.</p>
+          <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car&apus; brilliance will stand the test of time.</p>
           <div>
-            <p className="mb-4">Want to see what all the hype's about? Tap the button and let's chat.</p>
+            <p className="mb-4">Want to see what all the hype&apus;s about? Tap the button and let&apus;s chat.</p>
             <ContactUsButton />
           </div>
         </div>
