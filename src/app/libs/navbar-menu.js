@@ -23,7 +23,7 @@ export const navbarMenu = [
     showArrow: true,
     subMenu: true,
     submenuList: [
-      { name: 'Contact', link: 'contact' },
+      { name: 'Our Location', link: 'our-location' },
       { name: 'Gallery', link: 'gallery' },
       { name: 'FAQ', link: 'faq' },
       { name: 'Privacy Policy & TOS', link: 'privacy-policy-tos' },
