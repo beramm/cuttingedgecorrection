@@ -3,7 +3,7 @@ import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { cn } from "@/app/libs/utils";
+import { cn } from "../../libs/utils";
 
 export const ParallaxScroll = ({
   images,
@@ -30,11 +30,11 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-[40rem] items-start overflow-y-auto w-full", className)}
+      className={cn("h-[40rem] items-start overflow-y-auto w-full  max-w-screen-xl m-auto", className)}
       ref={gridRef}
     >
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-5xl mx-auto gap-10 py-40 px-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-5xl mx-auto gap-10 "
         ref={gridRef}
       >
         <div className="grid gap-10">

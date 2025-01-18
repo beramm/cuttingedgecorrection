@@ -1,18 +1,32 @@
-"use client"
-import React from 'react'
-import { ParallaxScroll } from '../components/ui/parrallax-scroll'
+"use client";
+import React from "react";
+import { ParallaxScroll } from "../components/ui/parrallax-scroll";
 
 const Gallery = () => {
-  
   return (
     <div
-      style={{ backgroundImage: `url(carbon_background.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{
+        backgroundImage: `url(carbon_background.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
     >
-      <ParallaxScroll images={images}/>
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-center text-5xl lg:text-[60spx] font-extrabold mt-20">
+          WORKSHOP{" "}
+          <span className="bg-radial-gradient bg-clip-text text-transparent">
+            GALLERY
+          </span>
+        </h1>
+        <ParallaxScroll
+          images={images}
+          className="overflow-y-scroll scrollbar-thin scrollbar-thumb-foreground scrollbar-track-primary scrollbar-track-opacity-50"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 const images = [
   "https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
   "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3070&q=80",
@@ -41,5 +55,4 @@ const images = [
   "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3070&q=80",
 ];
 
-
-export default Gallery
+export default Gallery;

@@ -1,4 +1,4 @@
-import { navbarMenu } from '@/app/libs/navbar-menu'
+import { navbarMenu } from '../../libs/navbar-menu'
 import Link from 'next/link'
 import React from 'react'
 import { NavArrowDown } from '../icon'
