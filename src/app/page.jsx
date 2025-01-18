@@ -33,7 +33,7 @@ export default function Home() {
         <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
           <h1>EXCELLENCE IN DETAILLING.</h1>
-          <h1>EXPERIENCE THE CUTTING EDGE.</h1>
+          <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
         </div>
         <div className="flex flex-col justify-between mt-10 md:mt-0">
           <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car&apus; brilliance will stand the test of time.</p>
