@@ -46,7 +46,7 @@ const SubscriptionPlansCard = ({ data }) => {
           );
         })}
       </div>
-      <button onClick={handleSubscribe} className={`text-xl font-bold absolute bottom-0 w-full h-full max-h-16 ${data.bgColor} rounded-b-[40px]`}>
+      <button onClick={handleSubscribe} className={`text-xl font-bold absolute bottom-0 w-full h-full max-h-16 ${data.bgColor} rounded-b-[40px] hover:opacity-80`}>
         SUBSCRIBE
       </button>
       {data.bestValue && <div className="absolute -top-10 -right-10">
