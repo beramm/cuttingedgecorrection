@@ -21,7 +21,7 @@ const Gallery = () => {
         </h1>
         <ParallaxScroll
           images={images}
-          className="overflow-y-scroll scrollbar-thin scrollbar-thumb-foreground scrollbar-track-primary scrollbar-track-opacity-50"
+          className="overflow-y-scroll scrollbar-thin scrollbar-thumb-foreground scrollbar-track-transparent"
         />
       </div>
     </div>
