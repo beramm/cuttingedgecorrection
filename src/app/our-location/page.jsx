@@ -25,13 +25,13 @@ const OurLocation = () => {
           HAPPENS
         </h1>
 
-        <div className="flex mt-16 text-foreground">
+        <div className="mt-16 text-foreground flex lg:flex-row flex-col">
           {/* Map Section */}
           <div className="flex-1 justify-end">
             <MapComponent />
           </div>
           {/* Description Contact Section */}
-          <div className="flex-1 flex flex-col justify-center pl-32">
+          <div className="flex-1 flex flex-col justify-center lg:pl-32 lg:pt-0 pt-16">
             {/* Content */}
             <div className="flex flex-col gap-10">
               {/* Address */}
