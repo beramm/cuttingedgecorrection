@@ -28,7 +28,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[700px]">
+        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[770px]">
           <div className="w-full flex flex-row justify-between items-start px-10 mb-16">
             <div className="w-1/2 pr-5">
               <h2 className="text-[35px] font-bold">
@@ -66,14 +66,14 @@ export default function Home() {
           className="absolute inset-0 z-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(0, 0, 0, 0) ,  rgba(0, 0, 0, 7) ,rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))",
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ,rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1))",
           }}
         ></div>
       </div>
 
       {/** Our Services */}
       <div className="relative w-full bg-black">
-        <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12">
+        <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12 mt-64">
           <h1>
             OUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
