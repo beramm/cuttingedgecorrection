@@ -28,16 +28,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[900px]">
+        <div className="w-full h-auto flex flex-col items-center z-10 absolute px-32 top-[700px]">
           <div className="w-full flex flex-row justify-between items-start px-10 mb-16">
             <div className="w-1/2 pr-5">
-              <h2 className="text-[40px] font-bold">
+              <h2 className="text-[35px] font-bold">
                 PASSION FOR CARS,
                 <br />
                 EXCELLENCE IN DETAILING.
               </h2>
               <br />
-              <h2 className="text-[40px] font-bold">
+              <h2 className="text-[35px] font-bold">
                 EXPERIENCE THE CUTTING EDGE
               </h2>
             </div>
@@ -66,13 +66,13 @@ export default function Home() {
           className="absolute inset-0 z-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1))",
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0) ,  rgba(0, 0, 0, 7) ,rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))",
           }}
         ></div>
       </div>
 
       {/** Our Services */}
-      <div className="relative w-full bg-black pt-96">
+      <div className="relative w-full bg-black">
         <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12">
           <h1>
             OUR{" "}
