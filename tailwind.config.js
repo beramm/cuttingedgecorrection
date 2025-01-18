@@ -17,9 +17,12 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-    backgroundImage: {
-      'radial-gradient': 'radial-gradient(circle, #00A2FF, #006199)',
-      'custom-gradient': 'linear-gradient(180deg, #141416 0%, #1B1B1E 50%, #1F1F22 100%)',
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(circle, #00A2FF, #006199)',
+        'custom-gradient': 'linear-gradient(180deg, #141416 0%, #1B1B1E 50%, #1F1F22 100%)',
+      },
+      screens: {
+        '3xl': '1920px',
       },
     },
   },
