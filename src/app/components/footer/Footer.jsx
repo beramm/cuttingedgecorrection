@@ -6,7 +6,7 @@ import ContactUsButton from '../button/ContactUsButton';
 
 const Footer = () => {
   return (
-    <div className="w-full min-h-[400px] text-foreground bg-primary">
+    <div className="w-full min-h-[400px] text-foreground bg-primary relative">
       <div className="max-w-screen-xl m-auto h-full flex flex-col justify-between p-12">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between border-y-2 border-foreground py-10 relative">
