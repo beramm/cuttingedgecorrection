@@ -95,23 +95,26 @@ export default function Home() {
         ></div>
       </div>
 
-      {/**Our Commitment */}
-      <div className="relative w-full flex flex-col lg:flex-row h-[1240px] mx-auto max-w-screen-3xl z-0">
+      {/** Our Commitment */}
+      <div className="relative w-full flex flex-col lg:flex-rowmx-auto z-0 h-[920px] justify-center ">
         {/* Background Image */}
-        <Image
-          src={"/carbon_background.png"}
-          width={1920}
-          height={1080}
-          alt="bg"
-          className="absolute inset-0 h-full w-full object-cover z-0"
-        />
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src={"/carbon_background.png"}
+            width={1920}
+            height={1080}
+            alt="bg"
+            className="h-full w-full object-cover"
+          />
+        </div>
 
         {/* Content Wrapper */}
-        <div className="relative z-10 flex flex-col lg:flex-row lg:h-screen items-center w-full max-w-screen-3xl">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-screen-2xl mx-auto lg: px-0">
+          
           {/* Text Side */}
-          <div className="flex-1 flex flex-col items-center lg:items-start justify-center px-6 py-12 lg:py-0 lg:ml-44">
+          <div className="flex-1 flex flex-col items-center lg:items-center justify-center py-12 lg:px-20">
             {/* Title */}
-            <div className="text-center lg:text-left text-5xl lg:text-[60px] font-extrabold mb-4 lg:mb-8">
+            <div className="text-center lg:text-left text-4xl sm:text-5xl lg:text-[60px] font-extrabold mb-4 lg:mb-8">
               <h1>
                 OUR{" "}
                 <span className="bg-radial-gradient bg-clip-text text-transparent">
@@ -120,7 +123,7 @@ export default function Home() {
               </h1>
             </div>
             {/* Details */}
-            <div className="flex flex-col gap-3 lg:gap-6 max-w-xl text-sm lg:text-base px-4 lg:px-0">
+            <div className="flex flex-col gap-3 lg:gap-6 max-w-lg text-sm sm:text-base px-4 lg:px-0">
               <p>
                 At Cutting Edge Correction, we&apos;re not just about
                 cars&mdash;we&apos;re about the people of Geelong.
@@ -135,25 +138,27 @@ export default function Home() {
               </p>
             </div>
             {/* Button */}
-            <div className="self-center lg:self-start mt-4">
+            <div className="self-center lg:self-start mt-4 lg:ml-16 w-36">
               <ContactUsButton />
             </div>
-
+            {/* Decorative Bar */}
             <div className="bg-foreground w-[85%] h-2 mt-4 lg:mt-8"></div>
           </div>
 
           {/* Image Side */}
-          <div className="flex-1 mt-6 lg:mt-0">
+          <div className="flex-1 mt-6 lg:mt-0 bg-slate-400 lg:items-end">
             <Image
               src={"/our_commitment_image.webp"}
               width={1920}
               height={1080}
               alt="image"
-              className="w-full lg:w-[800px] h-[350px] lg:h-[650px] object-cover object-left"
+              className="w-full lg:w-[800px] h-[350px] lg:h-[650px] object-cover object-left "
             />
+            s
           </div>
         </div>
       </div>
+
       {/**Testimonials*/}
       {/* <div className="h-[1200px] w-full relative">
         <Image
