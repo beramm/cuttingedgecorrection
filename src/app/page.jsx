@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden md:overflow-visible">
         <video 
-          className="absolute top-0 md:left-0 right-0 object-cover md:object-contain block      mx-auto md:mx-0 h-[1200px] md:h-auto w-auto sm:w-full z-0" 
+          className="absolute top-0 md:left-0 right-0 object-cover md:object-contain block mx-auto md:mx-0 h-[1200px] md:h-auto w-auto sm:w-full z-0" 
           src="/videoplayback.webm" autoPlay loop muted
         ></video>
         <div className="relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
@@ -36,9 +36,9 @@ export default function Home() {
           <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
         </div>
         <div className="flex flex-col justify-between mt-10 md:mt-0">
-          <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car&apus; brilliance will stand the test of time.</p>
+          <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car&apos;s brilliance will stand the test of time.</p>
           <div>
-            <p className="mb-4">Want to see what all the hype&apus;s about? Tap the button and let&apus;s chat.</p>
+            <p className="mb-4">Want to see what all the hype&apos;s about? Tap the button and let&apos;s chat.</p>
             <ContactUsButton />
           </div>
         </div>
