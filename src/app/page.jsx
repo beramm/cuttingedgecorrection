@@ -7,8 +7,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./components/card/review-card/infinite-moviing-cards";
 
-
-
 export default function Home() {
   const [review, setReview] = useState([]);
 
@@ -103,69 +101,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/** Our Commitment */}
-      <div className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image
-            src={"/carbon_background.png"}
-            width={1920}
-            height={1080}
-            alt="bg"
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        {/* Content Wrapper */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-screen-2xl mx-auto">
-          {/* Text Side */}
-          <div className="flex-1 flex flex-col items-start justify-center py-12 p-10 md:p-0 lg:px-20">
-            {/* Title */}
-            <div className="text-left text-4xl md:text-5xl font-extrabold mb-8">
-              <h1>
-                OUR{" "}
-                <span className="bg-radial-gradient bg-clip-text text-transparent">
-                  COMMITMENT
-                </span>
-              </h1>
-            </div>
-            {/* Details */}
-            <div className="flex flex-col gap-3 lg:gap-6 max-w-lg text-sm sm:text-base">
-              <p>
-                At Cutting Edge Correction, we&apos;re not just about
-                cars&mdash;we&apos;re about the people of Geelong.
-              </p>
-              <p>
-                We understand that you want your vehicle to look its absolute
-                best, and we&apos;re committed to making that happen every
-                single time. No shortcuts, no rush jobs&mdash;just high-quality
-                results. Whether you&apos;re cruising along the coast or turning
-                heads around town, we&apos;ll make sure your car gets the
-                attention it deserves.
-              </p>
-            </div>
-            {/* Button */}
-            <div className="flex items-center justify-start mt-4 w-36">
-              <ContactUsButton />
-            </div>
-            {/* Decorative Bar */}
-            <div className="bg-foreground w-full h-1 mt-8"></div>
-          </div>
-
-          {/* Image Side */}
-          <div className="w-full max-w-[800px] mt-6">
-            <Image
-              src={"/our_commitment_image.webp"}
-              width={1920}
-              height={1080}
-              alt="image"
-              className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Testimony */}
       <div
         style={{
           backgroundImage: `url(carbon_background.png)`,
@@ -174,24 +109,78 @@ export default function Home() {
         }}
         className="h-full w-full"
       >
-       <div className="flex flex-col items-center mt-20 max-w-screen-3xl m-auto lg:mb-40 mb-20">
-      <div className="text-left lg:text-4xl text-3xl md:text-5xl font-extrabold mb-8">
-        <h1>
-          WHAT OUR{" "}
-          <span className="bg-radial-gradient bg-clip-text text-transparent">
-            CUSTOMER SAY
-          </span>
-        </h1>
-      </div>
-      
-      <div className="w-full">
-      <InfiniteMovingCards
-        value={review}
-        direction="right"
-        speed="normal"
-      /> 
-      </div>
-    </div>
+        {/** Our Commitment */}
+        <div className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center">
+          {/* Content Wrapper */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-screen-2xl mx-auto">
+            {/* Text Side */}
+            <div className="flex-1 flex flex-col items-start justify-center py-12 p-10 md:p-0 lg:px-20">
+              {/* Title */}
+              <div className="text-left text-4xl md:text-5xl font-extrabold mb-8">
+                <h1>
+                  OUR{" "}
+                  <span className="bg-radial-gradient bg-clip-text text-transparent">
+                    COMMITMENT
+                  </span>
+                </h1>
+              </div>
+              {/* Details */}
+              <div className="flex flex-col gap-3 lg:gap-6 max-w-lg text-sm sm:text-base">
+                <p>
+                  At Cutting Edge Correction, we&apos;re not just about
+                  cars&mdash;we&apos;re about the people of Geelong.
+                </p>
+                <p>
+                  We understand that you want your vehicle to look its absolute
+                  best, and we&apos;re committed to making that happen every
+                  single time. No shortcuts, no rush jobs&mdash;just
+                  high-quality results. Whether you&apos;re cruising along the
+                  coast or turning heads around town, we&apos;ll make sure your
+                  car gets the attention it deserves.
+                </p>
+              </div>
+              {/* Button */}
+              <div className="flex items-center justify-start mt-4 w-36">
+                <ContactUsButton />
+              </div>
+              {/* Decorative Bar */}
+              <div className="bg-foreground w-full h-1 mt-8"></div>
+            </div>
+
+            {/* Image Side */}
+            <div className="w-full max-w-[800px] mt-6">
+              <Image
+                src={"/our_commitment_image.webp"}
+                width={1920}
+                height={1080}
+                alt="image"
+                className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Testimony */}
+        <div className="h-full w-full">
+          <div className="flex flex-col items-center mt-20 max-w-screen-3xl m-auto lg:mb-40 mb-20">
+            <div className="text-left lg:text-4xl text-3xl md:text-5xl font-extrabold mb-8">
+              <h1>
+                WHAT OUR{" "}
+                <span className="bg-radial-gradient bg-clip-text text-transparent">
+                  CUSTOMER SAY
+                </span>
+              </h1>
+            </div>
+
+            <div className="w-full">
+              <InfiniteMovingCards
+                value={review}
+                direction="left"
+                speed="slow"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
