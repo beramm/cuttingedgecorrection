@@ -41,14 +41,21 @@ const OurLocation = () => {
                   <h1 className="text-4xl font-bold">ADDRESS</h1>
                 </div>
                 <p className="hover:underline text-sm font-light mt-2">
-                  67 Walsgott Street, North Geelong, VIC 3215
+                  <a
+                    href="https://www.google.com/maps/place/Cutting+Edge+Correction/@-38.1167031,144.3417704,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad4118fa7bfd889:0x19eba5f83ed455b3!8m2!3d-38.1167031!4d144.3443453!16s%2Fg%2F11pwphknv6?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-sm font-light"
+                  >
+                    67 Walsgott Street, North Geelong, VIC 3215
+                  </a>
                 </p>
               </div>
               {/* Phone */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <PhoneIconSolid size={20} hexColor={"#E8E6DE"} />
-                  <h1 className="text-4xl font-bold">PHONE</h1>
+                  <h1 className="text-4xl font-bold ">PHONE</h1>
                 </div>
                 <p className="hover:underline text-sm font-light mt-2">
                   0450 649 257
@@ -61,7 +68,14 @@ const OurLocation = () => {
                   <h1 className="text-4xl font-bold">EMAIL</h1>
                 </div>
                 <p className="hover:underline text-sm font-light mt-2">
-                  cuttingedgecorrection@gmail.com
+                  <a
+                    href="mailto:cuttingedgecorrection@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-sm font-light"
+                  >
+                    cuttingedgecorrection@gmail.com
+                  </a>
                 </p>
               </div>
             </div>
