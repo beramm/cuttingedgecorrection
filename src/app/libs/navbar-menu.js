@@ -4,12 +4,12 @@ export const navbarMenu = [
     showArrow: true,
     subMenu: true,
     submenuList: [
-      { name: 'Ceramic Coatings', link: 'services/ceramic-coating' },
-      { name: 'Paint Correction', link: 'services/paint-correction' },
-      { name: 'Decontamination', link: 'services/decontamination' },
-      { name: 'Interior Detailing', link: 'services/interior-detailing' },
-      { name: 'Headlight Restoration', link: 'services/headlight-restoration' },
-      { name: 'Engine Bay Detail', link: 'services/engine-bay-detail' },
+      { name: 'Ceramic Coatings', link: '/services/ceramic-coating' },
+      { name: 'Paint Correction', link: '/services/paint-correction' },
+      { name: 'Decontamination', link: '/services/decontamination' },
+      { name: 'Interior Detailing', link: '/services/interior-detailing' },
+      { name: 'Headlight Restoration', link: '/services/headlight-restoration' },
+      { name: 'Engine Bay Detail', link: '/services/engine-bay-detail' },
     ]
   },
   {
@@ -23,10 +23,10 @@ export const navbarMenu = [
     showArrow: true,
     subMenu: true,
     submenuList: [
-      { name: 'Our Location', link: 'our-location' },
-      { name: 'Gallery', link: 'gallery' },
-      { name: 'FAQ', link: 'faq' },
-      { name: 'Privacy Policy & TOS', link: 'privacy-policy-tos' },
+      { name: 'Our Location', link: '/our-location' },
+      { name: 'Gallery', link: '/gallery' },
+      { name: 'FAQ', link: '/faq' },
+      { name: 'Privacy Policy & TOS', link: '/privacy-policy-tos' },
     ]
   }
 ]
