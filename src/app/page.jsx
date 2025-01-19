@@ -45,7 +45,7 @@ export default function Home() {
       </div>
 
       {/* Transition between sections: Landing Page and Our Services */}
-      <div className="relative w-full h-60 3xl:h-[560px] -top-48 3xl-top-12">
+      <div className="relative w-full h-64 3xl:h-[560px] -top-48 3xl-top-12">
         <div
           className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
           // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
