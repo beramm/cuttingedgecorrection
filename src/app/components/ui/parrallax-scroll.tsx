@@ -100,7 +100,7 @@ export const ParallaxScroll = ({
                 style={{ y: translateSecond }}
                 key={"grid-2" + idx}
               >
-                <ImageComponent src={el} idx={idx + third} />
+                <ImageComponent src={el} idx={idx + third} /> 
               </motion.div>
             ))}
           </div>

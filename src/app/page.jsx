@@ -1,32 +1,40 @@
-"use client"
+"use client";
 
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
 import ContactUsButton from "./components/button/ContactUsButton";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { InfiniteMovingCards } from "./components/card/review-card/infinite-moviing-cards";
+
+
 
 export default function Home() {
-  const [review, setReview] = useState([])
+  const [review, setReview] = useState([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const reviewData = await axios.get('/api/v1/reviews')
-      setReview(reviewData.data.data)
-    }
+      const reviewData = await axios.get("/api/v1/reviews");
+      setReview(reviewData.data.data);
+    };
 
-    fetchReviews()
-  }, [])
-  
+    fetchReviews();
+  }, []);
+
   return (
     <>
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
-        <video 
-          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto w-auto sm:w-full z-0" 
-          src="/videoplayback.webm" autoPlay loop muted
+        <video
+          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto w-auto sm:w-full z-0"
+          src="/videoplayback.webm"
+          autoPlay
+          loop
+          muted
         ></video>
         <div className="relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
-          <h1 className="hidden md:block text-6xl font-bold">CUTTING EDGE CORRECTION</h1>
+          <h1 className="hidden md:block text-6xl font-bold">
+            CUTTING EDGE CORRECTION
+          </h1>
           <div className="flex md:hidden text-5xl font-bold flex-col">
             <p>CUTTING</p>
             <p>EDGE</p>
@@ -35,9 +43,9 @@ export default function Home() {
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl">
             <p>
               At CEC, we provide exceptional car detailing services right here
-              in Geelong. Our home-based business ensures personalized care
-              and attention to detail, bringing top-tier results that exceed
-              your expectations.
+              in Geelong. Our home-based business ensures personalized care and
+              attention to detail, bringing top-tier results that exceed your
+              expectations.
             </p>
           </div>
           <ContactUsButton />
@@ -51,9 +59,16 @@ export default function Home() {
           <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
         </div>
         <div className="flex flex-col justify-between mt-10 md:mt-0">
-          <p>Delivering a 5-star finish is our standard, and we never settle for less. Our unwavering dedication means your car&apos;s brilliance will stand the test of time.</p>
+          <p>
+            Delivering a 5-star finish is our standard, and we never settle for
+            less. Our unwavering dedication means your car&apos;s brilliance
+            will stand the test of time.
+          </p>
           <div>
-            <p className="mb-4">Want to see what all the hype&apos;s about? Tap the button and let&apos;s chat.</p>
+            <p className="mb-4">
+              Want to see what all the hype&apos;s about? Tap the button and
+              let&apos;s chat.
+            </p>
             <ContactUsButton />
           </div>
         </div>
@@ -151,16 +166,32 @@ export default function Home() {
       </div>
 
       {/* Testimony */}
-      <div>
-        <div>
-          {review && review.map((eachReview, index) => {
-            return (
-              <div key={index}>
-                <h1>{eachReview.content}</h1>
-              </div>
-            )
-          })}
-        </div>
+      <div
+        style={{
+          backgroundImage: `url(carbon_background.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="h-full w-full"
+      >
+       <div className="flex flex-col items-center mt-20 max-w-screen-3xl m-auto lg:mb-40 mb-20">
+      <div className="text-left lg:text-4xl text-3xl md:text-5xl font-extrabold mb-8">
+        <h1>
+          WHAT OUR{" "}
+          <span className="bg-radial-gradient bg-clip-text text-transparent">
+            CUSTOMER SAY
+          </span>
+        </h1>
+      </div>
+      
+      <div className="w-full">
+      <InfiniteMovingCards
+        value={review}
+        direction="right"
+        speed="normal"
+      /> 
+      </div>
+    </div>
       </div>
     </>
   );
