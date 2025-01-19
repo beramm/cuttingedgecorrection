@@ -1,8 +1,23 @@
+"use client"
+
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
 import ContactUsButton from "./components/button/ContactUsButton";
 import Image from "next/image";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [review, setReview] = useState([])
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const reviewData = await axios.get('/api/v1/reviews')
+      setReview(reviewData.data.data)
+    }
+
+    fetchReviews()
+  }, [])
+  
   return (
     <>
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
@@ -132,6 +147,19 @@ export default function Home() {
               className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
             />
           </div>
+        </div>
+      </div>
+
+      {/* Testimony */}
+      <div>
+        <div>
+          {review && review.map((eachReview, index) => {
+            return (
+              <div key={index}>
+                <h1>{eachReview.content}</h1>
+              </div>
+            )
+          })}
         </div>
       </div>
     </>
