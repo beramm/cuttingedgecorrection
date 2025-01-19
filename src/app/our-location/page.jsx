@@ -14,9 +14,9 @@ const OurLocation = () => {
       className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
     >
       {/* Content Wrapper */}
-      <div className="max-w-screen-xl m-auto">
+      <div className="max-w-screen-xl m-auto mt-12">
         {/* Title Section */}
-        <h1 className=" text-5xl lg:text-[60px] font-extrabold text-foreground">
+        <h1 className=" text-5xl lg:text-6xl font-extrabold text-foreground">
           WHERE THE{" "}
           <span className="bg-radial-gradient bg-clip-text text-transparent">
             {" "}

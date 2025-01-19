@@ -9,7 +9,7 @@ const SubscriptionPlans = () => {
       className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
     >
       <div className="relative w-full mt-12">
-        <div className="text-center text-5xl lg:text-[60spx] font-extrabold mb-12">
+        <div className="text-center text-5xl lg:text-6xl font-extrabold mb-12">
           <h1>
             CURATE YOUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
