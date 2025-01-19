@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-12 md:10 w-full max-w-screen-xl p-10 md:p-16 xl:p-0">
+      <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
         <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
           <h1>EXCELLENCE IN DETAILLING.</h1>
@@ -72,17 +72,18 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Transition between sections: Landing Page and Our Services */}
-      <div className="relative w-full h-64 3xl:h-[560px] -top-48 3xl-top-12">
-        <div
-          className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
-          // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
-        ></div>
-      </div>
-
       {/* Our Services */}
       <div className="relative w-full bg-black">
-        <div className="text-center text-4xl md:text-5xl font-extrabold mb-12">
+
+        {/* Transition between sections: Landing Page and Our Services */}
+        <div className="absolute w-full h-64 md:h-96 3xl:h-[320px] -top-60 md:-top-80 3xl:-top-80">
+          <div
+            className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
+            // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
+          ></div>
+        </div>
+        
+        <div className="text-center text-4xl md:text-5xl font-extrabold mt-60 mb-12">
           <h1>
             OUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
