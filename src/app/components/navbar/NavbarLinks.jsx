@@ -1,12 +1,15 @@
 import { navbarMenu } from '../../libs/navbar-menu'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { NavArrowDown } from '../icon'
+import ContactUsButton from '../button/ContactUsButton'
 
-const NavbarLinks = () => {
+const NavbarLinks = ({ handleOpenMobileNav }) => {
+  const [openSubmenu, setOpenSubmenu] = useState("")
+
   return (
     <>
-      <ul className="flex items-center justify-center gap-x-8">
+      <ul className="hidden md:flex items-center justify-center gap-x-8">
         {navbarMenu.map((eachMenu, index) => {
           return (
             <li key={index} className="py-4 flex gap-x-1 items-center justify-center cursor-pointer group">
@@ -31,6 +34,44 @@ const NavbarLinks = () => {
           )
         })}
       </ul>
+
+      {/* Mobile */}
+      <div className="flex flex-col md:hidden items-center justify-center w-full mt-4 py-4 px-8">
+        <ul className="flex flex-col items-start justify-between gap-x-8 w-full">
+          {navbarMenu.map((eachMenu, index) => {
+            return (
+              <li key={index} className="mb-8 w-full">
+                <div className="flex items-center justify-between" onClick={() => openSubmenu !== eachMenu.name ? setOpenSubmenu(eachMenu.name) : setOpenSubmenu("")}>
+                  {eachMenu.name === 'Subscription Plans' ? <Link href={"/subscription-plans"} onClick={handleOpenMobileNav}>{eachMenu.name}</Link> : eachMenu.name}
+                  {eachMenu.showArrow && <span className="">
+                    <NavArrowDown size={24} hexColor={"#E8E6DE"} />
+                  </span>}
+                </div>
+                {eachMenu.subMenu && openSubmenu && openSubmenu === eachMenu.name &&
+                <div className="mt-2 border-l-2">
+                  <ul className="">
+                    {eachMenu.submenuList.map((eachSubmenu, index) => (
+                      <Link href={eachSubmenu.link} key={index} onClick={() => {handleOpenMobileNav(); setOpenSubmenu("")}}>
+                        <p className="py-2 ms-5">
+                          {eachSubmenu.name.toUpperCase()}
+                        </p>
+                      </Link>
+                    ))}
+                  </ul>
+                </div>}
+              </li>
+            )
+          })}
+        </ul>
+        <div className="w-full flex items-center justify-center mt-4">
+          <span className="bg-accent h-0.5 w-full"></span>
+          <span className="mx-2">||</span>
+          <span className="bg-accent h-0.5 w-full"></span>
+        </div>
+        <div className="mt-10">
+          <ContactUsButton />
+        </div>
+      </div>
     </>
   )
 }
