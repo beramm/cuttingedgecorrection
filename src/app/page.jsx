@@ -104,7 +104,7 @@ export default function Home() {
 
       <div
         style={{
-          backgroundImage: `url(carbon_background.png)`,
+          backgroundImage: `url(/carbon_background.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
