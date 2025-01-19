@@ -24,7 +24,7 @@ const ServicesCarousel = () => {
       title: "Paint Correction",
       description:
         "Removes oxidation, eliminates scratches, and results in your paint looking flawless. Perfection is guaranteed. ",
-      image: "/services/Swirl Removal.jpg",
+      image: "/services/Paint Correction.jpg",
     },
     {
       title: "Engine Bay Detail",
@@ -84,7 +84,7 @@ const ServicesCarousel = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index} className="relative">
               <Link
-                href={`/service/${service.title
+                href={`/services/${service.title
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`}
                 passHref
