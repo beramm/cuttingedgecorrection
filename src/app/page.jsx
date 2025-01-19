@@ -175,7 +175,7 @@ export default function Home() {
             <div className="w-full">
               <InfiniteMovingCards
                 value={review}
-                direction="left"
+                direction="right"
                 speed="slow"
               />
             </div>
