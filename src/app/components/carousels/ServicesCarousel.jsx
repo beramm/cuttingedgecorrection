@@ -17,37 +17,37 @@ const ServicesCarousel = () => {
     {
       title: "Ceramic Coatings",
       description:
-        "Paint correction, superior UV & scratch resistance, and extremely hydrophobic.",
+        "The ultimate in paint protection and gloss enhancement. Dirt, water, and scratches don't stand a chance.",
       image: "/services/Ceramic Coatings.jpg",
     },
     {
       title: "Paint Correction",
       description:
-       "Eliminate imperfections for a flawless, mirror-like shine.",
+        "Removes oxidation, eliminates scratches, and results in your paint looking flawless. Perfection is guaranteed. ",
       image: "/services/Swirl Removal.jpg",
     },
     {
       title: "Engine Bay Detail",
       description:
-        "Revitalize your engine bay with a deep clean and shine, enhancing the overall appearance and performance of your vehicle.",
+        "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet.",
       image: "/services/Engine Bay Detail.jpg",
     },
     {
       title: "Headlight Restoration",
       description:
-        "Improve nighttime visibility and restore clarity to your headlights with our expert restoration service.",
+        "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection.",
       image: "/services/Headlight Restoration.png",
     },
     {
       title: "Interior Detailing",
       description:
-        "Transform your vehicle's interior with a thorough cleaning and detailing, leaving every surface spotless and refreshed.",
+        "The place you'll spend most of your time. We can keep it spotless for you.",
       image: "/services/Interior Detailing.jpg",
     },
     {
       title: "Decontamination",
       description:
-        "Remove embedded contaminants from your car's paint, preparing the surface for a smooth and flawless finish.",
+        "Eliminate stubborn grime and iron from the surface of your paint, permanently. Leaving behind a sleek, sexy finish.",
       image: "/services/Decontamination.jpg",
     },
   ];
@@ -83,7 +83,12 @@ const ServicesCarousel = () => {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index} className="relative">
-              <Link href={`/service/${service.title.replace(/\s+/g, "-").toLowerCase()}`} passHref>
+              <Link
+                href={`/service/${service.title
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+                passHref
+              >
                 <div className="relative w-full h-full overflow-hidden">
                   {/* Parallax Image */}
                   <div
@@ -99,7 +104,7 @@ const ServicesCarousel = () => {
                     />
                   </div>
                   {/* Content Box */}
-                  <div className="absolute bottom-8 left-4 sm:left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 max-w-[240px] sm:max-w-[280px] text-foreground border-t-highlight border-t-4 h-[170px]">
+                  <div className="absolute bottom-8 left-4 sm:left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] text-foreground border-t-highlight border-t-4 flex flex-col justify-center">
                     <h2 className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">
                       {service.title}
                     </h2>
