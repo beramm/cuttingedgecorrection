@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="h-dvh w-full flex items-center justify-start overflow-hidden md:overflow-visible">
+      <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
         <video 
-          className="absolute top-0 md:left-0 right-0 object-cover md:object-contain block mx-auto md:mx-0 h-[1200px] md:h-auto w-auto sm:w-full z-0" 
+          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto w-auto sm:w-full z-0" 
           src="/videoplayback.webm" autoPlay loop muted
         ></video>
         <div className="relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">

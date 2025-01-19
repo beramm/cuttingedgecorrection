@@ -11,7 +11,7 @@ const OurLocation = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
+      className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
     >
       {/* Content Wrapper */}
       <div className="max-w-screen-xl m-auto mt-12">

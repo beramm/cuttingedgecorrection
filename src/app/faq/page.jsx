@@ -33,7 +33,7 @@ const Faq = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div className="min-h-[900px] flex flex-col items-center justify-start gap-24 w-full bg-custom-gradient px-8 md:px-4 xl:px-0 py-28">
+    <div className="min-h-[900px] flex flex-col items-center justify-start gap-24 w-full bg-custom-gradient px-8 md:px-12 xl:px-0 py-28">
       <div className="mt-12">
         <h1 className="font-bold text-5xl lg:text-6xl text-center text-foreground">
           FREQUENTLY ASKED <br />{" "}

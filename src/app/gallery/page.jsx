@@ -11,7 +11,7 @@ const Gallery = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
+      className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
     >
       <div className="flex flex-col items-center justify-center h-screen mt-12">
         <h1 className="text-center text-5xl lg:text-6xl font-extrabold mb-12">

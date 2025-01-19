@@ -8,7 +8,7 @@ const PrivacyPolicyTos = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-      className="h-full w-full px-8 md:px-4 xl:px-0 py-28"
+      className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
     >
       <div className="max-w-4xl mx-auto mt-12">
         {/* Privacy Policy & TOS Header */}
