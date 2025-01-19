@@ -38,7 +38,7 @@ const MapComponent = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.google.com/maps?rlz=1C1GCEA_enID1021ID1021&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg5MgwIAhAjGCcYgAQYigUyCggDEAAYsQMYgAQyCggEEAAYsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQc3MjhqMGo0qAIAsAIA&um=1&ie=UTF-8&fb=1&gl=id&sa=X&geocode=KYnYv6ePEdRqMbNV1D74pesZ&daddr=67+Walsgott+St,+North+Geelong+VIC+3215,+Australia"
+            href="https://www.google.com/maps/place/Cutting+Edge+Correction/@-38.1167031,144.3417704,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad4118fa7bfd889:0x19eba5f83ed455b3!8m2!3d-38.1167031!4d144.3443453!16s%2Fg%2F11pwphknv6?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
           >
             <strong>Cutting Edge Correction</strong>
           </a>
