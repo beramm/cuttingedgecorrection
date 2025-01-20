@@ -61,7 +61,7 @@ const ServicesCarousel = () => {
       className={`
     transition-all 
     ease-in 
-    duration-700 
+    duration-500 
     ${isVisible ? "opacity-100 translate-y-0" :
           "opacity-0 translate-y-10"}`}>
       <div className="w-full mx-auto max-w-[1700px]">
