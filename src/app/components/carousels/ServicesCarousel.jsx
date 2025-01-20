@@ -38,7 +38,7 @@ const ServicesCarousel = () => {
       title: "Headlight Restoration",
       description:
         "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection.",
-      image: "/services/Headlight Restoration.png",
+      image: "/services/Headlight Restoration.jpg",
     },
     {
       title: "Interior Detailing",
