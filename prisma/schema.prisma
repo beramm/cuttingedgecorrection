@@ -20,3 +20,11 @@ model Reviews {
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
 }
+
+model Pictures {
+  id            String    @id @default(uuid())
+  url           String    @db.LongText
+  service_name       String    
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+}
