@@ -1,9 +1,20 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ParallaxScroll } from "../components/ui/parrallax-scroll";
-import {images} from '../libs/gallery-images'
+import axios from "axios";
 
 const Gallery = () => {
+  const [picture, setPicture] = useState([]);
+
+  useEffect(() => {
+    const fetchPict = async () => {
+      const reviewData = await axios.get("/api/v1/pictures");
+      setPicture(reviewData.data.data);
+    };
+
+    fetchPict();
+  }, []);
+
   return (
     <div
       style={{
@@ -21,13 +32,12 @@ const Gallery = () => {
           </span>
         </h1>
         <ParallaxScroll
-          images={images}
+          images={picture.map((pic) => pic.url)}
           className="overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-800"
         />
       </div>
     </div>
   );
 };
-
 
 export default Gallery;

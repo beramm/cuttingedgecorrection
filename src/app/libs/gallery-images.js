@@ -15,5 +15,6 @@ export const images = [
   "https://lh3.googleusercontent.com/p/AF1QipPB3OyQtgyxA32uKm9TlpxTEAmD6xMdF9NTiQrv=s1360-w1360-h1020",
   "https://lh3.googleusercontent.com/p/AF1QipOu-cLGBY2O1_tg24-Lj91nCWGqNuItW3bBp70Y=s1360-w1360-h1020",
   "https://lh3.googleusercontent.com/p/AF1QipMFRGblugXOBcGsJ0O0O2p8d5gTAHh8iKs1l-WB=s1360-w1360-h1020",
-  "https://lh3.googleusercontent.com/p/AF1QipNBPZdLpN2CQX7v9NbZZKiRIjsgN5fw_n-lxFqh=s1360-w1360-h1020"
+  "https://lh3.googleusercontent.com/p/AF1QipNBPZdLpN2CQX7v9NbZZKiRIjsgN5fw_n-lxFqh=s1360-w1360-h1020",
+  "https://drive.google.com/uc?id=1NrgJoJxZ2bU0XgOBPLKiIpbcVIAgJerA"
 ];
