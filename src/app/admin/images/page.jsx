@@ -226,14 +226,14 @@ const AdminImageList = () => {
       <div className="flex w-full justify-between mt-4">
         <Button
           variant="outlined"
-          className="bg-foreground px-6 py-2 hover:opacity-80 transition duration-200 cursor-pointer"
+          className="w-36 bg-foreground px-6 py-2 hover:opacity-80 transition duration-200 cursor-pointer"
           onClick={toBack}
         >
           Back
         </Button>
         <Button
           variant="outlined"
-          className="bg-foreground px-6 py-2 hover:opacity-80 transition duration-200 cursor-pointer"
+          className="w-36 bg-foreground px-6 py-2 hover:opacity-80 transition duration-200 cursor-pointer"
           onClick={toUpload}
         >
           Upload Images

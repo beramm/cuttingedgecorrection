@@ -29,11 +29,15 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="h-full w-full px-8 md:px-12 xl:px-0 py-28 max-w-screen-xl m-auto">
-    <h1 className="text-2xl  mb-8 lg:text-5xl text-center font-bold">WELCOME TO THE <span className=" bg-radial-gradient bg-clip-text text-transparent">ADMIN PAGE</span></h1>
-    <p className="text-center text-sm font-light mt-4 text-foreground">
-          Manage User Reviews and Pictures for your Services here.
-        </p>
+    <div className="h-full w-full mt-14 px-8 md:px-12 xl:px-0 py-28 max-w-screen-xl m-auto">
+      <h1 className="hidden md:block text-2xl mb-8 lg:text-6xl text-center font-bold">WELCOME TO THE <span className=" bg-radial-gradient bg-clip-text text-transparent">ADMIN PAGE</span></h1>
+      <div className="flex md:hidden flex-col items-center justify-center text-center font-bold text-4xl">
+        <h1>WELCOME TO THE</h1>
+        <h1 className="bg-radial-gradient bg-clip-text text-transparent">ADMIN PAGE</h1>
+      </div>
+      <p className="text-center text-sm font-light mt-4 text-foreground">
+        Manage User Reviews and Pictures for your Services here.
+      </p>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 h-96">
       <Link
@@ -59,10 +63,10 @@ export default function AdminPage() {
             />
           )}
         </AnimatePresence>
-        <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+        <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 flex items-center justify-center">
           <div className="relative z-50">
-            <div className="p-4">
-              <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mt-4 text-7xl">Reviews</h4>
+            <div className="p-4 text-center">
+              <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mb-4 p-2 text-5xl lg:text-6xl">Reviews</h4>
               <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
                 Manage and moderate user reviews
               </p>
@@ -94,13 +98,13 @@ export default function AdminPage() {
             />
           )}
         </AnimatePresence>
-        <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+        <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 flex items-center justify-center">
           <div className="relative z-50">
-            <div className="p-4">
-            <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mt-4 text-7xl">Images</h4>
-              <p className="mt-8 text-foreground tracking-wide leading-relaxed text-sm font-light">
-                Upload and manage gallery images
-              </p>
+            <div className="p-4 text-center">
+            <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mb-4 p-2 text-5xl lg:text-6xl">Images</h4>
+            <p className="mt-8 text-foreground tracking-wide leading-relaxed text-sm font-light">
+              Upload and manage gallery images
+            </p>
             </div>
           </div>
         </div>
