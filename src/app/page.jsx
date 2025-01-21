@@ -30,10 +30,10 @@ export default function Home() {
           muted
         ></video>
         <div className="relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
-          <h1 className="hidden md:block text-6xl font-bold">
+          <h1 className="hidden md:block text-6xl font-black">
             CUTTING EDGE CORRECTION
           </h1>
-          <div className="flex md:hidden text-5xl font-bold flex-col">
+          <div className="flex md:hidden text-5xl font-black flex-col">
             <p>CUTTING</p>
             <p>EDGE</p>
             <p>CORRECTION</p>
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
+      <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-24 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
         <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
           <h1>EXCELLENCE IN DETAILLING.</h1>
@@ -83,7 +83,7 @@ export default function Home() {
           ></div>
         </div>
         
-        <div className="text-center text-4xl md:text-5xl font-extrabold mt-60 mb-12">
+        <div className="text-center text-4xl md:text-5xl font-extrabold mt-96 md:mt-60 mb-12">
           <h1>
             OUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
@@ -141,7 +141,7 @@ export default function Home() {
                 </p>
               </div>
               {/* Button */}
-              <div className="flex items-center justify-start mt-4 w-36">
+              <div className="flex items-center justify-start mt-4">
                 <ContactUsButton />
               </div>
               {/* Decorative Bar */}
@@ -155,6 +155,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 alt="image"
+                unoptimized={true}
                 className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
               />
             </div>
@@ -164,8 +165,8 @@ export default function Home() {
         {/* Testimony */}
         <div className="h-full w-full">
           <div className="flex flex-col items-center mt-20 max-w-screen-3xl m-auto lg:mb-40 mb-20">
-            <div className="text-left lg:text-4xl text-3xl md:text-5xl font-extrabold mb-8">
-              <h1>
+            <div className="text-left text-4xl md:text-5xl font-extrabold mb-8">
+              <h1 className="text-center px-4">
                 WHAT OUR{" "}
                 <span className="bg-radial-gradient bg-clip-text text-transparent">
                   CUSTOMER SAY

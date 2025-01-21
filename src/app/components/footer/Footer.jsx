@@ -80,6 +80,7 @@ const Footer = () => {
               width={260}
               height={260}
               alt="CEC"
+              unoptimized={true}
             />
             <div className="absolute bottom-0">
               <ContactUsButton borderColor={"#00A2FF"} />
