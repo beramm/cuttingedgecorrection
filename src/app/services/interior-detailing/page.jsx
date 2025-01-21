@@ -6,7 +6,7 @@ import { interiorDetailingResults } from '../../libs/service-results-carousel'
 const InteriorDetailing = () => {
   return (
     <>
-      <EachServicePage service={interiorDetailing} serviceImage={interiorDetailingResults} />
+      <EachServicePage service={interiorDetailing} serviceName="interior-detailing" />
     </>
   )
 }

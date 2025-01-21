@@ -6,7 +6,7 @@ import { engineBayDetailResults } from '../../libs/service-results-carousel'
 const EngineBayDetail = () => {
   return (
     <>
-      <EachServicePage service={engineBayRetail} serviceImage={engineBayDetailResults} />
+      <EachServicePage service={engineBayRetail} serviceName="engine-bay-detail" />
     </>
   )
 }

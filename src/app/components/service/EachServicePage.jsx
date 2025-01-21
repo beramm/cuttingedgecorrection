@@ -1,18 +1,31 @@
 "use client";
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ContactUsButton from "../button/ContactUsButton"
 import Image from "next/image"
 import ServiceHeadline from '../text/ServiceHeadline'
 import TheResultsCarousel from '../carousels/TheResultsCarousel'
 import { useIsVisible } from '../../hooks/useIsVisible'
+import axios from 'axios';
 
-const EachServicePage = ({ service, serviceImage }) => {
+const EachServicePage = ({ service, serviceName }) => {
 
   const ref1 = useRef();
   const isVIsible1 = useIsVisible(ref1);
 
   const ref2 = useRef();
   const isVIsible2 = useIsVisible(ref2);
+
+  const [resultsPict , setResultPict] = useState([])
+
+  useEffect(()=>{
+    const fetchResults = async() => { 
+      const response = await axios.get(`/api/v1/pictures/service/${serviceName}`)
+      setResultPict(response.data.data)
+    }
+    fetchResults()
+  }, [])
+  
+  useEffect(()=> {console.log(resultsPict);} , [resultsPict])
 
 
 
@@ -138,7 +151,7 @@ const EachServicePage = ({ service, serviceImage }) => {
               </span>
             </h1>
           </div>
-          <TheResultsCarousel serviceImage={serviceImage} />
+          <TheResultsCarousel serviceImage={resultsPict} />
         </div>
       </div>
     </>
