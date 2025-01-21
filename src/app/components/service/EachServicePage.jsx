@@ -20,21 +20,18 @@ const EachServicePage = ({ service, serviceImage }) => {
   return (
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
-
-
         <img
-          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"
-            }`}
+          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"
         />
         <div
-          className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVIsible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
-            }`}
-        >          <h1 className="hidden md:block text-6xl font-black items-end">
+          className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVIsible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
+        >          
+          <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
           </h1>
-          <div className="flex md:hidden text-5xl font-black flex-col">
+          <div className="flex md:hidden text-4xl font-black flex-col text-right">
             {service.name.toUpperCase()}
           </div>
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl text-right">
@@ -63,8 +60,7 @@ const EachServicePage = ({ service, serviceImage }) => {
         <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto -z-2 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
 
           <div ref={ref2} className="flex flex-col lg:flex-row items-center justify-start gap-x-16 h-full w-full max-w-screen-2xl">
-            <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
-              }`}>
+            <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>
               <div className="md:ms-12 mb-4 w-full max-w-md">
                 <p className="mb-4">{service.content.firstDescription[0]}</p>
                 <p>{service.content.firstDescription[1]}</p>
@@ -80,8 +76,7 @@ const EachServicePage = ({ service, serviceImage }) => {
               </div>
             </div>
 
-            <div className={`w-full h-full flex flex-col justify-between transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
-              }`}>
+            <div className={`w-full h-full flex flex-col justify-between transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 md:translate-x-20 opacity-0"}`}>
               {/* Mobile Decorative Bar */}
               <div className="flex md:hidden w-full justify-end my-12">
                 <div className="bg-foreground w-full max-w-2xl h-1"></div>
@@ -135,8 +130,7 @@ const EachServicePage = ({ service, serviceImage }) => {
         className="h-full w-full"
       >
         {/* The Results */}
-        <div className={`mt-16 relative w-full flex flex-col mx-auto -z-2 h-[920px] items-center justify-center transition-all duration-700 ease-in-out ${isVIsible3 ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-          }`}>
+        <div className={`mt-16 relative w-full flex flex-col mx-auto -z-2 h-[920px] items-center justify-center transition-all duration-700 ease-in-out ${isVIsible3 ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
           <div className="text-left text-4xl md:text-5xl font-extrabold mb-10">
             <h1>
               THE{" "}
