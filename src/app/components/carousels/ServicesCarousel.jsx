@@ -53,88 +53,78 @@ const ServicesCarousel = () => {
       image: "/services/Decontamination.jpg",
     },
   ];
-  const ref = useRef();
-  const isVisible = useIsVisible(ref);
 
   return (
-    <div ref={ref}
-      className={`
-    transition-all 
-    ease-in 
-    duration-500 
-    ${isVisible ? "opacity-100 translate-y-0" :
-          "opacity-0 translate-y-10"}`}>
-      <div className="w-full mx-auto max-w-[1700px]">
-        {/* Swiper Container */}
-        <div className="relative h-[500px]">
-          <Swiper
-            modules={[Navigation, Pagination, A11y, Parallax]}
-            spaceBetween={16}
-            loop={true} // Enable looping
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 8,
-              },
-              640: {
-                slidesPerView: 1.5,
-                spaceBetween: 12,
-              },
-              1024: {
-                slidesPerView: 2.5,
-                spaceBetween: 42,
-              },
-            }}
-            navigation
-            pagination={{
-              el: ".custom-pagination", // Link to the custom pagination container
-              clickable: true,
-            }}
-            className="h-full w-full custom-swiper"
-          >
-            {services.map((service, index) => (
-              <SwiperSlide key={index} className="relative">
-                <Link
-                  href={`/services/${service.title
-                    .replace(/\s+/g, "-")
-                    .toLowerCase()}`}
-                  passHref
-                >
-                  <div className="relative w-full h-full overflow-hidden">
-                    {/* Parallax Image */}
-                    <div
-                      data-swiper-parallax="-300"
-                      className="relative w-full h-full cursor-pointer"
-                    >
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        width={800}
-                        height={600}
-                        unoptimized={true}
-                        className="w-full h-full object-cover brightness-75 transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                    {/* Content Box */}
-                    <div className="absolute bottom-8 left-4 sm:left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] text-foreground border-t-highlight border-t-4 flex flex-col justify-center">
-                      <h2 className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">
-                        {service.title}
-                      </h2>
-                      <p className="text-xs sm:text-sm font-light">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
 
-        {/* Custom Pagination Container */}
-        <div className="bg-black py-4">
-          <div className="custom-pagination flex justify-center"></div>
-        </div>
+    <div className="w-full mx-auto max-w-[1700px]">
+      {/* Swiper Container */}
+      <div className="relative h-[500px]">
+        <Swiper
+          modules={[Navigation, Pagination, A11y, Parallax]}
+          spaceBetween={16}
+          loop={true} // Enable looping
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 8,
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 12,
+            },
+            1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 42,
+            },
+          }}
+          navigation
+          pagination={{
+            el: ".custom-pagination", // Link to the custom pagination container
+            clickable: true,
+          }}
+          className="h-full w-full custom-swiper"
+        >
+          {services.map((service, index) => (
+            <SwiperSlide key={index} className="relative">
+              <Link
+                href={`/services/${service.title
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+                passHref
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  {/* Parallax Image */}
+                  <div
+                    data-swiper-parallax="-300"
+                    className="relative w-full h-full cursor-pointer"
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover brightness-75 transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                  {/* Content Box */}
+                  <div className="absolute bottom-8 left-4 sm:left-8 cursor-pointer bg-primary p-4 rounded-lg shadow-lg z-10 w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] text-foreground border-t-highlight border-t-4 flex flex-col justify-center">
+                    <h2 className="text-xl sm:text-3xl font-bold mb-1 sm:mb-2">
+                      {service.title}
+                    </h2>
+                    <p className="text-xs sm:text-sm font-light">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Custom Pagination Container */}
+      <div className="bg-black py-4">
+        <div className="custom-pagination flex justify-center"></div>
       </div>
     </div>
 

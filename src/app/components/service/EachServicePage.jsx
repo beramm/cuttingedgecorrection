@@ -14,8 +14,7 @@ const EachServicePage = ({ service, serviceImage }) => {
   const ref2 = useRef();
   const isVIsible2 = useIsVisible(ref2);
 
-  const ref3 = useRef();
-  const isVIsible3 = useIsVisible(ref3);
+
 
   return (
     <>
@@ -27,7 +26,7 @@ const EachServicePage = ({ service, serviceImage }) => {
         />
         <div
           className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVIsible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
-        >          
+        >
           <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
           </h1>
@@ -123,7 +122,7 @@ const EachServicePage = ({ service, serviceImage }) => {
         </div>
       </div>
 
-      <div ref={ref3}
+      <div
         style={{
           backgroundImage: `url(/carbon_background.png)`,
           backgroundSize: "cover",
@@ -132,7 +131,7 @@ const EachServicePage = ({ service, serviceImage }) => {
         className="h-full w-full"
       >
         {/* The Results */}
-        <div className={`mt-16 relative w-full flex flex-col mx-auto -z-2 h-[920px] items-center justify-center transition-all duration-700 ease-in-out ${isVIsible3 ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
+        <div className={`mt-16 relative w-full flex flex-col mx-auto -z-2 h-[920px] items-center justify-center`}>
           <div className="text-left text-4xl md:text-5xl font-extrabold mb-10">
             <h1>
               THE{" "}
