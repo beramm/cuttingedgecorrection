@@ -108,7 +108,7 @@ const UploadReview = () => {
       <div className="flex w-full justify-between mt-11">
         <Button
           variant="outlined"
-          className="bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer"
+          className="w-36 bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer"
           onClick={toBack}
         >
           Back
