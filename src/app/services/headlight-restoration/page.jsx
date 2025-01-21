@@ -6,7 +6,7 @@ import { headlightRestorationResults } from '../../libs/service-results-carousel
 const HeadlightRestoration = () => {
   return (
     <>
-      <EachServicePage service={headlightRestoration} serviceImage={headlightRestorationResults} />
+      <EachServicePage service={headlightRestoration} serviceName="headlight-restoration" />
     </>
   )
 }

@@ -6,7 +6,7 @@ import { paintCorrectionResults } from '../../libs/service-results-carousel'
 const PaintCorrection = () => {
   return (
     <>
-      <EachServicePage service={paintCorrection} serviceImage={paintCorrectionResults} />
+      <EachServicePage service={paintCorrection} serviceName="paint-correction" />
     </>
   )
 }

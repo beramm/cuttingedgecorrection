@@ -51,8 +51,8 @@ const TheResultsCarousel = ({ serviceImage }) => {
                     className="relative w-full h-full cursor-pointer"
                   >
                     <Image
-                      src={service.image}
-                      alt={service.title}
+                      src={service.url}
+                      alt={service.service_name}
                       width={800}
                       height={600}
                       unoptimized={true}
