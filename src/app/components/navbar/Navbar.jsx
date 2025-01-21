@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className="h-28 w-full max-w-screen-xl mx-auto">
           <div className="w-full h-full px-8 md:px-4 xl:px-0 flex items-center justify-between">
             <Link href={"/"} className="w-32">
-              <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" />
+              <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" unoptimized={true} />
             </Link>
             <div className="hidden md:block">
               <NavbarLinks handleOpenMobileNav={handleOpenMobileNav} />
@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className={`md:hidden bg-primary fixed w-full top-0 overflow-y-auto bottom-0 px-8 duration-300 ${open ? "left-0" : "left-[-100%]"}`}>
             <div className="h-28 flex items-center justify-between">
               <Link href={"/"} className="w-32">
-                <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" />
+                <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" unoptimized={true} />
               </Link>
               <div className="block md:hidden relative -right-1" onClick={handleOpenMobileNav}>
                 <CloseIcon size={40} hexColor={"#E8E6DE"} />

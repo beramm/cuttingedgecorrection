@@ -155,6 +155,7 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 alt="image"
+                unoptimized={true}
                 className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
               />
             </div>

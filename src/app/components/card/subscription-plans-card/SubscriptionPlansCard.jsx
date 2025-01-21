@@ -62,7 +62,7 @@ const SubscriptionPlansCard = ({ data }) => {
           SUBSCRIBE
         </button>
         {data.bestValue && <div className="absolute -top-10 -right-10">
-          <Image src={"/bestvalue_banner.png"} width={120} height={120} alt="bestvalue_banner" className="w-auto h-auto" />
+          <Image src={"/bestvalue_banner.png"} width={120} height={120} alt="bestvalue_banner" unoptimized={true} className="w-auto h-auto" />
           <div className="relative">
             <p className={`text-[#B53534] text-xl absolute -top-[80px] right-[30px] leading-5 rotate-[30deg] text-center font-black`}>BEST</p>
             <p className={`text-[#B53534] text-xl absolute -top-[60px] right-[38px] leading-5 rotate-[30deg] text-center font-black`}>VALUE</p>
