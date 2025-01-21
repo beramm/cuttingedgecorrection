@@ -48,7 +48,7 @@
     } catch (err) {
       console.log("Token verification error:", err.message);
       return NextResponse.json(
-        { error: "Unauthorized: Invalid or expired token" },
+        { error: "Unauthorized: Invalid or expired token , please login again!" },
         { status: 401 }
       );
     }

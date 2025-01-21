@@ -13,7 +13,7 @@ export const POST = async (req) => {
 
     // Validate input
     if (!email || !password) {
-      return NextResponse.json({ status: 400, error: "Email and password are required" });
+      return NextResponse.json({ status: 400, error: "Email and password are required" } , {status : 400});
     }
 
     // Find the user by email
@@ -22,13 +22,13 @@ export const POST = async (req) => {
     });
 
     if (!user) {
-      return NextResponse.json({ status: 401, error: "Invalid email or password" });
+      return NextResponse.json({ status: 401, error: "Invalid email or password" }  , {status : 401});
     }
 
     // Compare passwords
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return NextResponse.json({ status: 401, error: "Invalid email or password" });
+      return NextResponse.json({ status: 401, error: "Invalid email or password" }  , {status : 401});
     }
 
     // Generate a JWT token using jose
@@ -45,6 +45,6 @@ export const POST = async (req) => {
     });
   } catch (error) {
     console.error("Login error:", error);
-    return NextResponse.json({ status: 500, error: "Internal server error" });
+    return NextResponse.json({ status: 500, error: "Internal server error" }  , {status : 500});
   }
 };
