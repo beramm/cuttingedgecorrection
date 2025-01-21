@@ -146,9 +146,9 @@ const AdminImageUpload = () => {
 
         <button
           type="submit"
-          className="w-full bg-foreground flex justify-center text-center text-primary-foreground py-2.5 px-4 rounded-md text-primary hover:bg-highlight hover:text-foreground transition-colors font-medium"
+          className="text-sm w-full bg-foreground flex justify-center text-center text-primary-foreground py-2.5 px-4 rounded-md text-primary hover:bg-highlight hover:text-foreground transition-colors font-medium"
         >
-          {isSubmit ? <LoadingSpinnerSmall /> : "Submit Review"}
+          {isSubmit ? <LoadingSpinnerSmall /> : "Upload Image"}
         </button>
       </form>
 
