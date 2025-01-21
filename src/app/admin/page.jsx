@@ -72,7 +72,7 @@ export default function AdminPage() {
       </Link>
 
       <Link
-        href="/admin/pictures"
+        href="/admin/images"
         className="relative group block p-2 h-full w-full"
         onMouseEnter={() => setHoveredIndex(1)}
         onMouseLeave={() => setHoveredIndex(null)}
@@ -97,7 +97,7 @@ export default function AdminPage() {
         <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
           <div className="relative z-50">
             <div className="p-4">
-            <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mt-4 text-7xl">Pictures</h4>
+            <h4 className="bg-radial-gradient bg-clip-text text-transparent font-bold tracking-wide mt-4 text-7xl">Images</h4>
               <p className="mt-8 text-foreground tracking-wide leading-relaxed text-sm font-light">
                 Upload and manage gallery images
               </p>

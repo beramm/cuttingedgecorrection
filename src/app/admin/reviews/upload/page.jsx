@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { LoadingSpinner } from '../../../components/icon/index';
+import { LoadingSpinner, LoadingSpinnerSmall } from '../../../components/icon/index';
 import { useRouter } from 'next/navigation';
 import { Button } from '@material-tailwind/react';
 import axios from 'axios';
@@ -11,6 +11,7 @@ const UploadReview = () => {
   const [user, setUser] = useState('');
   const [content, setContent] = useState('');
   const [token, setToken] = useState('');
+  const [isSubmit , setIsSubmit] = useState(false)
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -37,6 +38,7 @@ const UploadReview = () => {
 
   const handlePost = async (e) => {
     e.preventDefault();
+    setIsSubmit(false)
 
     try {
       await axios.post(
@@ -48,6 +50,7 @@ const UploadReview = () => {
           },
         }
       );
+      setIsSubmit(true)
       router.push('/admin/reviews');
     } catch (error) {
       console.error('Error uploading review:', error);
@@ -96,9 +99,9 @@ const UploadReview = () => {
 
         <button
           type="submit"
-          className="w-full bg-foreground text-primary-foreground py-2.5 px-4 rounded-md text-primary hover:bg-highlight hover:text-foreground transition-colors font-medium"
+          className="w-full bg-foreground flex justify-center text-center text-primary-foreground py-2.5 px-4 rounded-md text-primary hover:bg-highlight hover:text-foreground transition-colors font-medium"
         >
-          Submit Review
+          {isSubmit ? <LoadingSpinnerSmall/> :"Submit Review"}
         </button>
       </form>
 

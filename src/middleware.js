@@ -7,7 +7,7 @@
     const url = req.nextUrl.pathname;
     
     // If it's not a POST request, allow it through immediately
-    if (req.method !== 'POST') {
+    if (req.method !== 'POST' || req.method !== 'DELETE' ) {
       return NextResponse.next();
     }
 

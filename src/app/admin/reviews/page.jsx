@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import { LoadingSpinner, TrashSolidIcon } from "../../components/icon";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-const AdminReview = () => {
+const AdminReviewList = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
@@ -43,13 +43,11 @@ const AdminReview = () => {
     try {
       setIsFetching(true);
       const reviewData = await axios.get("/api/v1/reviews");
-      console.log("Fetched reviews:", reviewData.data.data); // Debug log
       setReviews(reviewData.data.data);
     } catch (error) {
       const errorMessage =
         error.response?.data?.error ||
         "Internal Server Error. Please try again.";
-      console.error("Error fetching in:", errorMessage);
       setAlertType("error");
       setAlertMessage(errorMessage);
       setShowAlert(true);
@@ -67,17 +65,12 @@ const AdminReview = () => {
         data: { id: reviewId }
       });
       
-      console.log("Delete response:", response);
-      
-      // Show success alert
       setAlertType("success");
       setAlertMessage("Review deleted successfully!");
       setShowAlert(true);
       
-      // Refresh the reviews list
       fetchReviews();
     } catch (error) {
-      console.error("Delete error:", error);
       const errorMessage =
         error.response?.data?.error ||
         "Error deleting review. Please try again.";
@@ -107,20 +100,18 @@ const AdminReview = () => {
           REVIEWS
         </span>
       </Typography>
-      <div className="overflow-y-auto my-16 max-w-screen-lg h-[400px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-200">
+      <div className="overflow-y-auto my-16 max-w-screen-lg w-full h-[400px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-200">
         <Card className="w-full text-foreground">
           <CardBody>
-            <div className="mb-4 flex items-center justify-between"></div>
             <div className="divide-y divide-gray-200">
               {isFetching ? (
                 Array.from({ length: 5 }).map((_, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between pb-3 pt-3 last:pb-0 animate-pulse max-h-96"
+                    className="flex items-start justify-between py-6 min-h-[100px] md:max-h-[100px] w-full"
                   >
-                    <div className="flex items-center gap-x-3">
-                      <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-                      <div>
+                    <div className="flex items-start gap-x-3 w-full">
+                      <div className="w-full">
                         <div className="h-5 bg-gray-300 rounded w-36 mb-2"></div>
                         <div className="h-3 bg-gray-200 rounded w-48"></div>
                       </div>
@@ -128,7 +119,7 @@ const AdminReview = () => {
                   </div>
                 ))
               ) : reviews.length === 0 ? (
-                <div className="flex items-center justify-center py-8">
+                <div className="flex items-center justify-center py-8 w-full bg-none">
                   <Typography className="text-gray-500 text-lg">
                     No reviews available. Add a review to get started.
                   </Typography>
@@ -137,35 +128,32 @@ const AdminReview = () => {
                 reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between pb-3 pt-3 last:pb-0"
+                    className="flex items-start justify-between py-6 min-h-[100px] md:max-h-[100px] relative w-full"
                   >
-                    <div className="flex items-center gap-x-3">
-                      <div>
-                        <Typography
-                          variant="h4"
-                          className="bg-radial-gradient bg-clip-text text-transparent"
-                        >
-                          {review.user}
-                        </Typography>
+                    <div className="w-full pr-12">
+                      <Typography
+                        variant="h4"
+                        className="bg-radial-gradient bg-clip-text text-transparent mb-2 w-full"
+                      >
+                        {review.user}
+                      </Typography>
+                      <div className="w-full md:max-h-[50px] md:overflow-y-auto">
                         <Typography
                           variant="small"
-                          className="font-extralight text-xs lg:mt-2 pr-10 lg:pr-20"
+                          className="font-extralight text-xs whitespace-pre-wrap break-words w-full"
                         >
                           {review.content}
                         </Typography>
                       </div>
                     </div>
                     <div 
-                      className="flex items-center"
-                      onClick={() => {
-                        console.log("Clicked review:", review);
-                        handleDelete(review._id || review.id);
-                      }}
+                      className="absolute right-0 top-6 cursor-pointer"
+                      onClick={() => handleDelete(review._id || review.id)}
                     >
                       <TrashSolidIcon
                         size={20}
                         hexColor="#FFFFFF"
-                        className="min-w-[32px] min-h-[32px] cursor-pointer hover:opacity-80"
+                        className="min-w-[32px] min-h-[32px] hover:opacity-80"
                       />
                     </div>
                   </div>
@@ -223,4 +211,4 @@ const AdminReview = () => {
   );
 };
 
-export default AdminReview;
+export default AdminReviewList;
