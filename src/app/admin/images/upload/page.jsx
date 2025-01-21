@@ -47,10 +47,32 @@ const AdminImageUpload = () => {
     e.preventDefault();
     setIsSubmit(true);
 
+    const driveRegex = /https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/view\?.*/;
+
+    const match = url.match(driveRegex);
+    let transformedUrl = "";
+
+    console.log(match);
+    if (match) {
+      const fileId = match[1];
+      transformedUrl = `https://drive.google.com/uc?id=${fileId}`;
+      setUrl(transformedUrl);
+
+      console.log("isinya", transformedUrl);
+      console.log("isinya 2", url);
+
+    } else {
+      setAlertType("error");
+      setAlertMessage("Invalid Google Drive URL format.");
+      setShowAlert(true);
+      setIsSubmit(false);
+      return;
+    }
+
     try {
       await axios.post(
         "/api/v1/pictures",
-        { url, service_name },
+        { url: transformedUrl, service_name },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -165,9 +187,8 @@ const AdminImageUpload = () => {
       {showAlert && (
         <Alert
           open={showAlert}
-          className={`${
-            alertType === "error" ? "bg-red-700" : "bg-green-700"
-          } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
+          className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+            } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
           animate={{
             mount: { opacity: 1 },
             unmount: { opacity: 0 },
@@ -180,9 +201,8 @@ const AdminImageUpload = () => {
               color="white"
               size="sm"
               onClick={() => setShowAlert(false)}
-              className={`${
-                alertType === "error" ? "bg-red-900" : "bg-green-900"
-              } hover:opacity-80 transition duration-200`}
+              className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+                } hover:opacity-80 transition duration-200`}
             >
               Close
             </Button>

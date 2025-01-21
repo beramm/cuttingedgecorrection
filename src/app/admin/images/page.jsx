@@ -193,7 +193,6 @@ const AdminImageList = () => {
                           src={imageLink}
                           width={400}
                           height={300}
-                          unoptimized={true}
                           sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 300px"
                           alt={`service-image-${id}`}
                           style={{ imageRendering: "crisp-edges" }}

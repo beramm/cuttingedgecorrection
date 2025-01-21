@@ -79,10 +79,10 @@ export default function Home() {
         <div className="absolute w-full h-64 md:h-96 3xl:h-[320px] -top-60 md:-top-80 3xl:-top-80">
           <div
             className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
-            // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
+          // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
           ></div>
         </div>
-        
+
         <div className="text-center text-4xl md:text-5xl font-extrabold mt-96 md:mt-60 mb-12">
           <h1>
             OUR{" "}
@@ -97,7 +97,7 @@ export default function Home() {
         <div className="absolute w-full h-40 -bottom-40 z-20">
           <div
             className="absolute inset-0 bg-gradient-to-t from-transparent to-black to-40%"
-            // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
+          // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
           ></div>
         </div>
       </div>
@@ -155,12 +155,13 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 alt="image"
-                unoptimized={true}
                 className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
               />
             </div>
           </div>
         </div>
+        
+
 
         {/* Testimony */}
         <div className="h-full w-full">
@@ -177,8 +178,8 @@ export default function Home() {
             <div className="w-full">
               <InfiniteMovingCards
                 value={review}
-                direction="right"
-                speed="slow"
+                direction="left"
+                speed="normal"
               />
             </div>
           </div>

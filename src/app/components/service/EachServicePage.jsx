@@ -70,7 +70,6 @@ const EachServicePage = ({ service, serviceImage }) => {
                   alt={`image-${service.name}`}
                   fill
                   sizes='auto'
-                  unoptimized={true}
                   className="object-cover"
                 />
               </div>
@@ -88,7 +87,6 @@ const EachServicePage = ({ service, serviceImage }) => {
                   alt={`image-${service.name}`}
                   fill
                   sizes='auto'
-                  unoptimized={true}
                   className="object-cover"
                 />
               </div>

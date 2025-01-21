@@ -66,7 +66,6 @@ export const ParallaxScroll = ({
       className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
       height={400}
       width={400}
-      unoptimized={true}
       alt={`Gallery image ${idx + 1}`}
       onError={(e: any) => {
         e.target.src = '/cec_nocolor_logo.png';

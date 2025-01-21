@@ -2,17 +2,23 @@
 import React, { useEffect, useState } from "react";
 import { ParallaxScroll } from "../components/ui/parrallax-scroll";
 import axios from "axios";
+import { galleryImages } from "../libs/gallery-images.js";
+
 
 const Gallery = () => {
   const [picture, setPicture] = useState([]);
 
-  useEffect(() => {
-    const fetchPict = async () => {
-      const reviewData = await axios.get("/api/v1/pictures");
-      setPicture(reviewData.data.data);
-    };
+  // useEffect(() => {
+  //   const fetchPict = async () => {
+  //     const reviewData = await axios.get("/api/v1/pictures");
+  //     setPicture(reviewData.data.data);
+  //   };
 
-    fetchPict();
+  //   fetchPict();
+  // }, []);
+
+  useEffect(() => {
+    setPicture(galleryImages);
   }, []);
 
   return (
