@@ -70,7 +70,7 @@ const NavbarAdmin = () => {
               {existToken && (
                 <Button
                   variant="outlined"
-                  className="bg-foreground h-8"
+                  className="bg-foreground h-8 hover:bg-red-500 hover:border-red-500 hover:text-white"
                   onClick={handleLogout}
                 >
                   Logout

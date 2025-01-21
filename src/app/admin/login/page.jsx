@@ -11,7 +11,8 @@ import {
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { LeftArrowIcon, LoadingSpinner, LoadingSpinnerSmall } from "../../components/icon";
+import { LoadingSpinner, LoadingSpinnerSmall } from "../../components/icon";
+import Link from "next/link";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -71,33 +72,23 @@ const Page = () => {
   return (
     <div className="h-screen w-full flex items-center justify-center text-foreground px-6">
       <div className="relative w-full max-w-xl mx-auto">
-        <a
-          className="absolute -top-10 left-0 lg:-left-44 flex items-center gap-2 text-sm font-medium text-gray-300 hover:underline"
-          href="/"
-        >
-          <LeftArrowIcon size={20} hexColor={"#FFFFFF"} />
-          <span>Landing Page</span>
-        </a>
         <Card
           shadow={false}
-          className="w-full max-w-md md:max-w-lg lg:max-w-xl bg-none text-foreground px-6 md:px-16 py-8 md:py-12"
+          className="w-full bg-none text-foreground px-6 md:px-16 py-8 md:py-12"
         >
           <CardHeader
             shadow={false}
             floated={false}
             className="text-center text-foreground"
           >
-            <h1
-              variant="h1"
-              className="mb-4 text-4xl md:text-4xl lg:text-5xl font-bold"
-            >
+            <h1 className="mb-4 text-4xl md:text-4xl lg:text-5xl font-bold">
               ADMIN{" "}
               <span className="bg-radial-gradient bg-clip-text text-transparent">
                 LOGIN
               </span>
             </h1>
           </CardHeader>
-          <CardBody>
+          <CardBody className="p-0">
             <form className="flex flex-col gap-6 mt-6" onSubmit={handleLogin}>
               <div>
                 <label htmlFor="email">
@@ -147,16 +138,24 @@ const Page = () => {
                   required
                 />
               </div>
-              <Button
-                size="lg"
-                color="gray"
-                fullWidth
-                className={`bg-foreground text-primary h-10 flex items-center justify-center hover:bg-highlight hover:text-foreground transition duration-200`}
-                type="submit"
-                disabled={loading}
-              >
-                {loading ?  <LoadingSpinnerSmall/> : "Continue"}
-              </Button>
+              <div className="flex items-center justify-between gap-x-3">
+                <Link
+                  href={"/"}
+                  className="w-full rounded-lg bg-primary font-semibold text-sm border border-accent text-accent h-10 flex items-center justify-center hover:border-gray-500 hover:bg-gray-500 hover:text-foreground transition duration-200"
+                >
+                  Landing Page
+                </Link>
+                <Button
+                  size="lg"
+                  color="gray"
+                  fullWidth
+                  className={`bg-foreground text-primary h-10 flex items-center justify-center hover:bg-highlight hover:text-foreground transition duration-200`}
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ?  <LoadingSpinnerSmall/> : "Continue"}
+                </Button>
+              </div>
             </form>
           </CardBody>
         </Card>
