@@ -12,11 +12,11 @@ import axios from "axios";
 const AdminImageUpload = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [service_name, setService_name] = useState(""); // State for dropdown selection
+  const [service_name, setService_name] = useState("");
   const [url, setUrl] = useState("");
   const [token, setToken] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
-  const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
+  const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("error");
 
@@ -47,8 +47,16 @@ const AdminImageUpload = () => {
     e.preventDefault();
     setIsSubmit(true);
 
-    const driveRegex = /https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/view\?.*/;
+    // Check if URL starts with http:// or https://
+    if (!url.match(/^https?:\/\/.+/)) {
+      setAlertType("error");
+      setAlertMessage("Invalid URL format. URL must start with http:// or https://");
+      setShowAlert(true);
+      setIsSubmit(false);
+      return;
+    }
 
+    const driveRegex = /https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/view\?.*/;
     const match = url.match(driveRegex);
     let transformedUrl = "";
 
@@ -60,7 +68,6 @@ const AdminImageUpload = () => {
 
       console.log("isinya", transformedUrl);
       console.log("isinya 2", url);
-
     } else {
       setAlertType("error");
       setAlertMessage("Invalid Google Drive URL format.");
@@ -96,7 +103,7 @@ const AdminImageUpload = () => {
   };
 
   const handleServiceChange = (e) => {
-    setService_name(e.target.value); // Update service_name when dropdown changes
+    setService_name(e.target.value);
   };
 
   return (
@@ -125,8 +132,8 @@ const AdminImageUpload = () => {
             <select
               id="service"
               name="service"
-              value={service_name} // Bind the dropdown value to the service_name state
-              onChange={handleServiceChange} // Update the service_name state on change
+              value={service_name}
+              onChange={handleServiceChange}
               className="w-full rounded-md border bg-background px-3 py-2 pr-10 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-foreground focus:border-transparent appearance-none cursor-pointer"
               required
             >
