@@ -17,7 +17,7 @@ import Link from "next/link";
 const ServicesCarousel = () => {
   const services = [
     {
-      title: "Ceramic Coatings",
+      title: "Ceramic Coating",
       description:
         "The ultimate in paint protection and gloss enhancement. Dirt, water, and scratches don't stand a chance.",
       image: "/services/Ceramic Coatings.jpg",
