@@ -53,7 +53,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-24 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
         <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
-          <h1>EXCELLENCE IN DETAILLING.</h1>
+          <h1>EXCELLENCE IN DETAILING.</h1>
           <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
         </div>
         <div className="flex flex-col justify-between mt-10 md:mt-0">
