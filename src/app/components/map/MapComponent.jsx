@@ -30,8 +30,8 @@ const MapComponent = () => {
   return (
     <Map center={position} zoom={15} style={{ height: "500px", width: "100%" }}>
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={position}>
         <Popup>
