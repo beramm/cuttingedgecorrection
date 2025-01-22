@@ -9,21 +9,21 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
 }
 
 model Reviews {
   id            Int       @id @default(autoincrement())
   user          String    
-  content       String    @db.LongText
+  content       String    @db.Text
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
 }
 
 model Pictures {
   id            Int       @id @default(autoincrement())
-  url           String    @db.LongText
+  url           String    @db.Text
   service_name  String    
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
