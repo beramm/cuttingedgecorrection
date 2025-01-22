@@ -53,7 +53,7 @@ const SubscriptionPlansCard = ({ data }) => {
             const isHighlighted = highlightWords.some((word) =>
               firstWord.includes(word)
             );
-
+            
             return (
               <div key={index} className="flex items-start mb-3">
                 <div className="w-[24px]">
