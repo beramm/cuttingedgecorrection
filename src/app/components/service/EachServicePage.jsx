@@ -33,7 +33,7 @@ const EachServicePage = ({ service, serviceName }) => {
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
         <img
-          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
+          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"
         />
