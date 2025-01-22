@@ -1,3 +1,5 @@
+"use client"
+
 import { navbarMenu } from '../../libs/navbar-menu'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -8,7 +10,7 @@ const NavbarLinks = ({ handleOpenMobileNav }) => {
   const [openSubmenu, setOpenSubmenu] = useState("")
 
   return (
-    <>
+  <>
       <ul className="hidden md:flex items-center justify-center gap-x-8">
         {navbarMenu.map((eachMenu, index) => {
           return (

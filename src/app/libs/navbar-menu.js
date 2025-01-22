@@ -4,7 +4,7 @@ export const navbarMenu = [
     showArrow: true,
     subMenu: true,
     submenuList: [
-      { name: 'Ceramic Coatings', link: '/services/ceramic-coating' },
+      { name: 'Ceramic Coating', link: '/services/ceramic-coating' },
       { name: 'Paint Correction', link: '/services/paint-correction' },
       { name: 'Decontamination', link: '/services/decontamination' },
       { name: 'Interior Detailing', link: '/services/interior-detailing' },
