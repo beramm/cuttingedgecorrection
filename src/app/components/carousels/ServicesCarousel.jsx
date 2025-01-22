@@ -21,12 +21,14 @@ const ServicesCarousel = () => {
       description:
         "The ultimate in paint protection and gloss enhancement. Dirt, water, and scratches don't stand a chance.",
       image: "/services/Ceramic Coatings.jpg",
+      link: "/services/ceramic-coating"
     },
     {
       title: "Paint Correction",
       description:
         "Removes oxidation, eliminates scratches, and results in your paint looking flawless. Perfection is guaranteed. ",
       image: "/services/Paint Correction.jpg",
+      link: "/services/paint-correction"
     },
     {
       title: "Engine Bay Detail",
@@ -39,6 +41,7 @@ const ServicesCarousel = () => {
       description:
         "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection.",
       image: "/services/Headlight Restoration.jpg",
+      link: "/services/headlight-restoration"
     },
     {
       title: "Interior Detailing",
@@ -51,6 +54,7 @@ const ServicesCarousel = () => {
       description:
         "Eliminate stubborn grime and iron from the surface of your paint, permanently. Leaving behind a sleek, sexy finish.",
       image: "/services/Decontamination.jpg",
+      link: "/services/decontamination"
     },
   ];
 
@@ -87,9 +91,7 @@ const ServicesCarousel = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index} className="relative">
               <Link
-                href={`/services/${service.title
-                  .replace(/\s+/g, "-")
-                  .toLowerCase()}`}
+                href={`${service.link}`}
                 passHref
               >
                 <div className="relative w-full h-full overflow-hidden">
