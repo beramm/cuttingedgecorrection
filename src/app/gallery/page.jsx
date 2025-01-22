@@ -20,7 +20,7 @@ const Gallery = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(carbon_background.png)`,
+        backgroundImage: `url(/carbon_background.png)`,
         backgroundPosition: "center",
       }}
       className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
