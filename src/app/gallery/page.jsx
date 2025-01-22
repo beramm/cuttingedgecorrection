@@ -21,7 +21,6 @@ const Gallery = () => {
     <div
       style={{
         backgroundImage: `url(carbon_background.png)`,
-        backgroundSize: "cover",
         backgroundPosition: "center",
       }}
       className="h-full w-full px-8 md:px-12 xl:px-0 py-28"

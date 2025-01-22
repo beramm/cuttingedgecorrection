@@ -5,7 +5,7 @@ import SubscriptionPlansCard from '../components/card/subscription-plans-card/Su
 const SubscriptionPlans = () => {
   return (
     <div
-      style={{ backgroundImage: `url(carbon_background.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: `url(carbon_background.png)`, backgroundPosition: 'center' }}
       className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
     >
       <div className="relative w-full mt-12">
