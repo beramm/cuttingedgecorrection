@@ -37,3 +37,11 @@ model User {
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
 }
+
+model Item {
+  id            Int       @id @default(autoincrement())
+  name          String    @db.Text()
+  price         Int
+  image_link    String
+  payment_link  String
+}
