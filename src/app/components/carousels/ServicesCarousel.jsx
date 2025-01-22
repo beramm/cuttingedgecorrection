@@ -35,6 +35,7 @@ const ServicesCarousel = () => {
       description:
         "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet.",
       image: "/services/Engine Bay Detail.jpg",
+      link:"/services/engine-bay-detail"
     },
     {
       title: "Headlight Restoration",
@@ -48,6 +49,7 @@ const ServicesCarousel = () => {
       description:
         "The place you'll spend most of your time. We can keep it spotless for you.",
       image: "/services/Interior Detailing.jpg",
+      link:"/services/interior-detailing"
     },
     {
       title: "Decontamination",
