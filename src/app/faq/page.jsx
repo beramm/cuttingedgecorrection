@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, {useRef} from "react";
 import {
   Accordion,
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
+import { useIsVisible } from "../hooks/useIsVisible";
+
 
 const Faq = () => {
   function Icon({ id, open }) {
@@ -32,6 +34,9 @@ const Faq = () => {
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
   return (
     <div className="min-h-[900px] flex flex-col items-center justify-start gap-24 w-full bg-custom-gradient px-8 md:px-12 xl:px-0 py-28">
       <div className="mt-12">
@@ -45,7 +50,7 @@ const Faq = () => {
           Got questions? We have the answers.
         </p>
       </div>
-      <div className="max-w-[900px]">
+      <div ref={ref} className={`max-w-[900px] transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
         <Accordion
           open={open === 1}
           icon={<Icon id={1} open={open} />}

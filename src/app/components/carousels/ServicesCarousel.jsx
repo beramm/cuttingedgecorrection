@@ -60,9 +60,12 @@ const ServicesCarousel = () => {
     },
   ];
 
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
   return (
 
-    <div className="w-full mx-auto max-w-[1700px]">
+    <div ref={ref} className={`w-full mx-auto max-w-[1700px] transition-all duration-700 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
       {/* Swiper Container */}
       <div className="relative h-[500px]">
         <Swiper
