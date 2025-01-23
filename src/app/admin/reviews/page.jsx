@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { LoadingSpinner, TrashSolidIcon } from "../../components/icon";
 import { useRouter } from "next/navigation";
@@ -34,7 +34,7 @@ const AdminReviewList = () => {
   const toUpload = () => {
     router.push("/admin/reviews/upload");
   };
-  
+
   const toBack = () => {
     router.push("/admin");
   };
@@ -62,13 +62,13 @@ const AdminReviewList = () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        data: { id: reviewId }
+        data: { id: reviewId },
       });
-      
+
       setAlertType("success");
       setAlertMessage("Review deleted successfully!");
       setShowAlert(true);
-      
+
       fetchReviews();
     } catch (error) {
       const errorMessage =
@@ -140,13 +140,13 @@ const AdminReviewList = () => {
                       <div className="w-full md:max-h-[50px] md:overflow-y-auto">
                         <Typography
                           variant="small"
-                          className="font-extralight text-xs whitespace-pre-wrap break-words w-full"
+                          className="font-extralight text-xs whitespace-pre-wrap break-words w-full max-h-[50px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-200"
                         >
                           {review.content}
                         </Typography>
                       </div>
                     </div>
-                    <div 
+                    <div
                       className="absolute right-0 top-6 cursor-pointer"
                       onClick={() => handleDelete(review._id || review.id)}
                     >
