@@ -42,7 +42,7 @@ const SubscriptionPlans = () => {
             </b>
           </p>
           <p className="text-sm font-medium" style={{ color: '#515151' }}>
-            Please refer to the "Privacy Policy & TOS" page via our website
+            Please refer to the &quot;Privacy Policy & TOS&quot; page via our website
             for in-depth information regarding our subscription services.
             Alternatively, use the link supplied below. Thankyou.
             <br /><a
