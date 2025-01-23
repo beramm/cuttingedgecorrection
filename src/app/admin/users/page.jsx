@@ -33,6 +33,11 @@ const AdminUserList = () => {
     );
   };
 
+  const selectAllUsers = () => {
+    const allEmails = user.map((userData) => userData.email);
+    setSelectedEmails(allEmails);
+  };
+
   const handleBroadcast = () => {
     if (selectedEmails.length === 0) {
       alert("Please select at least one email to broadcast.");
@@ -96,6 +101,12 @@ const AdminUserList = () => {
             onClick={handleBroadcast}
           >
             Broadcast
+          </button>
+          <button
+            className="bg-white text-black border border-gray-300 px-4 py-2 rounded hover:bg-gray-100 w-32"
+            onClick={selectAllUsers}
+          >
+            Select All
           </button>
         </div>
       </div>

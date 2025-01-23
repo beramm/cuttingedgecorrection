@@ -11,8 +11,8 @@ export const ceramicCoating = {
       "Spend less time worrying about your vehicle and more time enjoying it. A Ceramic Coating guarantees your ride stays sharp, fortified, and ready for anything life throws your way."
     ],
   },
-  landingImage: "/services/ceramic-coating/ceramic-coating-landing-image.jpg",
-  firstContentImage: "/services/ceramic-coating/ceramic-coating-left-content-image.png",
+  landingImage: "/services/ceramic-coating/ceramic-coating-landing-image5.jpg",
+  firstContentImage: "/services/ceramic-coating/ceramic-coating-left-content-image2.jpg",
   secondContentImage: "/services/ceramic-coating/ceramic-coating-right-content-image.jpg",
 };
 
