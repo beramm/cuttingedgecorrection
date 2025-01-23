@@ -10,10 +10,10 @@ import axios from 'axios';
 const EachServicePage = ({ service, serviceName }) => {
 
   const ref1 = useRef();
-  const isVIsible1 = useIsVisible(ref1);
+  const isVisible1 = useIsVisible(ref1);
 
   const ref2 = useRef();
-  const isVIsible2 = useIsVisible(ref2);
+  const isVisible2 = useIsVisible(ref2);
 
   const [resultsPict , setResultPict] = useState([])
 
@@ -33,12 +33,12 @@ const EachServicePage = ({ service, serviceName }) => {
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
         <img
-          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
+          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVisible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"
         />
         <div
-          className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVIsible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
+          className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVisible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
         >
           <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
@@ -72,7 +72,7 @@ const EachServicePage = ({ service, serviceName }) => {
       <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto -z-2 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
 
           <div ref={ref2} className="flex flex-col lg:flex-row items-center justify-start gap-x-16 h-full w-full max-w-screen-2xl">
-            <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>
+            <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVisible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>
               <div className="md:ms-12 mb-4 w-full max-w-md">
                 <p className="mb-4">{service.content.firstDescription[0]}</p>
                 <p>{service.content.firstDescription[1]}</p>
@@ -88,7 +88,7 @@ const EachServicePage = ({ service, serviceName }) => {
               </div>
           </div>
 
-            <div className={`w-full h-full flex flex-col justify-between transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 md:translate-x-20 opacity-0"}`}>
+            <div className={`w-full h-full flex flex-col justify-between transition-all duration-700 ease-in-out ${isVisible2 ? "translate-x-0 opacity-100" : "-translate-x-20 md:translate-x-20 opacity-0"}`}>
               {/* Mobile Decorative Bar */}
               <div className="flex md:hidden w-full justify-end my-12">
                 <div className="bg-foreground w-full max-w-2xl h-1"></div>

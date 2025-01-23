@@ -38,8 +38,7 @@ const AdminUserList = () => {
       alert("Please select at least one email to broadcast.");
       return;
     }
-
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${selectedEmails.join(
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&bcc=${selectedEmails.join(
       ","
     )}`;
     window.open(mailtoLink, "_blank");

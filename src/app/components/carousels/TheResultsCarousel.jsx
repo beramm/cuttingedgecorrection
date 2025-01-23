@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Navigation, Pagination, A11y, Parallax } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useIsVisible } from "../../hooks/useIsVisible";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,8 +16,11 @@ import Image from "next/image";
 const TheResultsCarousel = ({ serviceImage }) => {
   const shouldEnableLoop = serviceImage.length > 2; // Ensure enough slides for loop mode
 
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
   return (
-    <div className="w-full mx-auto max-w-[1700px]">
+    <div ref={ref} className={`w-full mx-auto max-w-[1700px] transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
       {/* Swiper Container */}
       <div className="relative h-[400px]">
         {serviceImage.length > 0 ? (
