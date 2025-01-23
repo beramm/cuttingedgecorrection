@@ -1,0 +1,36 @@
+import prisma from "../../../../libs/PrismaClient/prisma";
+import { NextResponse } from "next/server";
+
+export const DELETE = async (req, { params }) => {
+  try {
+    // Convert string ID to integer
+    const id = parseInt(params.id);
+
+    const existingReview = await prisma.user.findUnique({
+      where: { id: id }
+    });
+
+    if (!existingReview) {
+      return NextResponse.json(
+        { status: 404, error: "User not found" },
+        { status: 404 }
+      );
+    }
+
+    await prisma.user.delete({
+      where: { id: id }
+    });
+
+    return NextResponse.json({
+      status: 200,
+      message: "User successfully deleted"
+    });
+
+  } catch (error) {
+    console.error("Error in Deleting User:", error);
+    return NextResponse.json(
+      { status: 500, error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+};

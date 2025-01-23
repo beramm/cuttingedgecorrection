@@ -1,203 +1,105 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-import { LoadingSpinner, TrashSolidIcon } from "../../components/icon";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import {
-  Alert,
-  Button,
-  Card,
-  CardBody,
-  Typography,
-} from "@material-tailwind/react";
 
 const AdminUserList = () => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
-  const [emails, setEmails] = useState([]);
+  const [user, setUser] = useState([]);
+  const [selectedEmails, setSelectedEmails] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState("");
-  const [alertType, setAlertType] = useState("error");
-  const [token, setToken] = useState("");
 
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    if (!token) {
-      router.push("/admin/login");
-    } else {
-      setIsLoading(false);
-      setToken(token);
-    }
-  }, [router]);
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("/api/v1/user");
+        setUser(response.data.data || []);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setUser([]);
+      } finally {
+        setIsFetching(false);
+      }
+    };
 
-  const toUpload = () => {
-    router.push("/");
-  };
-  
-  const toBack = () => {
-    router.push("/admin");
-  };
-
-  const fetchReviews = async () => {
-    try {
-      setIsFetching(true);
-      const reviewData = await axios.get("/api/v1/user");
-      setEmails(reviewData.data.data);
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.error ||
-        "Internal Server Error. Please try again.";
-      setAlertType("error");
-      setAlertMessage(errorMessage);
-      setShowAlert(true);
-    } finally {
-      setIsFetching(false);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`/api/v1/reviews/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        data: { id: id }
-      });
-      
-      setAlertType("success");
-      setAlertMessage("Review deleted successfully!");
-      setShowAlert(true);
-      
-      fetchReviews();
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.error ||
-        "Error deleting review. Please try again.";
-      setAlertType("error");
-      setAlertMessage(errorMessage);
-      setShowAlert(true);
-    }
-  };
-
-  useEffect(() => {
-    fetchReviews();
+    fetchUsers();
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex w-full h-full items-center justify-center">
-        <LoadingSpinner />
-      </div>
+  const toggleEmailSelection = (email) => {
+    setSelectedEmails((prev) =>
+      prev.includes(email)
+        ? prev.filter((e) => e !== email)
+        : [...prev, email]
     );
-  }
+  };
+
+  const handleBroadcast = () => {
+    if (selectedEmails.length === 0) {
+      alert("Please select at least one email to broadcast.");
+      return;
+    }
+
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${selectedEmails.join(
+      ","
+    )}`;
+    window.open(mailtoLink, "_blank");
+  };
 
   return (
-    <div className="flex flex-col w-full min-h-screen items-center justify-center p-6 max-w-screen-xl m-auto">
-      <Typography variant="h1" className="font-bold">
-        USER{" "}
-        <span className="bg-radial-gradient bg-clip-text text-transparent">
-          REVIEWS
-        </span>
-      </Typography>
-      <div className="overflow-y-auto my-16 max-w-screen-lg w-full h-[400px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-200">
-        <Card className="w-full text-foreground">
-          <CardBody>
-            <div className="divide-y divide-gray-200">
-              {isFetching ? (
-                Array.from({ length: 5 }).map((_, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start justify-between py-6 min-h-[100px] md:max-h-[100px] w-full"
-                  >
-                    <div className="flex items-start gap-x-3 w-full">
-                      <div className="w-full">
-                        <div className="h-5 bg-gray-300 rounded w-36 mb-2"></div>
-                        <div className="h-3 bg-gray-200 rounded w-48"></div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : emails.length === 0 ? (
-                <div className="flex items-center justify-center py-8 w-full bg-none">
-                  <Typography className="text-gray-500 text-lg">
-                    There are no user                   </Typography>
-                </div>
-              ) : (
-                emails.map((user, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start justify-between py-6 md:max-h-[100px] relative w-full border-gray-800"
-                  >
-                    <div className="w-full ">
-                      <Typography
-                        variant="h5"
-                        className="text-foreground w-full "
-                      >
-                        {user.email}
-                      </Typography>
-                    </div>
-                    <div 
-                      className="absolute right-0 top-6 cursor-pointer "
-                      onClick={() => handleDelete(user._id || user.id)}
-                    >
-                      <TrashSolidIcon
-                        size={20}
-                        hexColor="#FFFFFF"
-                        className="min-w-[32px] min-h-[32px] hover:opacity-80"
-                      />
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-          </CardBody>
-        </Card>
-      </div>
-      <div className="flex w-full justify-between">
-        <Button
-          variant="outlined"
-          className="w-36 bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer"
-          onClick={toBack}
-        >
-          Back
-        </Button>
-        <Button
-          variant="outlined"
-          className="bg-foreground h-8 self-start hover:opacity-80 transition duration-200 cursor-pointer"
-          onClick={toUpload}
-        >
-          Upload Review
-        </Button>
-      </div>
+    <div className="flex flex-col w-full min-h-screen py-8">
+      <div className="container mx-auto px-4 max-w-4xl space-y-6 mt-24">
+        <h2 className="text-2xl font-bold text-center">
+          Admin - Broadcast Email
+        </h2>
 
-      {showAlert && (
-        <Alert
-          open={showAlert}
-          className={`${
-            alertType === "error" ? "bg-red-700" : "bg-green-700"
-          } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
-          animate={{
-            mount: { opacity: 1 },
-            unmount: { opacity: 0 },
-          }}
-        >
-          <div className="flex justify-between items-center gap-5">
-            <span className="flex-grow">{alertMessage}</span>
-            <Button
-              variant="text"
-              color="white"
-              size="sm"
-              onClick={() => setShowAlert(false)}
-              className={`${
-                alertType === "error" ? "bg-red-900" : "bg-green-900"
-              } hover:opacity-80 transition duration-200`}
-            >
-              Close
-            </Button>
+        <div className="w-full border rounded-lg p-4">
+          <h5 className="text-lg mb-4">User Email List</h5>
+          <div className="h-[400px] overflow-y-auto border rounded-lg">
+            {isFetching ? (
+              <div className="text-center py-4">Loading emails...</div>
+            ) : user.length === 0 ? (
+              <div className="text-center py-4 text-gray-500">
+                No users found.
+              </div>
+            ) : (
+              <div className="divide-y divide-gray-200">
+                {user.map((userData) => (
+                  <div
+                    key={userData.id || userData._id || Math.random()}
+                    className="flex items-center justify-between p-4 hover:opacity-50 cursor-pointer"
+                    onClick={() => toggleEmailSelection(userData.email)}
+                  >
+                    <div className="flex items-center gap-4">
+                      <input
+                        type="checkbox"
+                        className="form-checkbox text-blue-600"
+                        checked={selectedEmails.includes(userData.email)}
+                        readOnly
+                      />
+                      <span>{userData.email}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        </Alert>
-      )}
+        </div>
+
+        <div className="text-center flex gap-8 justify-center">
+          <button
+            className="bg-white text-black border border-gray-300 px-4 py-2 rounded hover:bg-gray-100 w-32"
+            onClick={() => router.push("/admin")}
+          >
+            Back
+          </button>
+          <button
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-32"
+            onClick={handleBroadcast}
+          >
+            Broadcast
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
