@@ -24,7 +24,7 @@ const Page = () => {
   const [alertMessage, setAlertMessage] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
 
     if (token) {
       router.push("/admin");
@@ -54,7 +54,7 @@ const Page = () => {
       const token = response.data.token;
 
       if (token) {
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("token", token);
         console.log("Login successful. Token stored.");
         setLoading(false);
         router.push("/admin");

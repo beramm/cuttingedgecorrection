@@ -14,7 +14,7 @@ const UploadReview = () => {
   const [isSubmit , setIsSubmit] = useState(false)
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('token');
+    const storedToken = sessionStorage.getItem('token');
 
     if (!storedToken) {
       router.push('/admin/login');

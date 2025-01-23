@@ -11,7 +11,7 @@ const NavbarAdmin = () => {
 
   useEffect(() => {
     const checkToken = () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       setExistToken(!!token);
       setIsLoading(false); 
     };
@@ -25,7 +25,7 @@ const NavbarAdmin = () => {
 
   const handleLogout = () => {
     setIsLoading(true); // Show loading on logout
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     setExistToken(false);
     router.push("/admin/login");
   };

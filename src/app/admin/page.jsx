@@ -11,7 +11,7 @@ export default function AdminPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
 
     if (!token) {
       router.push("/admin/login");

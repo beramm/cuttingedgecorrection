@@ -11,10 +11,10 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-const AdminReviewList = () => {
+const AdminUserList = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [reviews, setReviews] = useState([]);
+  const [emails, setEmails] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -32,7 +32,7 @@ const AdminReviewList = () => {
   }, [router]);
 
   const toUpload = () => {
-    router.push("/admin/reviews/upload");
+    router.push("/");
   };
   
   const toBack = () => {
@@ -42,8 +42,8 @@ const AdminReviewList = () => {
   const fetchReviews = async () => {
     try {
       setIsFetching(true);
-      const reviewData = await axios.get("/api/v1/reviews");
-      setReviews(reviewData.data.data);
+      const reviewData = await axios.get("/api/v1/user");
+      setEmails(reviewData.data.data);
     } catch (error) {
       const errorMessage =
         error.response?.data?.error ||
@@ -56,13 +56,13 @@ const AdminReviewList = () => {
     }
   };
 
-  const handleDelete = async (reviewId) => {
+  const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`/api/v1/reviews/${reviewId}`, {
+      await axios.delete(`/api/v1/reviews/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        data: { id: reviewId }
+        data: { id: id }
       });
       
       setAlertType("success");
@@ -118,37 +118,28 @@ const AdminReviewList = () => {
                     </div>
                   </div>
                 ))
-              ) : reviews.length === 0 ? (
+              ) : emails.length === 0 ? (
                 <div className="flex items-center justify-center py-8 w-full bg-none">
                   <Typography className="text-gray-500 text-lg">
-                    No reviews available. Add a review to get started.
-                  </Typography>
+                    There are no user                   </Typography>
                 </div>
               ) : (
-                reviews.map((review, index) => (
+                emails.map((user, index) => (
                   <div
                     key={index}
-                    className="flex items-start justify-between py-6 min-h-[100px] md:max-h-[100px] relative w-full"
+                    className="flex items-start justify-between py-6 md:max-h-[100px] relative w-full border-gray-800"
                   >
-                    <div className="w-full pr-12">
+                    <div className="w-full ">
                       <Typography
-                        variant="h4"
-                        className="bg-radial-gradient bg-clip-text text-transparent mb-2 w-full"
+                        variant="h5"
+                        className="text-foreground w-full "
                       >
-                        {review.user}
+                        {user.email}
                       </Typography>
-                      <div className="w-full md:max-h-[50px] md:overflow-y-auto">
-                        <Typography
-                          variant="small"
-                          className="font-extralight text-xs whitespace-pre-wrap break-words w-full"
-                        >
-                          {review.content}
-                        </Typography>
-                      </div>
                     </div>
                     <div 
-                      className="absolute right-0 top-6 cursor-pointer"
-                      onClick={() => handleDelete(review._id || review.id)}
+                      className="absolute right-0 top-6 cursor-pointer "
+                      onClick={() => handleDelete(user._id || user.id)}
                     >
                       <TrashSolidIcon
                         size={20}
@@ -211,4 +202,4 @@ const AdminReviewList = () => {
   );
 };
 
-export default AdminReviewList;
+export default AdminUserList;

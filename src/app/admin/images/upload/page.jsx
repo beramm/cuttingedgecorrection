@@ -21,7 +21,7 @@ const AdminImageUpload = () => {
   const [alertType, setAlertType] = useState("error");
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
+    const storedToken = sessionStorage.getItem("token");
 
     if (!storedToken) {
       router.push("/admin/login");
