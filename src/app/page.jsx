@@ -23,13 +23,13 @@ export default function Home() {
     <>
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
         <video
-          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto w-auto sm:w-full z-0"
+          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[60dvh] 2xl:h-auto w-auto sm:w-full z-0"
           src="/videoplayback.webm"
           autoPlay
           loop
           muted
         ></video>
-        <div className="relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
+        <div className="relative z-20 top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
           <h1 className="hidden md:block text-6xl font-black">
             CUTTING EDGE CORRECTION
           </h1>
@@ -76,9 +76,9 @@ export default function Home() {
       <div className="relative w-full bg-black">
 
         {/* Transition between sections: Landing Page and Our Services */}
-        <div className="absolute w-full h-64 md:h-96 3xl:h-[320px] -top-[500px] md:-top-80 3xl:-top-80">
+        <div className="absolute w-full h-[496px] md:h-96 3xl:h-[320px] -top-[900px] md:-top-80 3xl:-top-80">
           <div
-            className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
+            className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-30%"
           // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
           ></div>
         </div>

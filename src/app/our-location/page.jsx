@@ -1,9 +1,14 @@
-"use-client";
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { MailIconSolid, MapPinIcon, PhoneIconSolid } from "../components/icon";
 import MapComponent from "../components/map/MapComponent";
+import { useIsVisible } from "../hooks/useIsVisible";
+
 
 const OurLocation = () => {
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
   return (
     <div
       style={{
@@ -30,7 +35,7 @@ const OurLocation = () => {
             <MapComponent />
           </div>
           {/* Description Contact Section */}
-          <div className="flex-1 flex flex-col justify-center lg:pl-32 lg:pt-0 pt-16">
+          <div ref={ref} className={`flex-1 flex flex-col justify-center lg:pl-32 lg:pt-0 pt-16 transition-all duration-500 ease-in-out ${isVisible ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0"}`}>
             {/* Content */}
             <div className="flex flex-col gap-10">
               {/* Address */}

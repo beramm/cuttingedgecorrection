@@ -25,20 +25,16 @@ const EachServicePage = ({ service, serviceName }) => {
     fetchResults()
   }, [])
   
-  useEffect(()=> {console.log(resultsPict);} , [resultsPict])
-
-
-
   return (
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
         <img
-          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVisible1 ? "opacity-100" : "opacity-0"}`}
+          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[60dvh] md:h-dvh w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVisible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"
         />
         <div
-          className={`relative top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVisible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
+          className={`relative z-20 -top-[20dvh] md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVisible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
         >
           <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
@@ -57,19 +53,19 @@ const EachServicePage = ({ service, serviceName }) => {
       <div className="relative w-full bg-black">
 
         {/* Transition between sections: Landing Page and Content */}
-        <div className="absolute w-full h-64 md:h-96 3xl:h-[320px] -top-24 md:-top-[164px]">
+        <div className="absolute w-full h-[496px] md:h-96 3xl:h-[320px] -top-[496px] md:-top-[164px]">
           <div
-            className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-40%"
+            className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-30%"
           // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
           ></div>
         </div>
 
-        <div className="text-center text-4xl md:text-5xl font-extrabold mt-40 mb-0 md:mb-8 lg:mb-4 p-8 relative z-10">
+        <div className="text-center text-4xl md:text-5xl font-extrabold -mt-80 md:mt-40 mb-0 md:mb-8 lg:mb-4 p-8 relative z-10">
           <ServiceHeadline serviceName={service.name} />
         </div>
 
         {/* Content */}
-      <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto -z-2 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
+      <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto z-10 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
 
           <div ref={ref2} className="flex flex-col lg:flex-row items-center justify-start gap-x-16 h-full w-full max-w-screen-2xl">
             <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVisible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>

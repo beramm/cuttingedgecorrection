@@ -1,8 +1,10 @@
 "use client";
 
 import { cn } from "../../../libs/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import { QuoteIconSolid } from "../../icon";
+import { useIsVisible } from "../../../hooks/useIsVisible";
+
 
 export const InfiniteMovingCards = ({
   value = [], // Added default empty array
@@ -74,12 +76,17 @@ export const InfiniteMovingCards = ({
     }
   };
   
+  const isVisible = useIsVisible(containerRef);
+
   return (
 <div
   ref={containerRef}
   className={cn(
     "scroller relative z-20 w-[90%] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] m-auto",
-    className
+    className,
+    `transition-all duration-500 ease-in-out ${
+      isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+    }`
   )}
 >
   <ul

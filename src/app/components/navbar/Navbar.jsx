@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Mobile Navbar */}
           <div className={`md:hidden bg-primary fixed w-full top-0 overflow-y-auto bottom-0 px-8 duration-300 ${open ? "left-0" : "left-[-100%]"}`}>
             <div className="h-28 flex items-center justify-between">
-              <Link href={"/"} className="w-32">
+              <Link href={"/"} className="w-32" onClick={handleOpenMobileNav}>
                 <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC" />
               </Link>
               <div className="block md:hidden relative -right-1" onClick={handleOpenMobileNav}>

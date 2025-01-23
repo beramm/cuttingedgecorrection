@@ -1,7 +1,9 @@
 "use client";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useIsVisible } from "../../hooks/useIsVisible";
+
 
 // Dynamically import react-leaflet components
 const Map = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
@@ -27,24 +29,30 @@ const MapComponent = () => {
     }
   }, []);
 
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
   return (
-    <Map center={position} zoom={15} style={{ height: "500px", width: "100%" }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <Marker position={position}>
-        <Popup>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.google.com/maps/place/Cutting+Edge+Correction/@-38.1167031,144.3417704,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad4118fa7bfd889:0x19eba5f83ed455b3!8m2!3d-38.1167031!4d144.3443453!16s%2Fg%2F11pwphknv6?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
-          >
-            <strong>Cutting Edge Correction</strong>
-          </a>
-        </Popup>
-      </Marker>
-    </Map>
+    <div ref={ref} className={`transition-all duration-500 ease-in-out ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>
+      <Map center={position} zoom={15} style={{ height: "500px", width: "100%" }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <Marker position={position}>
+          <Popup>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/place/Cutting+Edge+Correction/@-38.1167031,144.3417704,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad4118fa7bfd889:0x19eba5f83ed455b3!8m2!3d-38.1167031!4d144.3443453!16s%2Fg%2F11pwphknv6?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
+            >
+              <strong>Cutting Edge Correction</strong>
+            </a>
+          </Popup>
+        </Marker>
+      </Map>
+    </div>
+
   );
 };
 
