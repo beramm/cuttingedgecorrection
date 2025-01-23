@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className="h-28 w-full max-w-screen-xl mx-auto">
           <div className="w-full h-full px-8 md:px-4 xl:px-0 flex items-center justify-between">
             <Link href={"/"} className="w-32">
-              <Image src={"/cec_logo.png"} width={80} height={80} alt="CEC"  />
+              <Image src={"/cec_logo.png"} width={100} height={100} alt="CEC"  />
             </Link>
             <div className="hidden md:block">
               <NavbarLinks handleOpenMobileNav={handleOpenMobileNav} />

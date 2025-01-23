@@ -54,7 +54,7 @@ export const decontamination = {
 
 export const interiorDetailing = {
   name: "Interior Detailing",
-  description: "The place you'll spend most of your time. We can keep it spotless for you. ",
+  description: "The place you'll spend most of your time. We can keep it spotless for you",
   content: {
     firstDescription: [
       "Our responsibility at Cutting Edge Correction, is to make sure your interior feels as fresh as the day it first hit the road. We tackle every corner, every seat, and every surface; eliminating dirt, stains, and grime that you didn't even know were there.",
@@ -72,7 +72,7 @@ export const interiorDetailing = {
 
 export const headlightRestoration = {
   name: "Headlight Restoration",
-  description: "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection.",
+  description: "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection",
   content: {
     firstDescription: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",
@@ -90,7 +90,7 @@ export const headlightRestoration = {
 
 export const engineBayRetail = {
   name: "Engine Bay Detail",
-  description: "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet.",
+  description: "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet",
   content: {
     firstDescription: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",
