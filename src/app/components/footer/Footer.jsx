@@ -8,57 +8,61 @@ import axios from 'axios';
 import { Alert, Button } from "@material-tailwind/react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("success");
   
-  const handleSubmit = async (e) =>  {
-    e.preventDefault()
-    try { 
-      await axios.post("/api/v1/user/register", { 
-        email
-      });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("/api/v1/user/register", { email });
       setAlertType("success");
       setAlertMessage("Email Submitted!");
       setShowAlert(true);
       setEmail("");
-    } catch(error) { 
+
+      // Automatically hide the alert after 3 seconds
+      setTimeout(() => setShowAlert(false), 3000);
+    } catch (error) {
       setAlertType("error");
       setAlertMessage(error.response?.data?.error || "Failed to submit. Please try again.");
       setShowAlert(true);
+
+      // Automatically hide the alert after 3 seconds
+      setTimeout(() => setShowAlert(false), 3000);
     }
-  }
+  };
 
   return (
     <>
-  {showAlert && (
-  <Alert
-    open={showAlert}
-    className={`${
-      alertType === "error" ? "bg-red-700" : "bg-green-700"
-    } text-white fixed bottom-4 left-4 z-50 shadow-lg max-w-sm`}
-    animate={{
-      mount: { opacity: 1 },
-      unmount: { opacity: 0 },
-    }}
-  >
-    <div className="flex justify-between items-center gap-5">
-      <span className="flex-grow text-sm">{alertMessage}</span>
-      <Button
-        variant="text"
-        color="white"
-        size="sm"
-        onClick={() => setShowAlert(false)}
+      <Alert
+        open={showAlert}
+        onClose={() => setShowAlert(false)} // Allows manual closing
         className={`${
-          alertType === "error" ? "bg-red-900" : "bg-green-900"
-        } hover:opacity-80 transition duration-200`}
+          alertType === "error" ? "bg-red-700" : "bg-green-700"
+        } text-white fixed bottom-4 left-4 z-50 shadow-lg max-w-sm`}
+        animate={{
+          mount: { opacity: 1, transform: "translateY(0)" },
+          unmount: { opacity: 0, transform: "translateY(-100%)" },
+        }}
       >
-        Close
-      </Button>
-    </div>
-  </Alert>
-)}
+        <div className="flex justify-between items-center gap-5">
+          <span className="flex-grow text-sm">{alertMessage}</span>
+          <Button
+            variant="text"
+            color="white"
+            size="sm"
+            onClick={() => setShowAlert(false)} // Manual close button
+            className={`${
+              alertType === "error" ? "bg-red-900" : "bg-green-900"
+            } hover:opacity-80 transition duration-200`}
+          >
+            Close
+          </Button>
+        </div>
+      </Alert>
+
       <div className="w-full min-h-[400px] text-foreground bg-primary relative">
         <div className="max-w-screen-xl m-auto h-full flex flex-col justify-between p-12">
           <div className="flex flex-col md:flex-row justify-between border-y-2 border-foreground py-10 relative">
@@ -70,9 +74,12 @@ const Footer = () => {
                   placeholder="Enter your email..."
                   className="p-2 bg-primary border-t border-l border-b border-foreground h-8 w-72 text-xs focus:outline-none"
                   value={email}
-                  onChange={(e)=>setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type='submit' className="bg-accent text-primary hover:bg-highlight hover:text-accent duration-200 px-2 h-8 text-xs font-bold w-28 md:w-24">
+                <button
+                  type="submit"
+                  className="bg-accent text-primary hover:bg-highlight hover:text-accent duration-200 px-2 h-8 text-xs font-bold w-28 md:w-24"
+                >
                   JOIN NOW
                 </button>
               </form>
