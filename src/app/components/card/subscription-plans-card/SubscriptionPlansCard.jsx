@@ -38,7 +38,7 @@ const SubscriptionPlansCard = ({ data }) => {
           <h1 className="text-4xl font-bold">{data.type.toUpperCase()}</h1>
           <div className="flex items-end justify-center text-2xl font-bold relative">
             <p className="relative top-1.5 font-base">$</p>
-            <p className="text-5xl mx-1 mt-2">{data.price}</p>
+            <p className="text-[56px] mx-1 mt-4">{data.price}</p>
             <p className="relative top-2.5 font-light">/mo</p>
           </div>
         </div>

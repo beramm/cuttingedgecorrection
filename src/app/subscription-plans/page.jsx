@@ -6,7 +6,7 @@ const SubscriptionPlans = () => {
   return (
     <div
       style={{ backgroundImage: `url(/carbon_background.png)`, backgroundPosition: 'center' }}
-      className="h-full w-full px-8 md:px-12 xl:px-0 py-28"
+      className="h-full w-full px-8 md:px-12 xl:px-0 pt-28 pb-8"
     >
       <div className="relative w-full mt-12">
         <div className="text-center text-5xl lg:text-6xl font-extrabold mb-12">
@@ -33,6 +33,20 @@ const SubscriptionPlans = () => {
               </div>
             )
           })}
+        </div>
+        <div className="text-center text-5xl lg:text-6xl font-extrabold mt-12">
+          <p className="text-sm  font-medium mt-8" style={{ color: '#515151' }}>
+            Subscription Terms & Conditions
+            <br />Please refer to the "Privacy Policy & TOS" page via our website
+            <br />for in-depth information regarding our subscription services.
+            <br />Alternatively, use the link supplied below. Thankyou.
+            <br /><a
+              href="/privacy-policy-tos"
+              style={{ color: '#00A2FF' }}
+            >
+              Privacy Policy & TOS
+            </a>
+          </p>
         </div>
       </div>
     </div>
