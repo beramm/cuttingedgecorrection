@@ -25,8 +25,6 @@ const EachServicePage = ({ service, serviceName }) => {
     fetchResults()
   }, [])
   
-  useEffect(()=> {console.log(resultsPict);} , [resultsPict])
-
   return (
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
