@@ -73,13 +73,12 @@ const Page = () => {
     <div className="h-screen w-full flex items-center justify-center text-foreground px-6">
       <div className="relative w-full max-w-xl mx-auto">
         <Card
-          shadow={false}
-          className="w-full bg-none text-foreground px-6 md:px-16 py-8 md:py-12"
+          className="w-full bg-transparent text-foreground px-6 md:px-16 py-8 md:py-12"
         >
           <CardHeader
             shadow={false}
             floated={false}
-            className="text-center text-foreground"
+            className="text-center text-foreground bg-transparent"
           >
             <h1 className="mb-4 text-4xl md:text-4xl lg:text-5xl font-bold">
               ADMIN{" "}

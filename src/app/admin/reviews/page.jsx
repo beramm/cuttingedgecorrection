@@ -101,7 +101,7 @@ const AdminReviewList = () => {
         </span>
       </Typography>
       <div className="overflow-y-auto my-16 max-w-screen-lg w-full h-[400px] scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-200">
-        <Card className="w-full text-foreground">
+        <Card className="w-full text-foreground bg-transparent">
           <CardBody>
             <div className="divide-y divide-gray-200">
               {isFetching ? (
