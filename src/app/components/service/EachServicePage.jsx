@@ -33,7 +33,7 @@ const EachServicePage = ({ service, serviceName }) => {
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
         <img
-          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[1200px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
+          className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[900px] 2xl:h-auto 2xl:max-h-[3000px] w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVIsible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"
         />
@@ -69,7 +69,7 @@ const EachServicePage = ({ service, serviceName }) => {
         </div>
 
         {/* Content */}
-        <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto -z-2 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
+      <div className="-mt-4 md:-mt-0 relative w-full flex flex-col lg:flex-row mx-auto -z-2 h-auto lg:h-[700px] justify-center items-center p-8 lg:p-0">
 
           <div ref={ref2} className="flex flex-col lg:flex-row items-center justify-start gap-x-16 h-full w-full max-w-screen-2xl">
             <div className={`w-full h-full flex flex-col justify-between mt-0 transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}`}>
@@ -86,7 +86,7 @@ const EachServicePage = ({ service, serviceName }) => {
                   className="object-cover"
                 />
               </div>
-            </div>
+          </div>
 
             <div className={`w-full h-full flex flex-col justify-between transition-all duration-700 ease-in-out ${isVIsible2 ? "translate-x-0 opacity-100" : "-translate-x-20 md:translate-x-20 opacity-0"}`}>
               {/* Mobile Decorative Bar */}
