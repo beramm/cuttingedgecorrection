@@ -11,7 +11,7 @@ export const ceramicCoating = {
       "Spend less time worrying about your vehicle and more time enjoying it. A Ceramic Coating guarantees your ride stays sharp, fortified, and ready for anything life throws your way."
     ],
   },
-  landingImage: "/services/ceramic-coating/ceramic-coating-landing-image5.jpg",
+  landingImage: "/services/ceramic-coating/ceramic-coating-landing-image.jpg",
   firstContentImage: "/services/ceramic-coating/ceramic-coating-left-content-image2.jpg",
   secondContentImage: "/services/ceramic-coating/ceramic-coating-right-content-image.jpg",
 };
@@ -54,7 +54,7 @@ export const decontamination = {
 
 export const interiorDetailing = {
   name: "Interior Detailing",
-  description: "Lorem ipsum",
+  description: "The place you'll spend most of your time. We can keep it spotless for you. ",
   content: {
     firstDescription: [
       "Our responsibility at Cutting Edge Correction, is to make sure your interior feels as fresh as the day it first hit the road. We tackle every corner, every seat, and every surface; eliminating dirt, stains, and grime that you didn't even know were there.",
@@ -72,7 +72,7 @@ export const interiorDetailing = {
 
 export const headlightRestoration = {
   name: "Headlight Restoration",
-  description: "Lorem ipsum",
+  description: "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection.",
   content: {
     firstDescription: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",
@@ -83,14 +83,14 @@ export const headlightRestoration = {
       "Mauris lobortis tincidunt justo eu sodales. Morbi massa nunc, tristique ut est eu, mattis imperdiet felis. Cras vel lectus ipsum. Vivamus ipsum purus, ultricies at magna nec, dictum cursus nibh. Nam et egestas nulla, id faucibus tortor."
     ],
   },
-  landingImage: "/services/headlight-restoration/headlight-restoration-landing-image.png",
+  landingImage: "/services/headlight-restoration/headlight-restoration-landing-image.jpg",
   firstContentImage: "/services/headlight-restoration/headlight-restoration-temporary-image.jpg",
   secondContentImage: "/services/headlight-restoration/headlight-restoration-temporary-image.jpg",
 };
 
 export const engineBayRetail = {
   name: "Engine Bay Detail",
-  description: "Lorem ipsum",
+  description: "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet.",
   content: {
     firstDescription: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",

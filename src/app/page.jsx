@@ -169,7 +169,7 @@ export default function Home() {
               <h1 className="text-center px-4">
                 WHAT OUR{" "}
                 <span className="bg-radial-gradient bg-clip-text text-transparent">
-                  CUSTOMER SAY
+                  CUSTOMERS SAY
                 </span>
               </h1>
             </div>
