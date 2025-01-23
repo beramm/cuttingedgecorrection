@@ -34,12 +34,17 @@ const SubscriptionPlans = () => {
             )
           })}
         </div>
-        <div className="text-center text-5xl lg:text-6xl font-extrabold mt-12">
-          <p className="text-sm  font-medium mt-8" style={{ color: '#515151' }}>
-            Subscription Terms & Conditions
-            <br />Please refer to the "Privacy Policy & TOS" page via our website
-            <br />for in-depth information regarding our subscription services.
-            <br />Alternatively, use the link supplied below. Thankyou.
+
+        <div className="justify-center text-center text-5xl lg:text-6xl font-extrabold mt-12 max-w-80 mx-auto">
+          <p className="text-sm font-bold mt-8" style={{ color: '#515151' }}>
+            <b>
+              Subscription Terms & Conditions
+            </b>
+          </p>
+          <p className="text-sm font-medium" style={{ color: '#515151' }}>
+            Please refer to the "Privacy Policy & TOS" page via our website
+            for in-depth information regarding our subscription services.
+            Alternatively, use the link supplied below. Thankyou.
             <br /><a
               href="/privacy-policy-tos"
               style={{ color: '#00A2FF' }}
@@ -48,6 +53,8 @@ const SubscriptionPlans = () => {
             </a>
           </p>
         </div>
+
+
       </div>
     </div>
   )
