@@ -18,7 +18,7 @@ const Navbar = () => {
       <header className="w-full absolute z-[999]">
         <nav className="h-28 w-full max-w-screen-xl mx-auto">
           <div className="w-full h-full px-8 md:px-4 xl:px-0 flex items-center justify-between">
-            <Link href={"/"} className="w-32">
+            <Link href={"/"} className="w-40">
               <div className="hidden md:block">
                 <Image src={"/cec_logo.png"} width={100} height={100} alt="CEC"  />
               </div>
