@@ -110,7 +110,7 @@ export default function Home() {
         className="h-full w-full"
       >
         {/** Our Commitment */}
-        <div className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center">
+        <div className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center z-20">
           {/* Content Wrapper */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-screen-2xl mx-auto">
             {/* Text Side */}
