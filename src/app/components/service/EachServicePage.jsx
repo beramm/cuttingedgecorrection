@@ -34,7 +34,7 @@ const EachServicePage = ({ service, serviceName }) => {
           alt="Background Image"
         />
         <div
-          className={`relative -top-[20dvh] md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVisible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
+          className={`relative z-20 -top-[20dvh] md:top-auto w-full mx-8 md:mx-16 lg:mx-36 flex flex-col items-end transition-all duration-1000 ease-in-out ${isVisible1 ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}
         >
           <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
