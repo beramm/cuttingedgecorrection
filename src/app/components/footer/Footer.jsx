@@ -12,7 +12,7 @@ const Footer = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("success");
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,40 +21,39 @@ const Footer = () => {
       setAlertType("error");
       setAlertMessage("Please enter a valid email address.");
       setShowAlert(true);
-  
+
       // Automatically hide the alert after 3 seconds
       setTimeout(() => setShowAlert(false), 3000);
       return; // Prevent further execution
     }
-  
+
     try {
       await axios.post("/api/v1/user/register", { email });
       setAlertType("success");
       setAlertMessage("Email Submitted!");
       setShowAlert(true);
       setEmail("");
-  
+
       // Automatically hide the alert after 3 seconds
       setTimeout(() => setShowAlert(false), 3000);
     } catch (error) {
       setAlertType("error");
       setAlertMessage(error.response?.data?.error || "Failed to submit. Please try again.");
       setShowAlert(true);
-  
+
       // Automatically hide the alert after 3 seconds
       setTimeout(() => setShowAlert(false), 3000);
     }
   };
-  
+
 
   return (
     <>
       <Alert
         open={showAlert}
         onClose={() => setShowAlert(false)} // Allows manual closing
-        className={`${
-          alertType === "error" ? "bg-red-700" : "bg-green-700"
-        } text-white fixed bottom-4 left-4 z-50 shadow-lg max-w-sm`}
+        className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+          } text-white fixed bottom-4 left-4 z-50 shadow-lg max-w-sm`}
         animate={{
           mount: { opacity: 1, transform: "translateY(0)" },
           unmount: { opacity: 0, transform: "translateY(-100%)" },
@@ -67,9 +66,8 @@ const Footer = () => {
             color="white"
             size="sm"
             onClick={() => setShowAlert(false)} // Manual close button
-            className={`${
-              alertType === "error" ? "bg-red-900" : "bg-green-900"
-            } hover:opacity-80 transition duration-200`}
+            className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+              } hover:opacity-80 transition duration-200`}
           >
             Close
           </Button>
@@ -119,7 +117,14 @@ const Footer = () => {
               <div>
                 <h3 className="text-xs font-light">Email</h3>
                 <p className="text-l font-extrabold">
-                  cuttingedgecorrection@gmail.com
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=cuttingedgecorrection@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#00A2FF]"
+                  >
+                    cuttingedgecorrection@gmail.com
+                  </a>
                 </p>
               </div>
               <div>
@@ -129,7 +134,14 @@ const Footer = () => {
               <div className="row-start-2">
                 <h3 className="text-xs font-light">Address</h3>
                 <p className="text-l font-extrabold">
-                  67 Walsgott Street, North Geelong, VIC 3215
+                  <a
+                    href="https://www.google.com/maps/place/Cutting+Edge+Correction/@-38.1167031,144.3417704,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad4118fa7bfd889:0x19eba5f83ed455b3!8m2!3d-38.1167031!4d144.3443453!16s%2Fg%2F11pwphknv6?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#00A2FF]"
+                  >
+                    67 Walsgott Street, North Geelong, VIC 3215
+                  </a>
                 </p>
               </div>
               <div className="row-start-2">

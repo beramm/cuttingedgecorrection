@@ -37,11 +37,10 @@ const OurLocation = () => {
           {/* Description Contact Section */}
           <div
             ref={ref}
-            className={`flex-1 flex flex-col justify-center lg:pl-32 lg:pt-0 pt-16 transition-all duration-500 ease-in-out ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-40 opacity-0"
-            }`}
+            className={`flex-1 flex flex-col justify-center lg:pl-32 lg:pt-0 pt-16 transition-all duration-500 ease-in-out ${isVisible
+              ? "translate-x-0 opacity-100"
+              : "translate-x-40 opacity-0"
+              }`}
           >
             {/* Content */}
             <div className="flex flex-col gap-10">
@@ -82,7 +81,7 @@ const OurLocation = () => {
                 </div>
                 <p className="hover:underline text-sm font-light mt-2">
                   <a
-                    href="mailto:cuttingedgecorrection@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=cuttingedgecorrection@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline text-sm font-light"
