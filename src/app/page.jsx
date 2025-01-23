@@ -116,7 +116,7 @@ export default function Home() {
             {/* Text Side */}
             <div className="flex-1 flex flex-col items-start justify-center py-12 p-10 md:p-0 lg:px-20">
               {/* Title */}
-              <div className="text-left text-4xl md:text-5xl font-extrabold mb-8">
+              <div className="text-left text-4xl md:text-5xl font-extrabold mb-8 z-20">
                 <h1>
                   OUR{" "}
                   <span className="bg-radial-gradient bg-clip-text text-transparent">
