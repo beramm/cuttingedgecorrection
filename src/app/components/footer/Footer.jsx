@@ -15,24 +15,37 @@ const Footer = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setAlertType("error");
+      setAlertMessage("Please enter a valid email address.");
+      setShowAlert(true);
+  
+      // Automatically hide the alert after 3 seconds
+      setTimeout(() => setShowAlert(false), 3000);
+      return; // Prevent further execution
+    }
+  
     try {
       await axios.post("/api/v1/user/register", { email });
       setAlertType("success");
       setAlertMessage("Email Submitted!");
       setShowAlert(true);
       setEmail("");
-
+  
       // Automatically hide the alert after 3 seconds
       setTimeout(() => setShowAlert(false), 3000);
     } catch (error) {
       setAlertType("error");
       setAlertMessage(error.response?.data?.error || "Failed to submit. Please try again.");
       setShowAlert(true);
-
+  
       // Automatically hide the alert after 3 seconds
       setTimeout(() => setShowAlert(false), 3000);
     }
   };
+  
 
   return (
     <>
