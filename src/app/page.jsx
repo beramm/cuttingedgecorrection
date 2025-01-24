@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
         <video
-          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[60dvh] 2xl:h-auto w-auto sm:w-full z-0"
+          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[60dvh] xl:h-auto w-auto sm:w-full z-0"
           src="/montage_video.mp4"
           autoPlay
           loop
