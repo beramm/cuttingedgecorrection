@@ -29,6 +29,7 @@ module.exports = {
         'custom-gradient': 'linear-gradient(180deg, #141416 0%, #1B1B1E 50%, #1F1F22 100%)',
       },
       screens: {
+        'max-xs': { max: '380px' },
         '3xl': '1920px',
       },
       animation: {

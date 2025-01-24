@@ -39,7 +39,7 @@ const EachServicePage = ({ service, serviceName }) => {
           <h1 className="hidden md:block text-6xl font-black items-end">
             {service.name.toUpperCase()}
           </h1>
-          <div className="flex md:hidden text-4xl font-black flex-col text-right">
+          <div className="flex md:hidden max-xs:text-3xl text-4xl font-black flex-col text-right">
             {service.name.toUpperCase()}
           </div>
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl text-right">
