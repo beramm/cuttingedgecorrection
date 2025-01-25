@@ -69,7 +69,9 @@ const OurLocation = () => {
                   <h1 className="text-4xl font-bold">PHONE</h1>
                 </div>
                 <p className="hover:underline text-sm font-light mt-2">
-                  0450 649 257
+                  <a href="tel:0450649257" className="text-sm font-light">
+                    0450 649 257
+                  </a>
                 </p>
               </div>
 

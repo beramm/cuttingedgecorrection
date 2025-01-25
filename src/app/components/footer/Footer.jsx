@@ -129,7 +129,11 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xs font-light">Phone</h3>
-                <p className="text-l font-extrabold">0450 649 257</p>
+                <p className="text-l font-extrabold">
+                  <a href="tel:0450649257" className=" hover:text-[#00A2FF] text-l font-extrabold">
+                    0450 649 257
+                  </a>
+                </p>
               </div>
               <div className="row-start-2">
                 <h3 className="text-xs font-light">Address</h3>
