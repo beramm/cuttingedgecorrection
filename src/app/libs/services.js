@@ -90,7 +90,7 @@ export const headlightRestoration = {
 
 export const engineBayRetail = {
   name: "Engine Bay Detail",
-  description: "Nothing shows your superiority like having a mint powerplant under the bonnet.",
+  description: "Nothing shows your superiority like having a mint powerplant under the bonnet",
   content: {
     firstDescription: [
       "Your engine bay is the heart of your vehicle; but it’s easy for dirt, oil, and debris to hide in places that need to be spotless.",
