@@ -3,9 +3,6 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import "swiper/css";
-import Head from "next/head";
-import Script from 'next/script'
-
 
 
 const roboto = Roboto({
@@ -25,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16655963362"
@@ -40,7 +37,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-      </Head>
+      </head>
       <body className={`${roboto.className} antialiased relative`}>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
