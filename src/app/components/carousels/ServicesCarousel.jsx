@@ -33,7 +33,7 @@ const ServicesCarousel = () => {
     {
       title: "Engine Bay Detail",
       description:
-        "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet.",
+        "Nothing shows your superiority like having an absolutely mint powerplant under the bonnet.",
       image: "/services/Engine Bay Detail.jpg",
       link:"/services/engine-bay-detail"
     },

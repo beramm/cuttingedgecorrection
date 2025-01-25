@@ -1,5 +1,5 @@
 "use client";
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -17,9 +17,8 @@ const Faq = () => {
         viewBox="0 0 24 24"
         strokeWidth={2}
         stroke="currentColor"
-        className={`${
-          id === open ? "rotate-180" : ""
-        } h-5 w-5 transition-transform relative text-foreground`}
+        className={`${id === open ? "rotate-180" : ""
+          } h-5 w-5 transition-transform relative text-foreground`}
       >
         <path
           strokeLinecap="round"
@@ -62,11 +61,10 @@ const Faq = () => {
           >
             <div className="absolute inset-0 bg-primary" />
             <span
-              className={`relative ${
-                open === 1
-                  ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
-                  : ""
-              }`}
+              className={`relative ${open === 1
+                ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
+                : ""
+                }`}
             >
               / / HOW OFTEN SHOULD I GET MY CAR DETAILED?
             </span>
@@ -91,11 +89,10 @@ const Faq = () => {
           >
             <div className="absolute inset-0 bg-primary" />
             <span
-              className={`relative ${
-                open === 2
-                  ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
-                  : ""
-              }`}
+              className={`relative ${open === 2
+                ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
+                : ""
+                }`}
             >
               / / DO YOU OFFER A WARRANTY OR GUARANTEE ON YOUR SERVICES?
             </span>
@@ -118,17 +115,21 @@ const Faq = () => {
           >
             <div className="absolute inset-0 bg-primary" />
             <span
-              className={`relative ${
-                open === 3
-                  ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
-                  : ""
-              }`}
+              className={`relative ${open === 3
+                ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
+                : ""
+                }`}
             >
-              / / DO YOU OFFER GIFT CARDS OR PACKAGE DEALS?
+              / / HOW LONG DOES A DETAILING APPOINTMENT TYPICALLY TAKE?
             </span>
           </AccordionHeader>
           <AccordionBody className="bg-primary px-8">
-           Yes .
+
+            The duration of a detail depends on the services requested and the
+            condition of the vehicle. However, our most extensive details can
+            take a full day. We&apos;ll provide you with a more accurate
+            estimate based on your specific needs when you place a booking with
+            us.
           </AccordionBody>
         </Accordion>
 
@@ -143,21 +144,18 @@ const Faq = () => {
           >
             <div className="absolute inset-0 bg-primary" />
             <span
-              className={`relative ${
-                open === 4
-                  ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
-                  : ""
-              }`}
+              className={`relative ${open === 4
+                ? "bg-gradient-to-r from-[#00A2FF] to-[#006199] bg-clip-text text-transparent"
+                : ""
+                }`}
             >
-              / / HOW LONG DOES A DETAILING APPOINTMENT TYPICALLY TAKE?
+              / / DO YOU OFFER GIFT CARDS OR PACKAGE DEALS?
             </span>
           </AccordionHeader>
           <AccordionBody className="bg-primary px-8">
-            The duration of a detail depends on the services requested and the
-            condition of the vehicle. However, our most extensive details can
-            take a full day. We&apos;ll provide you with a more accurate
-            estimate based on your specific needs when you place a booking with
-            us.
+            Yes, we offer eGift cards, so you can digitally gift a spotless car to someone special. They are available on our website.
+            We can absolutely tailor a custom package to your needs, whether you're after a full detail or just a few specific treatments.
+
           </AccordionBody>
         </Accordion>
       </div>

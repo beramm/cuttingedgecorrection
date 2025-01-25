@@ -49,10 +49,10 @@ const ServiceHeadline = ({ serviceName }) => {
   if (serviceName === 'Headlight Restoration') {
     return (
       <h1>
+        SHARP LIGHTS. {""}
         <span className="bg-radial-gradient bg-clip-text text-transparent">
-          LOREM
+          STRONG STATEMENT.
         </span>
-        {""} IPSUM
       </h1>
     )
   }
@@ -60,10 +60,11 @@ const ServiceHeadline = ({ serviceName }) => {
   if (serviceName === 'Engine Bay Detail') {
     return (
       <h1>
+        THE {""}
         <span className="bg-radial-gradient bg-clip-text text-transparent">
-          LOREM
+          BEAST
         </span>
-        {""} IPSUM
+        {""} BENEATH THE BONNET
       </h1>
     )
   }

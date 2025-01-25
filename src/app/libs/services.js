@@ -75,33 +75,33 @@ export const headlightRestoration = {
   description: "Give yourself a powerful presence on the road by restoring your headlights to crystal-clear perfection",
   content: {
     firstDescription: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",
-      "Morbi massa nunc, tristique ut est eu, mattis imperdiet felis. Cras vel lectus ipsum. Vivamus ipsum purus, ultricies at magna nec, dictum cursus nibh. Nam et egestas nulla, id faucibus tortor. Pellentesque quis maximus felis."
+      "Your headlights are more than just lights; they’re your vehicle’s first impression on the road.\n Over time they can dull, cloud, and lose their cutting-edge clarity, leaving your car looking less than its best.",
+      "Our Headlight Restoration service brings them back to life. Eliminating grime, oxidation, and fog to restore that sharp look your car deserves."
     ],
     secondDescription: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Mauris lobortis tincidunt justo eu sodales. Morbi massa nunc, tristique ut est eu, mattis imperdiet felis. Cras vel lectus ipsum. Vivamus ipsum purus, ultricies at magna nec, dictum cursus nibh. Nam et egestas nulla, id faucibus tortor."
+      "With our precision restoration, you’ll not only see better, you’ll be seen better. ",
+      "No more squinting through foggy lenses or driving with dimmed lights. It’s time to make your presence known. \nReady to see the difference? Let’s shine a light on it."
     ],
   },
   landingImage: "/services/headlight-restoration/headlight-restoration-landing-image.jpg",
-  firstContentImage: "/services/headlight-restoration/headlight-restoration-temporary-image.jpg",
-  secondContentImage: "/services/headlight-restoration/headlight-restoration-temporary-image.jpg",
+  firstContentImage: "/services/headlight-restoration/headlight-restoration-left-content-image.jpg",
+  secondContentImage: "/services/headlight-restoration/headlight-restoration-right-content-image.jpg",
 };
 
 export const engineBayRetail = {
   name: "Engine Bay Detail",
-  description: "There's no better way to show your superiority than having an absolutely mint powerplant under the bonnet",
+  description: "nothing shows your superiority like having an absolutely mint powerplant under the bonnet",
   content: {
     firstDescription: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis tincidunt justo eu sodales.",
-      "Morbi massa nunc, tristique ut est eu, mattis imperdiet felis. Cras vel lectus ipsum. Vivamus ipsum purus, ultricies at magna nec, dictum cursus nibh. Nam et egestas nulla, id faucibus tortor. Pellentesque quis maximus felis."
+      "Your engine bay is the heart of your vehicle; but it’s easy for dirt, oil, and debris to hide in places that need to be spotless.",
+      "Our Engine Bay Detailing service ensures every component is cleaned and restored, not only improving the appearance but also helping to maintain the longevity and performance of your car."
     ],
     secondDescription: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      "Mauris lobortis tincidunt justo eu sodales. Morbi massa nunc, tristique ut est eu, mattis imperdiet felis. Cras vel lectus ipsum. Vivamus ipsum purus, ultricies at magna nec, dictum cursus nibh. Nam et egestas nulla, id faucibus tortor."
+      "With our careful attention to detail, your engine will not only look fresh but run smoother. It’s a simple way to keep your car performing at its best while making a bold statement. ",
+      "Ready to pop the bonnet and show off? We’ve got the tools to make it happen."
     ],
   },
   landingImage: "/services/engine-bay-detail/engine-bay-detail-landing-image.jpg",
-  firstContentImage: "/services/engine-bay-detail/engine-bay-detail-temporary-image.jpg",
-  secondContentImage: "/services/engine-bay-detail/engine-bay-detail-temporary-image.jpg",
+  firstContentImage: "/services/engine-bay-detail/engine-bay-detail-left-content-image.jpg",
+  secondContentImage: "/services/engine-bay-detail/engine-bay-detail-right-content-image.jpg",
 };
