@@ -13,10 +13,14 @@ export const navbarMenu = [
     ]
   },
   {
-    name: 'Subscription Plans',
-    showArrow: false,
-    subMenu: false,
-    submenuList: []
+    name: 'Offers',
+    showArrow: true,
+    subMenu: true,
+    submenuList: [
+      { name: 'Subscription Plans', link: '/subscription-plans' },
+      { name: 'Gift Cards', link: 'https://cuttingedgestore.square.site/s/gift-cards' }
+
+    ]
   },
   {
     name: 'About Us',

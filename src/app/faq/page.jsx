@@ -153,7 +153,8 @@ const Faq = () => {
             </span>
           </AccordionHeader>
           <AccordionBody className="bg-primary px-8">
-            Yes, we offer eGift cards, so you can digitally gift a spotless car to someone special. They are available on our website.
+            Yes, we offer eGift cards, so you can digitally gift a spotless car to someone special. They are available on our 
+            <a href="https://cuttingedgestore.square.site/s/gift-cards" style={{ color: '#00A2FF' }} >&nbsp;store.</a>
             We can absolutely tailor a custom package to your needs, whether you&apos;re after a full detail or just a few specific treatments.
 
           </AccordionBody>
