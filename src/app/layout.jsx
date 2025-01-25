@@ -3,6 +3,9 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import "swiper/css";
+import Head from "next/head";
+import Script from 'next/script'
+
 
 
 const roboto = Roboto({
@@ -22,6 +25,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16655963362"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16655963362');
+            `,
+          }}
+        />
+      </Head>
       <body className={`${roboto.className} antialiased relative`}>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
