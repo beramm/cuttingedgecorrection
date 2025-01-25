@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+
+
 export const NavArrowDown = ({ size, hexColor }) => (
   <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
     <path d="M6 9L12 15L18 9" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -23,21 +26,30 @@ export const ArrowUpCircleSolid = ({ size, hexColor }) => (
   </svg>
 )
 
-export const FacebookIcon = ({ size, hexColor }) => (
-  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
-    <path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-    <path d="M11 21C11 18 11 15 11 12C11 9.8125 11.5 8 15 8" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-    <path d="M9 13H11H15" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-  </svg>
-)
+export const FacebookIcon = ({ size, hexColor }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
-export const InstagramIcon = ({ size, hexColor }) => (
-  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
-    <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-    <path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke={hexColor} strokeWidth="1.5"></path>
-    <path d="M17.5 6.51L17.51 6.49889" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-  </svg>
-)
+  return (
+    <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={isHovered ? "#00A2FF" : hexColor} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+      <path d="M11 21C11 18 11 15 11 12C11 9.8125 11.5 8 15 8" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+      <path d="M9 13H11H15" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+    </svg>
+  );
+};
+
+
+export const InstagramIcon = ({ size, hexColor }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={isHovered ? "#00A2FF" : hexColor} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" ></path>
+      <path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" ></path>
+      <path d="M17.5 6.51L17.51 6.49889" stroke={isHovered ? "#00A2FF" : hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" ></path>
+    </svg>
+  );
+};
 
 export const MailIconNonSolid = ({ size, hexColor }) => (
   <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
