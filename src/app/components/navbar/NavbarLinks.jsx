@@ -70,7 +70,7 @@ const NavbarLinks = ({ handleOpenMobileNav }) => {
           <span className="mx-2">||</span>
           <span className="bg-accent h-0.5 w-full"></span>
         </div>
-        <div className="mt-10">
+        <div className="mt-10" onClick={handleOpenMobileNav}>
           <ContactUsButton />
         </div>
       </div>
