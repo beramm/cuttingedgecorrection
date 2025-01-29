@@ -28,73 +28,33 @@ const structuredData = {
     {
       "@type": "ListItem",
       "position": 1,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/ceramic-coating",
-        "name": "Ceramic Coating",
-        "description": "This is an introductory CS course laying out the basics.",
-      }
+      "url": "https://www.cecdetailing.com.au/services/ceramic-coating"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/decontamination",
-        "name": "Decontamination",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
+      "url": "https://www.cecdetailing.com.au/services/decontamination"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/paint-correction",
-        "name": "Paint Correction",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
+      "url": "https://www.cecdetailing.com.au/services/paint-correction"
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/headlight-restoration",
-        "name": "Headlight Restoration",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
+      "url": "https://www.cecdetailing.com.au/services/headlight-restoration"
     },
     {
       "@type": "ListItem",
       "position": 5,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/interior-detailing",
-        "name": "Interior Detailing",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
+      "url": "https://www.cecdetailing.com.au/services/interior-detailing"
     },
     {
       "@type": "ListItem",
       "position": 6,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/engine-bay-detail",
-        "name": "Engine Bay Detail",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Course",
-        "url": "https://www.cecdetailing.com.au/services/",
-        "name": "Our Location",
-        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
-      }
-    },
+      "url": "https://www.cecdetailing.com.au/services/engine-bay-detail"
+    }
   ]
 };
 
