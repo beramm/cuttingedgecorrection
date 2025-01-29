@@ -21,6 +21,41 @@ export const metadata = {
   description: "Cutting Edge Correction, AU",
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Cutting Edge Correction",
+  "image": "https://www.cecdetailing.com.au/_next/image?url=%2Fcec_logo.png&w=128&q=75",
+  "@id": "https://www.cecdetailing.com.au/our-location",
+  "url": "https://www.cecdetailing.com.au/our-location",
+  "telephone": "0450 649 257",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "67 Walsgott Street",
+    "addressLocality": "North Geelong",
+    "addressRegion": "VIC",
+    "postalCode": "3215",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -38.1167031,
+    "longitude": 144.3443453
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://web.facebook.com/CuttingEdgeCorrection",
+    "https://www.instagram.com/cuttingedgecorrection"
+  ]
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -39,6 +74,13 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+
+
       </head>
       <body className={`${roboto.className} antialiased relative`}>
         <Navbar />
