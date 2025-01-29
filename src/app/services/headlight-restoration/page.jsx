@@ -7,7 +7,8 @@ const HeadlightRestoration = () => {
   return (
     <>
       <title>Headlight Restoration - Cutting Edge Correction</title>
-      <meta name="description" content="Ceramic Coating Benefits: A Ceramic Coating provides essential protection for your vehicle, creating a durable, hydrophobic layer that defends against dirt, water, UV damage, oxidation, and scratches. This helps preserve your car's paintwork, extend its lifespan, and reduce maintenance efforts, keeping your ride sharp and ready for anything." />
+      <meta name="description"
+        content="Headlight Restoration: Headlights are your vehicle’s first impression, but over time, they can dull and cloud. Our Headlight Restoration service removes grime, oxidation, and fog, restoring their sharp look. With precision restoration, you’ll not only see better but be seen better, eliminating dim lights and foggy lenses." />
       <EachServicePage service={headlightRestoration} serviceName="headlight-restoration" />
     </>
   )

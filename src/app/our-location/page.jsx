@@ -11,10 +11,10 @@ const OurLocation = () => {
 
   return (
     <>
-      <title>Contact Us - Cutting Edge Correction</title>
+      <title>Our Location - Cutting Edge Correction</title>
       <meta
         name="description"
-        content="Lock in your detailing appointment with our easy booking form. Provide your details, choose your service, and let us know any special requests. Get started today for a premium car detailing experience!"
+        content="Visit Cutting Edge Correction at 67 Walsgott Street, North Geelong, VIC 3215, where the magic happens. We are open 7 days a week to serve you. Contact us at 0450 649 257 or email info@cecdetailing.com.au for inquiries. "
       />
       <div
         style={{
