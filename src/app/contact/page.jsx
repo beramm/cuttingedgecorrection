@@ -41,12 +41,19 @@ const ContactUsForm = () => {
             const resp = await axios.post('api/v1/send-email', requestBody)
             
             if (typeof window !== "undefined" && window.gtag) {
-                window.gtag("event", "conversion", {
-                    send_to: "AW-16655963362",
-                    event_category: "Contact Form",
-                    event_label: "Form Submitted",
-                    value: 1.0 
-                });
+                try {
+                    console.log("Sending Google Ads conversion event...");
+                    window.gtag("event", "conversion", {
+                        send_to: "AW-16655963362/o3VECMmO7JQaEOKpl4Y-",  
+                        event_category: "Submit lead form",
+                        event_label: "Form Submitted",
+                        value: 1.0
+                    });
+                    console.log("Google Ads conversion event sent successfully.");
+                } catch (error) {
+                    console.error("Error sending Google Ads conversion event:", error);
+                }
+            
             }
 
             setAlertType("success")
