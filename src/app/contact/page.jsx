@@ -40,6 +40,15 @@ const ContactUsForm = () => {
         
             const resp = await axios.post('api/v1/send-email', requestBody)
             
+            if (typeof window !== "undefined" && window.gtag) {
+                window.gtag("event", "conversion", {
+                    send_to: "AW-16655963362",
+                    event_category: "Contact Form",
+                    event_label: "Form Submitted",
+                    value: 1.0 
+                });
+            }
+
             setAlertType("success")
             setAlertMessage("Form submitted successfully!")
             setShowAlert(true)

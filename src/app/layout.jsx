@@ -28,31 +28,37 @@ const structuredData = {
     {
       "@type": "ListItem",
       "position": 1,
+      "name":"Ceramic Coating",
       "url": "https://www.cecdetailing.com.au/services/ceramic-coating"
     },
     {
       "@type": "ListItem",
       "position": 2,
+      "name":"Decontamination",
       "url": "https://www.cecdetailing.com.au/services/decontamination"
     },
     {
       "@type": "ListItem",
       "position": 3,
+      "name":"Paint Correction",
       "url": "https://www.cecdetailing.com.au/services/paint-correction"
     },
     {
       "@type": "ListItem",
       "position": 4,
+      "name":"Headlight Restoration",
       "url": "https://www.cecdetailing.com.au/services/headlight-restoration"
     },
     {
       "@type": "ListItem",
       "position": 5,
+      "name":"Interior Detailing",
       "url": "https://www.cecdetailing.com.au/services/interior-detailing"
     },
     {
       "@type": "ListItem",
       "position": 6,
+      "name":"Engine Bay Detail",
       "url": "https://www.cecdetailing.com.au/services/engine-bay-detail"
     }
   ]
