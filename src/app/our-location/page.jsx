@@ -4,9 +4,6 @@ import React, { useRef } from "react";
 import { MailIconSolid, MapPinIcon, PhoneIconSolid } from "../components/icon";
 import MapComponent from "../components/map/MapComponent";
 import { useIsVisible } from "../hooks/useIsVisible";
-import { generateMetadata } from "../our-location/our-location";
-import Head from 'next/head';
-
 
 const OurLocation = () => {
   const ref = useRef();
