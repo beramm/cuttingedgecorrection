@@ -23,36 +23,78 @@ export const metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Cutting Edge Correction",
-  "image": "https://www.cecdetailing.com.au/_next/image?url=%2Fcec_logo.png&w=128&q=75",
-  "@id": "https://www.cecdetailing.com.au/our-location",
-  "url": "https://www.cecdetailing.com.au/our-location",
-  "telephone": "0450 649 257",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "67 Walsgott Street",
-    "addressLocality": "North Geelong",
-    "addressRegion": "VIC",
-    "postalCode": "3215",
-    "addressCountry": "AU"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -38.1167031,
-    "longitude": 144.3443453
-  },
-  "openingHoursSpecification": [
+  "@type": "ItemList",
+  "itemListElement": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "07:00",
-      "closes": "18:00"
-    }
-  ],
-  "sameAs": [
-    "https://web.facebook.com/CuttingEdgeCorrection",
-    "https://www.instagram.com/cuttingedgecorrection"
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/ceramic-coating",
+        "name": "Ceramic Coating",
+        "description": "This is an introductory CS course laying out the basics.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/decontamination",
+        "name": "Decontamination",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/paint-correction",
+        "name": "Paint Correction",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/headlight-restoration",
+        "name": "Headlight Restoration",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/interior-detailing",
+        "name": "Interior Detailing",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/engine-bay-detail",
+        "name": "Engine Bay Detail",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Course",
+        "url": "https://www.cecdetailing.com.au/services/",
+        "name": "Our Location",
+        "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+      }
+    },
   ]
 };
 
@@ -74,7 +116,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
