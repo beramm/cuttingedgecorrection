@@ -118,12 +118,12 @@ const Footer = () => {
                 <h3 className="text-xs font-light">Email</h3>
                 <p className="text-l font-extrabold">
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=cuttingedgecorrection@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@cecdetailing.com.au"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#00A2FF]"
                   >
-                    cuttingedgecorrection@gmail.com
+                    info@cecdetailing.com.au
                   </a>
                 </p>
               </div>

@@ -9,7 +9,7 @@ export async function sendAppointmentEmail(formData) {
     "noreply@trial-pr9084zq9zx4w63d.mlsender.net",
     "Appointment Booking"
   );
-  const recipients = [new Recipient("cuttingedgecorrection@gmail.com")];
+  const recipients = [new Recipient("info@cecdetailing.com.au")];
 
   const htmlContent = `
   <!DOCTYPE html>

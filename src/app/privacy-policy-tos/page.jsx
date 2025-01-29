@@ -199,7 +199,7 @@ const PrivacyPolicyTos = () => {
             <address>
               Cutting Edge Correction <br />
               67 Walsgott Street, North Geelong, VIC 3215 <br />
-              cuttingedgecorrection@gmail.com <br />
+              info@cecdetailing.com.au <br />
               0450 649 257
             </address>
           </div>
