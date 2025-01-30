@@ -88,20 +88,10 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-
-
+        <link rel="icon" href="/favicon.ico"></link>
       </head>
 
       <body className={`${roboto.className} antialiased relative`}>
-        <header>
-          <Image
-            src="/cec_nocolor_logo.png" // Path to your logo in the public directory
-            alt="CEC Detailing Logo"
-            width={30} // Set the width of the logo
-            height={30} // Set the height of the logo
-          />
-          <link rel="icon" href="/favicon.ico"></link>
-        </header>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
           {children}
