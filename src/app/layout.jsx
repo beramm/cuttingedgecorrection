@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import "swiper/css";
+import Image from "next/image";
 
 
 
@@ -28,37 +29,37 @@ const structuredData = {
     {
       "@type": "ListItem",
       "position": 1,
-      "name":"Ceramic Coating",
+      "name": "Ceramic Coating",
       "url": "https://www.cecdetailing.com.au/services/ceramic-coating"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name":"Decontamination",
+      "name": "Decontamination",
       "url": "https://www.cecdetailing.com.au/services/decontamination"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name":"Paint Correction",
+      "name": "Paint Correction",
       "url": "https://www.cecdetailing.com.au/services/paint-correction"
     },
     {
       "@type": "ListItem",
       "position": 4,
-      "name":"Headlight Restoration",
+      "name": "Headlight Restoration",
       "url": "https://www.cecdetailing.com.au/services/headlight-restoration"
     },
     {
       "@type": "ListItem",
       "position": 5,
-      "name":"Interior Detailing",
+      "name": "Interior Detailing",
       "url": "https://www.cecdetailing.com.au/services/interior-detailing"
     },
     {
       "@type": "ListItem",
       "position": 6,
-      "name":"Engine Bay Detail",
+      "name": "Engine Bay Detail",
       "url": "https://www.cecdetailing.com.au/services/engine-bay-detail"
     }
   ]
@@ -90,7 +91,17 @@ export default function RootLayout({ children }) {
 
 
       </head>
+
       <body className={`${roboto.className} antialiased relative`}>
+        <header>
+          <Image
+            src="/cec_nocolor_logo.png" // Path to your logo in the public directory
+            alt="CEC Detailing Logo"
+            width={30} // Set the width of the logo
+            height={30} // Set the height of the logo
+          />
+          {/* Other header content */}
+        </header>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
           {children}
