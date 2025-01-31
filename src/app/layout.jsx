@@ -20,6 +20,11 @@ export const metadata = {
     template: "%s | CEC" // using %s so it can be dynamic title name
   },
   description: "Cutting Edge Correction, AU",
+  icons: {
+    icon: '/favicon.ico',
+    sizes: 'any',
+    rel: 'icon',
+  },
 };
 
 const structuredData = {
@@ -88,7 +93,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <link rel="icon" href="/favicon.ico"></link>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
       <body className={`${roboto.className} antialiased relative`}>
