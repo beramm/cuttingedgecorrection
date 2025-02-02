@@ -1,14 +1,38 @@
 import prisma from "../../../libs/PrismaClient/prisma";
 import { NextResponse } from "next/server"
 
-export const GET = async() => {
-  const blog = await prisma.blog.findMany({
-    orderBy: { created_at: 'desc' }
-  })
+export const GET = async (req) => {
+  try {
+    const { searchParams } = new URL(req.url);
+    const page = parseInt(searchParams.get("page")) || 1;
+    const limit = 6;
+    const skip = (page - 1) * limit;
 
-  return NextResponse.json({ status: 200, data: blog })
-}
+    const totalBlogs = await prisma.blog.count();
 
+    const blogs = await prisma.blog.findMany({
+      skip,
+      take: limit,
+      orderBy: { created_at: "desc" },
+    });
+
+    return NextResponse.json({
+      status: 200,
+      data: blogs,
+      pagination: {
+        currentPage: page,
+        totalPages: Math.ceil(totalBlogs / limit),
+        totalBlogs,
+      },
+    });
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    return NextResponse.json(
+      { status: 500, error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+};
 
 export const POST = async (req)=> { 
   try{
