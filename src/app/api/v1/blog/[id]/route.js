@@ -56,6 +56,7 @@ export const PATCH = async (req, { params }) => {
         slug: body.slug || existingBlog.slug,
         title: body.title || existingBlog.title,
         content: body.content || existingBlog.content,
+        thumbnail: body.thumbnail || existingBlog.thumbnail,
       },
     });
 

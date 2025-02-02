@@ -51,6 +51,7 @@ model Blog {
   slug        String    @unique
   title       String    @db.Text()
   content     String    @db.Text()
+  thumbnail   String    @db.Text()
   created_at  DateTime  @default(now())
   updated_at  DateTime  @updatedAt
 }

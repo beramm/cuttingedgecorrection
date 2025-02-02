@@ -13,13 +13,14 @@ export const GET = async() => {
 export const POST = async (req)=> { 
   try{
   const body = await req.json();
-  const { slug , title , content } = body
+  const { slug , title , content , thumbnail } = body
 
   const blog = await prisma.blog.create({
     data: {
      slug ,
      title,
-     content
+     content,
+     thumbnail
     },
   });
 
