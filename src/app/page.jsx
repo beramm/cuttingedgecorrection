@@ -6,6 +6,9 @@ import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./components/card/review-card/infinite-moviing-cards";
+import { useRef } from "react";
+import { useIsVisible } from "../app/hooks/useIsVisible";
+
 
 export default function Home() {
   const [review, setReview] = useState([]);
@@ -18,6 +21,9 @@ export default function Home() {
 
     fetchReviews();
   }, []);
+
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
 
   return (
     <>
@@ -115,11 +121,11 @@ export default function Home() {
         className="h-full w-full"
       >
         {/** Our Commitment */}
-        <div className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center z-20">
+        <div ref={ref} className="mt-16 relative w-full flex flex-col lg:flex-rowmx-auto -z-2 h-[920px] justify-center z-20">
           {/* Content Wrapper */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-screen-2xl mx-auto">
             {/* Text Side */}
-            <div className="flex-1 flex flex-col items-start justify-center py-12 p-10 md:p-0 lg:px-20">
+            <div className={`flex-1 flex flex-col items-start justify-center py-12 p-10 md:p-0 lg:px-20 transition-all duration-700 ease-in-out ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-40 opacity-0"}`}>
               {/* Title */}
               <div className="text-left text-4xl md:text-5xl font-extrabold mb-8 z-20">
                 <h1>
@@ -153,7 +159,7 @@ export default function Home() {
             </div>
 
             {/* Image Side */}
-            <div className="w-full max-w-[800px] mt-6">
+            <div className={`w-full max-w-[800px] mt-6 transition-all duration-700 ease-in-out ${isVisible ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0"}`}>
               <Image
                 src={"/our_commitment_image.webp"}
                 width={1920}

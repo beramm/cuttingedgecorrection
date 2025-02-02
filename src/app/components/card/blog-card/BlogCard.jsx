@@ -1,12 +1,17 @@
 "use client"
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import { ArrowRightCircleSolid } from '../../icon'
+import { useIsVisible } from "../../../hooks/useIsVisible";
+
 
 const BlogCard = ({ blogData }) => {
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
   return (
-    <div className="w-[320px] h-[520px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer duration-300">
+    <div ref={ref} className={`w-[320px] h-[520px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer duration-300 transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
       <div className="w-full h-[320px] relative overflow-hidden rounded-t-lg">
         <Image
           src={blogData.thumbnail}
@@ -31,7 +36,7 @@ const BlogCard = ({ blogData }) => {
         <button className="text-sm font-medium mt-4 flex items-center justify-between gap-x-2">
           <p>Read more</p>
           <ArrowRightCircleSolid size={20} hexColor={"#E8E6DE"} />
-          </button>
+        </button>
       </div>
     </div>
   )
