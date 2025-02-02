@@ -6,15 +6,16 @@
   export async function middleware(req) {
     const url = req.nextUrl.pathname;
     
-    // If it's not a POST request, allow it through immediately
-    if (req.method !== 'POST' || req.method !== 'DELETE' ) {
+    // If it's not a POST,DELETE,PATCH request, allow it through immediately
+    if (req.method !== 'POST' && req.method !== 'DELETE' && req.method !== 'PATCH') {
       return NextResponse.next();
     }
 
     // Define routes that need POST protection
     const protectedRoutes = [
       "/api/v1/pictures",
-      "/api/v1/reviews"
+      "/api/v1/reviews",
+      "/api/v1/blog"
     ];
 
     // Check if current route is protected
@@ -55,5 +56,5 @@
   }
 
   export const config = {
-    matcher: ["/api/v1/pictures/:path*", "/api/v1/reviews/:path*"],
+    matcher: ["/api/v1/pictures/:path*", "/api/v1/reviews/:path*" , "/api/v1/blog/:path*"],
   };
