@@ -14,12 +14,12 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: {
-    absolute: "", // to ignore the template
-    default: "Cutting Edge Correction",
-    template: "%s | CEC" // using %s so it can be dynamic title name
-  },
-  description: "Cutting Edge Correction, AU",
+  // title: {
+  //   absolute: "", // to ignore the template
+  //   default: "Cutting Edge Correction",
+  //   template: "%s | CEC" // using %s so it can be dynamic title name
+  // },
+  // description: "Cutting Edge Correction, AU",
   icons: {
     icon: '/favicon.ico',
     sizes: 'any',

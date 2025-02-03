@@ -87,94 +87,100 @@ const BlogAdmin = () => {
   }
 
   return (
-    <div className="max-w-screen-xl m-auto mt-32">
-      {blogs.length === 0 && !isLoading ? (
-        <div className="overflow-y-auto h-[600px] flex items-center justify-center">
-          No blogs available.
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[600px] items-center justify-center">
-          {blogs.map((blog) => (
-            <BlogCardAdmin
-              blogData={blog}
-              key={blog.id}
-              handleDelete={handleDelete}
-              handleEdit={handleEdit}
-            />
-          ))}
-        </div>
-      )}
+    <>
+      <title>Blogs Page - Cutting Edge Correction</title>
+      <meta name="description" content="Blogs Page" />
 
-      <div className="flex w-full items-center justify-around lg:justify-between">
-        <div>
-          <a href="/admin">
-            <button className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold">Back</button>
-          </a>
-        </div>
-        {/* Pagination Controls */}
-        <div className="flex items-center justify-center gap-2 mt-6 pb-6">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
-          >
-            Prev
-          </button>
+      <div className="max-w-screen-xl m-auto mt-32">
+        {blogs.length === 0 && !isLoading ? (
+          <div className="overflow-y-auto h-[600px] flex items-center justify-center">
+            No blogs available.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[600px] items-center justify-center">
+            {blogs.map((blog) => (
+              <BlogCardAdmin
+                blogData={blog}
+                key={blog.id}
+                handleDelete={handleDelete}
+                handleEdit={handleEdit}
+              />
+            ))}
+          </div>
+        )}
 
-          {[...Array(totalPages)].map((_, index) => (
+        <div className="flex w-full items-center justify-around lg:justify-between">
+          <div>
+            <a href="/admin">
+              <button className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold">Back</button>
+            </a>
+          </div>
+          {/* Pagination Controls */}
+          <div className="flex items-center justify-center gap-2 mt-6 pb-6">
             <button
-              key={index + 1}
-              onClick={() => handlePageChange(index + 1)}
-              className={`px-3 py-1 border rounded ${currentPage === index + 1
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
+            >
+              Prev
+            </button>
+
+            {[...Array(totalPages)].map((_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => handlePageChange(index + 1)}
+                className={`px-3 py-1 border rounded ${currentPage === index + 1
                   ? "bg-blue-500 text-white"
                   : "hover:bg-gray-100"
-                }`}
+                  }`}
+              >
+                {index + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
             >
-              {index + 1}
+              Next
             </button>
-          ))}
-
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
-          >
-            Next
-          </button>
-        </div>
-        <div>
-          <a href="/admin/blogs/upload">
-            <button className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold">Upload</button>
-          </a>
-        </div>
-      </div>
-
-      {showAlert && (
-        <Alert
-          open={showAlert}
-          className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
-            } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
-          animate={{
-            mount: { opacity: 1 },
-            unmount: { opacity: 0 },
-          }}
-        >
-          <div className="flex justify-between items-center gap-5">
-            <span className="flex-grow">{alertMessage}</span>
-            <Button
-              variant="text"
-              color="white"
-              size="sm"
-              onClick={() => setShowAlert(false)}
-              className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
-                } hover:opacity-80 transition duration-200`}
-            >
-              Close
-            </Button>
           </div>
-        </Alert>
-      )}
-    </div>
+          <div>
+            <a href="/admin/blogs/upload">
+              <button className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold">Upload</button>
+            </a>
+          </div>
+        </div>
+
+        {showAlert && (
+          <Alert
+            open={showAlert}
+            className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+              } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
+            animate={{
+              mount: { opacity: 1 },
+              unmount: { opacity: 0 },
+            }}
+          >
+            <div className="flex justify-between items-center gap-5">
+              <span className="flex-grow">{alertMessage}</span>
+              <Button
+                variant="text"
+                color="white"
+                size="sm"
+                onClick={() => setShowAlert(false)}
+                className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+                  } hover:opacity-80 transition duration-200`}
+              >
+                Close
+              </Button>
+            </div>
+          </Alert>
+        )}
+      </div>
+    </>
+
   );
 };
 
