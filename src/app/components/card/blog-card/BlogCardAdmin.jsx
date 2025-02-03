@@ -34,9 +34,7 @@ const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
             .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
             .toUpperCase()}
         </p>
-        <p className="line-clamp-3 text-sm">
-          {blogData.content}
-        </p>
+        <p className="line-clamp-3 text-smc" dangerouslySetInnerHTML={{ __html: blogData.content }}/>
         <button className="text-sm font-medium mt-4 flex items-center justify-between gap-x-2">
           <p>Read more</p>
           <ArrowRightCircleSolid size={20} hexColor={"#E8E6DE"} />
