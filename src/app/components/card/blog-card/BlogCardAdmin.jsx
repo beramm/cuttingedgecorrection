@@ -26,7 +26,7 @@ const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
         />
       </div>
       <div className="flex flex-col items-start justify-start w-full h-full p-6">
-        <h1 className="font-black text-3xl">
+        <h1 className="font-black text-2xl">
           {blogData.title}
         </h1>
         <p className="font-normal text-sm mt-1 mb-4 text-highlight">

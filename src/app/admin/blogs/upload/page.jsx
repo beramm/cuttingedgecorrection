@@ -13,7 +13,7 @@ const BlogAdminUpload = () => {
   const [thumbnail, setThumbnail] = useState(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  
+
   const router = useRouter();
 
   useEffect(() => {
@@ -73,7 +73,7 @@ const BlogAdminUpload = () => {
           'Content-Type': 'multipart/form-data',
         }
       });
-        router.push("/admin/blogs");
+      router.push("/admin/blogs");
     } catch (error) {
       console.error("Error uploading blog:", error);
       alert(error)
@@ -89,89 +89,94 @@ const BlogAdminUpload = () => {
   }
 
   return (
-    <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
-      <style>{`
+    <>
+      <title>Upload Blogs - Cutting Edge Correction</title>
+      <meta name="description" content="Upload blogs Page" />
+      <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
+        <style>{`
         trix-toolbar [data-trix-button-group="file-tools"] {
           display: none !important;
         }
       `}</style>
-      
-      <form onSubmit={handleUpload} className="space-y-6">
-        {/* Thumbnail */}
-        <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
-          <label htmlFor="image" className="block text-lg font-semibold">
-            Thumbnail
-          </label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={handleThumbnailChange}
-            className="w-full p-2 mt-1 border rounded-lg bg-primary"
-            required
-          />
-        </div>
 
-        {/* Title Input */}
-        <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
-          <label htmlFor="title" className="block text-lg font-semibold">
-            Title
-          </label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={title}
-            onChange={handleTitleChange}
-            className="w-full p-2 mt-1 border rounded-lg bg-primary"
-            placeholder="Enter blog title"
-            required
-          />
-        </div>
+        <form onSubmit={handleUpload} className="space-y-6">
+          {/* Thumbnail */}
+          <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
+            <label htmlFor="image" className="block text-lg font-semibold">
+              Thumbnail
+            </label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              onChange={handleThumbnailChange}
+              className="w-full p-2 mt-1 border rounded-lg bg-primary"
+              required
+            />
+          </div>
 
-        {/* Trix Editor */}
-        <div className="p-4 shadow-md rounded-lg">
-          <label
-            htmlFor="my_input"
-            className="block text-lg font-semibold text-foreground"
-          >
-            Content
-          </label>
-          <trix-toolbar
-            id="my_toolbar"
-            style={{ backgroundColor: "white" }}
-          ></trix-toolbar>
-          <trix-editor
-            id="my_input"
-            toolbar="my_toolbar"
-            style={{
-              height: "300px",
-              overflowY: "auto",
-              backgroundColor: "#141416",
-              color: "white",
-              fontSize: "20px",
-            }}
-            required
-          ></trix-editor>
-        </div>
+          {/* Title Input */}
+          <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
+            <label htmlFor="title" className="block text-lg font-semibold">
+              Title
+            </label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value={title}
+              onChange={handleTitleChange}
+              className="w-full p-2 mt-1 border rounded-lg bg-primary"
+              placeholder="Enter blog title"
+              required
+            />
+          </div>
 
-        {/* Submit Button */}
-        <div className="flex justify-between">
-          <a href="/admin/blogs" className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold text-center flex items-center justify-center">
-          Back
-          </a>
-       
-        <button
-          type="submit"
-         className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold"
-        >
-          Upload Blog
-        </button>
-        </div>
-       
-      </form>
-    </div>
+          {/* Trix Editor */}
+          <div className="p-4 shadow-md rounded-lg">
+            <label
+              htmlFor="my_input"
+              className="block text-lg font-semibold text-foreground"
+            >
+              Content
+            </label>
+            <trix-toolbar
+              id="my_toolbar"
+              style={{ backgroundColor: "white" }}
+            ></trix-toolbar>
+            <trix-editor
+              id="my_input"
+              toolbar="my_toolbar"
+              style={{
+                height: "300px",
+                overflowY: "auto",
+                backgroundColor: "#141416",
+                color: "white",
+                fontSize: "20px",
+              }}
+              required
+            ></trix-editor>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-between">
+            <a href="/admin/blogs" className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold text-center flex items-center justify-center">
+              Back
+            </a>
+
+            <button
+              type="submit"
+              className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold"
+            >
+              Upload Blog
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </>
+
   );
 };
 
