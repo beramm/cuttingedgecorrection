@@ -88,22 +88,22 @@ const BlogAdmin = () => {
 
   return (
     <div className="max-w-screen-xl m-auto mt-32">
-     {blogs.length === 0 && !isLoading ? (
-    <div className="overflow-y-auto h-[600px] flex items-center justify-center">
-      No blogs available.
-    </div>
-  ) : (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[600px] items-center justify-center">
-      {blogs.map((blog) => (
-        <BlogCardAdmin
-          blogData={blog}
-          key={blog.id}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-        />
-      ))}
-    </div>
-  )}
+      {blogs.length === 0 && !isLoading ? (
+        <div className="overflow-y-auto h-[600px] flex items-center justify-center">
+          No blogs available.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[600px] items-center justify-center">
+          {blogs.map((blog) => (
+            <BlogCardAdmin
+              blogData={blog}
+              key={blog.id}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="flex w-full items-center justify-around lg:justify-between">
         <div>
@@ -125,11 +125,10 @@ const BlogAdmin = () => {
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              className={`px-3 py-1 border rounded ${
-                currentPage === index + 1
+              className={`px-3 py-1 border rounded ${currentPage === index + 1
                   ? "bg-blue-500 text-white"
                   : "hover:bg-gray-100"
-              }`}
+                }`}
             >
               {index + 1}
             </button>
@@ -153,9 +152,8 @@ const BlogAdmin = () => {
       {showAlert && (
         <Alert
           open={showAlert}
-          className={`${
-            alertType === "error" ? "bg-red-700" : "bg-green-700"
-          } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
+          className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+            } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
           animate={{
             mount: { opacity: 1 },
             unmount: { opacity: 0 },
@@ -168,9 +166,8 @@ const BlogAdmin = () => {
               color="white"
               size="sm"
               onClick={() => setShowAlert(false)}
-              className={`${
-                alertType === "error" ? "bg-red-900" : "bg-green-900"
-              } hover:opacity-80 transition duration-200`}
+              className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+                } hover:opacity-80 transition duration-200`}
             >
               Close
             </Button>
