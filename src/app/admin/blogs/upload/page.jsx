@@ -60,11 +60,12 @@ const BlogAdminUpload = () => {
   const handleUpload = async (event) => {
     event.preventDefault();
     try {
+      const slug = slugify(title, { lower: true, strict: true });
       const formData = new FormData();
       formData.append('thumbnail', thumbnail);
       formData.append('title', title);
       formData.append('content', content);
-      formData.append('slug', title.toLowerCase().replace(/\s+/g, '-')); // Generate slug from title
+      formData.append('slug', slug); 
 
       const response = await axios.post("/api/v1/blog", formData, {
         headers: {

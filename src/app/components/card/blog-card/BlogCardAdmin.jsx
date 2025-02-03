@@ -15,14 +15,14 @@ const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
 
   return (
     <div ref={ref} className={`w-full  md:w-[400px] lg:w-[400px] h-[450px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-      <div className="w-full h-[320px] relative overflow-hidden rounded-t-lg">
+      <div className="w-full h-[500px] relative overflow-hidden rounded-t-lg bg-red-50">
         <Image
           src={blogData.thumbnail}
           // src="/picture-loading-failed.png"
           alt={`thumbnail ${blogData.title}`}
           fill
           sizes='auto'
-          className="object-cover"
+          className="object-cover w-full h-full"
         />
       </div>
       <div className="flex flex-col items-start justify-start w-full h-full p-6">
@@ -34,11 +34,13 @@ const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
             .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
             .toUpperCase()}
         </p>
+        
         <p className="line-clamp-3 text-smc" dangerouslySetInnerHTML={{ __html: blogData.content }}/>
-        <button className="text-sm font-medium mt-4 flex items-center justify-between gap-x-2">
+
+        {/* <button className="text-sm font-medium mt-4 flex items-center justify-between gap-x-2">
           <p>Read more</p>
           <ArrowRightCircleSolid size={20} hexColor={"#E8E6DE"} />
-        </button>
+        </button> */}
         <div className='absolute bottom-4 right-4 flex gap-x-4'>
           <button  onClick={()=>handleEdit(blogData)}>
           <PencilIcon size={20} hexColor={"#FFFFFF"}/>
