@@ -62,9 +62,6 @@ const BlogAdmin = () => {
     }
   };
 
-  const handleEdit = (blogData) => {
-    console.log('Edit blog:', blogData.id);
-  }
 
   const handleDelete = async (blogData) => {
     try {
@@ -103,7 +100,6 @@ const BlogAdmin = () => {
                 blogData={blog}
                 key={blog.id}
                 handleDelete={handleDelete}
-                handleEdit={handleEdit}
               />
             ))}
           </div>

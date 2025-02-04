@@ -7,14 +7,14 @@ import { useIsVisible } from "../../../hooks/useIsVisible";
 import axios from 'axios';
 
 
-const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
+const BlogCardAdmin = ({ blogData , handleDelete}) => {
   const ref = useRef();
   const isVisible = useIsVisible(ref);
   
 
 
   return (
-    <div ref={ref} className={`w-full  md:w-[400px] lg:w-[400px] h-[450px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+    <div ref={ref} className={`w-full  md:w-[400px] lg:w-[400px] h-[480px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
       <div className="w-full h-[500px] relative overflow-hidden rounded-t-lg bg-red-50">
         <Image
           src={blogData.thumbnail}
@@ -42,9 +42,9 @@ const BlogCardAdmin = ({ blogData , handleEdit , handleDelete}) => {
           <ArrowRightCircleSolid size={20} hexColor={"#E8E6DE"} />
         </button> */}
         <div className='absolute bottom-4 right-4 flex gap-x-4'>
-          <button  onClick={()=>handleEdit(blogData)}>
+          <a  href={`/admin/blogs/${blogData.slug}`}>
           <PencilIcon size={20} hexColor={"#FFFFFF"}/>
-          </button>
+          </a>
           <button onClick={()=>handleDelete(blogData)}>
           <TrashSolidIcon size={20} hexColor={"#FFFFFF"} /> 
           </button>
