@@ -13,7 +13,7 @@ const BlogCard = ({ blogData }) => {
 
   return (
     <>
-      <Link href={`/detailing-guides/${blogData.slug}`} passHref>
+      <Link href={`/detailing-guides/${blogData.slug}`} passHref >
         <div ref={ref} className={`w-full  md:w-[400px] lg:w-[400px] h-[500px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="w-full h-[320px] relative overflow-hidden rounded-t-lg">
             <Image
