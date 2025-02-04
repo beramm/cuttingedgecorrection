@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BlogCardAdmin from "../../components/card/blog-card/BlogCardAdmin";
 import { useRouter } from "next/navigation";
-import { LoadingSpinner } from "../../components/icon";
+import { LoadingSpinner, NavArrowLeft, NavArrowRight } from "../../components/icon";
 import { Alert, Button } from "@material-tailwind/react";
 
 const BlogAdmin = () => {
@@ -88,7 +88,7 @@ const BlogAdmin = () => {
       <title>Blogs Page - Cutting Edge Correction</title>
       <meta name="description" content="Blogs Page" />
 
-      <div className="max-w-screen-xl m-auto mt-32">
+      <div className="max-w-screen-xl m-auto px-8 md:px-12 xl:px-0 pt-28 pb-8">
         {blogs.length === 0 && !isLoading ? (
           <div className="overflow-y-auto h-[600px] flex items-center justify-center">
             No blogs available.
@@ -105,7 +105,7 @@ const BlogAdmin = () => {
           </div>
         )}
 
-        <div className="flex w-full items-center justify-around lg:justify-between">
+        <div className="flex w-full items-center justify-around lg:justify-between mt-2">
           <div>
             <a href="/admin">
               <button className="w-12 lg:w-24 text-xs bg-foreground h-8 self-end hover:opacity-80 transition duration-200 cursor-pointer text-primary rounded-lg font-bold">Back</button>
@@ -116,9 +116,12 @@ const BlogAdmin = () => {
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
+              className="flex items-center justify-center w-20 px-3 py-1 border border-highlight text-highlight rounded-lg hover:bg-gray-800 disabled:border-gray-400 disabled:bg-gray-400 disabled:text-gray-300 disabled:cursor-not-allowed cursor-pointer"
             >
-              Prev
+              <div className="-ms-2">
+                <NavArrowLeft size={24} hexColor={currentPage === 1 ? "#D1D5DB" : "#00A2FF"} />
+              </div>
+              <p>Prev</p>
             </button>
 
             {[...Array(totalPages)].map((_, index) => (
@@ -126,9 +129,9 @@ const BlogAdmin = () => {
                 key={index + 1}
                 onClick={() => handlePageChange(index + 1)}
                 className={`px-3 py-1 border rounded ${currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "hover:bg-gray-100"
-                  }`}
+                  ? "bg-highlight border-highlight text-white"
+                  : "hover:bg-accent hover:text-highlight"
+                }`}
               >
                 {index + 1}
               </button>
@@ -137,9 +140,12 @@ const BlogAdmin = () => {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50"
+              className="flex items-center justify-center w-20 px-3 py-1 border border-highlight text-highlight rounded-lg hover:bg-gray-800 disabled:border-gray-400 disabled:bg-gray-400 disabled:text-gray-300 disabled:cursor-not-allowed cursor-pointer"
             >
-              Next
+              <p>Next</p>
+              <div className="-me-2">
+                <NavArrowRight size={24} hexColor={currentPage === totalPages ? "#D1D5DB" : "#00A2FF"} />
+              </div>
             </button>
           </div>
           <div>

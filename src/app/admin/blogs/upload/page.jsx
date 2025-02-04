@@ -101,7 +101,7 @@ const BlogAdminUpload = () => {
 
         <form onSubmit={handleUpload} className="space-y-6">
           {/* Thumbnail */}
-          <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
+          <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
             <label htmlFor="image" className="block text-lg font-semibold">
               Thumbnail
             </label>
@@ -111,13 +111,13 @@ const BlogAdminUpload = () => {
               name="image"
               accept="image/*"
               onChange={handleThumbnailChange}
-              className="w-full p-2 mt-1 border rounded-lg bg-primary"
+              className="w-full p-2 mt-1 border rounded-lg bg-neutral-800"
               required
             />
           </div>
 
           {/* Title Input */}
-          <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
+          <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
             <label htmlFor="title" className="block text-lg font-semibold">
               Title
             </label>
@@ -127,14 +127,14 @@ const BlogAdminUpload = () => {
               name="title"
               value={title}
               onChange={handleTitleChange}
-              className="w-full p-2 mt-1 border rounded-lg bg-primary"
+              className="w-full p-2 mt-1 border rounded-lg bg-neutral-800"
               placeholder="Enter blog title"
               required
             />
           </div>
 
           {/* Trix Editor */}
-          <div className="p-4 shadow-md rounded-lg">
+          <div className="bg-neutral-800 p-4 shadow-md rounded-lg">
             <label
               htmlFor="my_input"
               className="block text-lg font-semibold text-foreground"
@@ -143,7 +143,7 @@ const BlogAdminUpload = () => {
             </label>
             <trix-toolbar
               id="my_toolbar"
-              style={{ backgroundColor: "white" }}
+              style={{ backgroundColor: "white", fontSize: '16px', padding: '10px' }}
             ></trix-toolbar>
             <trix-editor
               id="my_input"
@@ -151,7 +151,7 @@ const BlogAdminUpload = () => {
               style={{
                 height: "300px",
                 overflowY: "auto",
-                backgroundColor: "#141416",
+                backgroundColor: "#262626",
                 color: "white",
                 fontSize: "20px",
               }}

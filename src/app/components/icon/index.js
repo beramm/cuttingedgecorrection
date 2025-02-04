@@ -52,6 +52,18 @@ export const ArrowLeftCircleSolid = ({ size, hexColor }) => (
   </svg>
 )
 
+export const NavArrowLeft = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M15 6L9 12L15 18" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
+export const NavArrowRight = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M9 6L15 12L9 18" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
 export const FacebookIcon = ({ size, hexColor }) => {
   const [isHovered, setIsHovered] = useState(false);
 
