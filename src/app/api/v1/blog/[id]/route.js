@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 export const GET = async (req, { params }) => {
   {
     try {
-      const id = parseInt(params.id);
+      const id = params.id;
       const blog = await prisma.blog.findUnique({
-        where: { id: id },
+        where: { slug: id },
       });
       if (!blog) {
         return NextResponse.json(
