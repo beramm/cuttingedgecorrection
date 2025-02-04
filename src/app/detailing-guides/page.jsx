@@ -11,6 +11,9 @@ const detailingGuides = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const router = useRouter();
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [alertType, setAlertType] = useState("error");
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchBlogs = async () => {
@@ -82,7 +85,7 @@ const detailingGuides = () => {
                 {guides.map((guide) => (
                   <BlogCard
                     blogData={guide}
-                    key={guide.slug}
+                    key={guide.id}
                   />
                 ))}
               </div>
