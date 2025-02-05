@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import BlogCard from "../components/card/blog-card/BlogCard";
 import { useRouter } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../components/icon";
+import { Alert, Button } from "@material-tailwind/react";
 
 
 const DetailingGuides = () => {
@@ -94,7 +95,7 @@ const DetailingGuides = () => {
                 </div>
               </div>
             )}
-            
+
             <div className="flex items-center justify-center gap-2 mt-14 pb-6">
               <div className="flex items-center justify-center gap-2 mt-6 pb-6">
                 <button
@@ -115,7 +116,7 @@ const DetailingGuides = () => {
                     className={`px-3 py-1 border rounded ${currentPage === index + 1
                       ? "bg-highlight border-highlight text-white"
                       : "hover:bg-accent hover:text-highlight"
-                    }`}
+                      }`}
                   >
                     {index + 1}
                   </button>
@@ -134,8 +135,31 @@ const DetailingGuides = () => {
               </div>
             </div>
           </div>
-
-
+          {showAlert && (
+            <Alert
+              open={showAlert}
+              className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+                } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
+              animate={{
+                mount: { opacity: 1 },
+                unmount: { opacity: 0 },
+              }}
+            >
+              <div className="flex justify-between items-center gap-5">
+                <span className="flex-grow">{alertMessage}</span>
+                <Button
+                  variant="text"
+                  color="white"
+                  size="sm"
+                  onClick={() => setShowAlert(false)}
+                  className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+                    } hover:opacity-80 transition duration-200`}
+                >
+                  Close
+                </Button>
+              </div>
+            </Alert>
+          )}
 
         </div>
       </div>

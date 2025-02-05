@@ -7,7 +7,7 @@ export const POST = async (req) => {
   try {
     // Get form data from request
     const formData = await req.formData();
-    
+
     const title = formData.get("title");
     const content = formData.get("content");
     const slug = formData.get("slug");
@@ -57,12 +57,6 @@ export const POST = async (req) => {
   }
 };
 
-export const config = {
-  api: {
-    bodyParser: false, // Required for handling file uploads
-  },
-};
-
 export const GET = async (req) => {
   try {
     const { searchParams } = new URL(req.url);
@@ -95,3 +89,5 @@ export const GET = async (req) => {
     );
   }
 };
+
+export const dynamic = 'auto'
