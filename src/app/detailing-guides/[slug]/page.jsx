@@ -26,46 +26,60 @@ const SingleBlog = ({ params }) => {
         fetchResults()
     }, [])
 
+    console.log(guide.content)
     return (
-        <div className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
-            <Image
-                src={guide.thumbnail}
-                alt={`thumbnail ${guide.title}`}
-                fill
-                sizes='auto'
+        <>
+            <title>{`${guide.title} - Cutting Edge Correction`}</title>
+            <meta name="description"
+                content={guide?.content
+                    ? guide.content.replace(/<[^>]+>/g, "").slice(0, 160) + "..."
+                    : "Discover expert detailing guides from Cutting Edge Correction."}
             />
-            <div>
-                <h1>{guide ? guide.title : "Loading..."}</h1>
-                <p className="line-clamp-3 text-smc" dangerouslySetInnerHTML={{ __html: guide.content }} />
-            </div>
-
-
-            {showAlert && (
-                <Alert
-                    open={showAlert}
-                    className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
-                        } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
-                    animate={{
-                        mount: { opacity: 1 },
-                        unmount: { opacity: 0 },
-                    }}
-                >
-                    <div className="flex justify-between items-center gap-5">
-                        <span className="flex-grow">{alertMessage}</span>
-                        <Button
-                            variant="text"
-                            color="white"
-                            size="sm"
-                            onClick={() => setShowAlert(false)}
-                            className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
-                                } hover:opacity-80 transition duration-200`}
-                        >
-                            Close
-                        </Button>
+            <div
+                className="h-full w-full px-8 md:px-12 xl:px-0 pt-28 pb-8"
+            >
+                <div className="relative w-full mt-12">
+                    <div className="max-w-6xl mx-auto">
+                        <p className="text-white-500 text-base mt-2 mb-8">
+                            {guide?.created_at
+                                ? new Date(guide.created_at).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })
+                                : ""}
+                            {" "}. Written By Cutting Edge Correction
+                        </p>
+                        <h1 className="text-5xl font-bold mb-8">{guide ? guide.title : "Loading..."}</h1>
+                        <p className="text-lg text-white-700" dangerouslySetInnerHTML={{ __html: guide.content }} />
                     </div>
-                </Alert>
-            )}
-        </div>
+
+
+
+                    {showAlert && (
+                        <Alert
+                            open={showAlert}
+                            className={`${alertType === "error" ? "bg-red-700" : "bg-green-700"
+                                } text-white fixed bottom-4 left-4 max-w-sm shadow-lg`}
+                            animate={{
+                                mount: { opacity: 1 },
+                                unmount: { opacity: 0 },
+                            }}
+                        >
+                            <div className="flex justify-between items-center gap-5">
+                                <span className="flex-grow">{alertMessage}</span>
+                                <Button
+                                    variant="text"
+                                    color="white"
+                                    size="sm"
+                                    onClick={() => setShowAlert(false)}
+                                    className={`${alertType === "error" ? "bg-red-900" : "bg-green-900"
+                                        } hover:opacity-80 transition duration-200`}
+                                >
+                                    Close
+                                </Button>
+                            </div>
+                        </Alert>
+                    )}
+                </div>
+            </div>
+        </>
 
 
     );
