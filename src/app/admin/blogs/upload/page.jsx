@@ -47,8 +47,10 @@ const BlogAdminUpload = () => {
                 console.error(error);
             }
         };
-        initializePage();
-    }, []);
+        if (isLoading) {
+            initializePage();
+        }
+    }, [isLoading,router]);
 
     const handleThumbnailChange = (event) => {
         const file = event.target.files[0];
