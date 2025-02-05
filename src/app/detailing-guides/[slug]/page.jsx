@@ -44,6 +44,15 @@ const SingleBlog = ({ params }) => {
             >
                 <div ref={ref} className="relative w-full mt-12">
                     <div className={`max-w-6xl mx-auto transition-all ease-in-out duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+                        {/* Thumbnail */}
+                        {guide?.thumbnail && (
+                            <img
+                                src={guide.thumbnail}
+                                alt={guide.title}
+                                className="w-full max-h-[400px] object-cover rounded-lg mb-6"
+                            />
+                        )}
+
                         <p className="text-white-500 text-base mt-2 mb-8">
                             {guide?.created_at
                                 ? new Date(guide.created_at).toLocaleDateString("en-GB", { day: "2-digit", month: "short" }) + " . Written By "
@@ -51,6 +60,8 @@ const SingleBlog = ({ params }) => {
                             <span className="text-[#00A2FF]">Cutting Edge Correction</span>
                         </p>
                         <h1 className="text-5xl font-bold mb-8">{guide ? guide.title : "Loading..."}</h1>
+
+
                         <p className="text-lg text-white-700" dangerouslySetInnerHTML={{ __html: guide.content }} />
                     </div>
 
