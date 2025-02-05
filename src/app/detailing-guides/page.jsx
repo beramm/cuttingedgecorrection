@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import BlogCard from "../components/card/blog-card/BlogCard";
 import { useRouter } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../components/icon";
+import { Alert, Button } from "@material-tailwind/react";
 
 
 const DetailingGuides = () => {
