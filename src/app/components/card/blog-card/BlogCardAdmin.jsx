@@ -35,7 +35,7 @@ const BlogCardAdmin = ({ blogData , handleDelete}) => {
             .toUpperCase()}
         </p>
         
-        <p className="line-clamp-3 text-smc" dangerouslySetInnerHTML={{ __html: blogData.content }}/>
+        <p className="line-clamp-3 text-smc mb-4" dangerouslySetInnerHTML={{ __html: blogData.content }}/>
 
         {/* <button className="text-sm font-medium mt-4 flex items-center justify-between gap-x-2">
           <p>Read more</p>
