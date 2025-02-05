@@ -45,3 +45,13 @@ model Item {
   image_link    String
   payment_link  String
 }
+
+model Blog {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  title       String    @db.Text()
+  content     String    @db.Text()
+  thumbnail   String    @db.Text()
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+}

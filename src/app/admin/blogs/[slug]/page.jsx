@@ -1,8 +1,8 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import "trix";
-import "trix/dist/trix.css";
+// import "trix";
+// import "trix/dist/trix.css";
 import { LoadingSpinner } from "../../../components/icon";
 import axios from "axios";
 import Image from "next/image";
@@ -28,56 +28,56 @@ const BlogAdminEdit = () => {
     }
   }, [error]);
 
-  useEffect(() => {
-    const fetchBlog = async () => {
-      try {
-        const response = await axios.get(`/api/v1/blog/${slug}`);
-        const blogData = response.data.blog;
-        setBlog(blogData);
-        setTitle(blogData.title);
-        setContent(blogData.content);
+//   useEffect(() => {
+//     const fetchBlog = async () => {
+//       try {
+//         const response = await axios.get(`/api/v1/blog/${slug}`);
+//         const blogData = response.data.blog;
+//         setBlog(blogData);
+//         setTitle(blogData.title);
+//         setContent(blogData.content);
         
-        const trixEditor = document.querySelector("trix-editor");
-        if (trixEditor) {
-          trixEditor.editor.loadHTML(blogData.content);
-        }
-      } catch (error) {
-        setError(error.response?.data?.message || "Error fetching blog");
-        console.error("Fetch error:", error);
-        router.push("/admin/blogs")
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchBlog();
-  }, [slug]);
+//         const trixEditor = document.querySelector("trix-editor");
+//         if (trixEditor) {
+//           trixEditor.editor.loadHTML(blogData.content);
+//         }
+//       } catch (error) {
+//         setError(error.response?.data?.message || "Error fetching blog");
+//         console.error("Fetch error:", error);
+//         router.push("/admin/blogs")
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+//     fetchBlog();
+//   }, [slug]);
 
-  useEffect(() => {
-    const handleTrixInitialize = (event) => {
-      const trixEditor = event.target;
-      if (content && trixEditor) {
-        trixEditor.editor.loadHTML(content);
-      }
-    };
+//   useEffect(() => {
+//     const handleTrixInitialize = (event) => {
+//       const trixEditor = event.target;
+//       if (content && trixEditor) {
+//         trixEditor.editor.loadHTML(content);
+//       }
+//     };
 
-    const handleTrixFileAccept = (event) => {
-      event.preventDefault();
-    };
+//     const handleTrixFileAccept = (event) => {
+//       event.preventDefault();
+//     };
 
-    const handleTrixChange = (event) => {
-      setContent(event.target.innerHTML);
-    };
+//     const handleTrixChange = (event) => {
+//       setContent(event.target.innerHTML);
+//     };
 
-    document.addEventListener("trix-initialize", handleTrixInitialize);
-    document.addEventListener("trix-file-accept", handleTrixFileAccept);
-    document.addEventListener("trix-change", handleTrixChange);
+//     document.addEventListener("trix-initialize", handleTrixInitialize);
+//     document.addEventListener("trix-file-accept", handleTrixFileAccept);
+//     document.addEventListener("trix-change", handleTrixChange);
 
-    return () => {
-      document.removeEventListener("trix-initialize", handleTrixInitialize);
-      document.removeEventListener("trix-file-accept", handleTrixFileAccept);
-      document.removeEventListener("trix-change", handleTrixChange);
-    };
-  }, [content]);
+//     return () => {
+//       document.removeEventListener("trix-initialize", handleTrixInitialize);
+//       document.removeEventListener("trix-file-accept", handleTrixFileAccept);
+//       document.removeEventListener("trix-change", handleTrixChange);
+//     };
+//   }, [content]);
 
   useEffect(() => {
     const initializePage = async () => {
