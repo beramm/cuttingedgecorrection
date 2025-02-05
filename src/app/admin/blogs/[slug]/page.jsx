@@ -94,7 +94,7 @@ const BlogAdminEdit = () => {
       }
     };
     initializePage();
-  }, [router]);
+  }, []);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);

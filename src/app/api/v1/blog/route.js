@@ -7,7 +7,7 @@ export const POST = async (req) => {
   try {
     // Get form data from request
     const formData = await req.formData();
-    
+
     const title = formData.get("title");
     const content = formData.get("content");
     const slug = formData.get("slug");
@@ -91,3 +91,5 @@ export const GET = async (req) => {
     );
   }
 };
+
+export const dynamic = 'auto'
