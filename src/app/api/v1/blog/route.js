@@ -90,8 +90,4 @@ export const GET = async (req) => {
   }
 };
 
-export const config = {
-  api: {
-    bodyParser: false, // Required for handling file uploads
-  },
-};
+export const dynamic = 'auto'
