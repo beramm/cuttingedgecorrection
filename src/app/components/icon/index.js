@@ -26,6 +26,44 @@ export const ArrowUpCircleSolid = ({ size, hexColor }) => (
   </svg>
 )
 
+export const ArrowRightCircleNonSolid = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M8 12H16M16 12L12.5 8.5M16 12L12.5 15.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
+export const ArrowRightCircleSolid = ({ size, hexColor }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor} strokeWidth="1.5">
+    <path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM13.0303 7.96967L16.5303 11.4697C16.8232 11.7626 16.8232 12.2374 16.5303 12.5303L13.0303 16.0303C12.7374 16.3232 12.2626 16.3232 11.9697 16.0303C11.6768 15.7374 11.6768 15.2626 11.9697 14.9697L14.1893 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H14.1893L11.9697 9.03033C11.6768 8.73744 11.6768 8.26256 11.9697 7.96967C12.2626 7.67678 12.7374 7.67678 13.0303 7.96967Z" fill={hexColor}></path>
+  </svg>
+)
+
+export const ArrowLeftCircleNonSolid = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M16 12H8M8 12L11.5 15.5M8 12L11.5 8.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
+export const ArrowLeftCircleSolid = ({ size, hexColor }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor} strokeWidth="1.5">
+    <path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM10.9697 16.0303L7.46967 12.5303C7.17678 12.2374 7.17678 11.7626 7.46967 11.4697L10.9697 7.96967C11.2626 7.67678 11.7374 7.67678 12.0303 7.96967C12.3232 8.26256 12.3232 8.73744 12.0303 9.03033L9.81066 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H9.81066L12.0303 14.9697C12.3232 15.2626 12.3232 15.7374 12.0303 16.0303C11.7374 16.3232 11.2626 16.3232 10.9697 16.0303Z" fill={hexColor}></path>
+  </svg>
+)
+
+export const NavArrowLeft = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M15 6L9 12L15 18" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
+export const NavArrowRight = ({ size, hexColor }) => (
+  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
+    <path d="M9 6L15 12L9 18" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+  </svg>
+)
+
 export const FacebookIcon = ({ size, hexColor }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -136,13 +174,7 @@ export const TrashSolidIcon = ({ size, hexColor }) => {
   )
 }
 
-export const CartIcon = ({ size, hexColor }) => (
-  <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
-    <path d="M3 6H22L19 16H6L3 6ZM3 6L2.25 3.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-    <path d="M11 19.5C11 20.3284 10.3284 21 9.5 21C8.67157 21 8 20.3284 8 19.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-    <path d="M17 19.5C17 20.3284 16.3284 21 15.5 21C14.6716 21 14 20.3284 14 19.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-  </svg>
-)
+
 
 export const CartRemoveIcon = ({ size, hexColor }) => (
   <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
@@ -152,6 +184,16 @@ export const CartRemoveIcon = ({ size, hexColor }) => (
     <path d="M17 19.5C17 20.3284 16.3284 21 15.5 21C14.6716 21 14 20.3284 14 19.5" stroke={hexColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
   </svg>
 )
+
+export const PencilIcon = ({size , hexColor}) => { 
+  return ( 
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"  className="hover:opacity-50 cursor-pointer">
+<path fillRule="evenodd" clipRule="evenodd" d="M2.25 21C2.25 20.5858 2.58579 20.25 3 20.25L21 20.25C21.4142 20.25 21.75 20.5858 21.75 21C21.75 21.4142 21.4142 21.75 21 21.75L3 21.75C2.58579 21.75 2.25 21.4142 2.25 21Z" fill={hexColor}/>
+<path fillRule="evenodd" clipRule="evenodd" d="M20.5302 8.48004C20.8231 8.18714 20.8231 7.71227 20.5302 7.41938L15.5805 2.46963C15.2876 2.17674 14.8127 2.17674 14.5198 2.46963L6.08478 10.9047C5.75659 11.2328 5.57222 11.678 5.57222 12.1421L5.57222 16.6776C5.57222 17.0918 5.90801 17.4276 6.32222 17.4276L10.8577 17.4276C11.3219 17.4276 11.767 17.2433 12.0952 16.9151L20.5302 8.48004ZM18.9392 7.94971L17.1715 9.71747L13.2824 5.82839L15.0501 4.06062L18.9392 7.94971ZM12.2217 6.88905L16.1108 10.7781L11.0345 15.8544C10.9876 15.9013 10.9241 15.9276 10.8578 15.9276L7.07222 15.9276L7.07222 12.1421C7.07222 12.0758 7.09856 12.0122 7.14544 11.9653L12.2217 6.88905Z" fill={hexColor}/>
+</svg>
+
+  )
+}
 
 export const CartAddIcon = ({ size, hexColor }) => (
   <svg width={size} height={size} strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color={hexColor}>
