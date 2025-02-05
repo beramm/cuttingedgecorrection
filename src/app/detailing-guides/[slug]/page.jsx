@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
 import { useIsVisible } from "../../hooks/useIsVisible";
+import { Alert, Button } from "@material-tailwind/react";
 
 
 const SingleBlog = ({ params }) => {
