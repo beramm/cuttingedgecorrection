@@ -21,16 +21,20 @@ const BlogAdminUpload = () => {
         const handleTrixInit = () => console.log("Trix Editor Initialized");
         const handleTrixFileAccept = (event) => event.preventDefault();
 
-        document.addEventListener("trix-initialize", handleTrixInit);
-        document.addEventListener("trix-file-accept", handleTrixFileAccept);
-        document.addEventListener("trix-change", handleTrixChange);
+        // Attach event listeners only once, during initial mount
+        if (document.querySelector("trix-editor")) {
+            document.addEventListener("trix-initialize", handleTrixInit);
+            document.addEventListener("trix-file-accept", handleTrixFileAccept);
+            document.addEventListener("trix-change", handleTrixChange);
+        }
 
+        // Cleanup event listeners on unmount
         return () => {
             document.removeEventListener("trix-initialize", handleTrixInit);
             document.removeEventListener("trix-file-accept", handleTrixFileAccept);
             document.removeEventListener("trix-change", handleTrixChange);
         };
-    }, []);
+    }, []);  // Empty dependency array ensures this runs once, when the component mounts
 
 
     useEffect(() => {
@@ -47,10 +51,8 @@ const BlogAdminUpload = () => {
                 console.error(error);
             }
         };
-        if (isLoading) {
-            initializePage();
-        }
-    }, [isLoading,router]);
+        initializePage();
+    }, []);
 
     const handleThumbnailChange = (event) => {
         const file = event.target.files[0];
