@@ -46,7 +46,7 @@ const BlogAdmin = () => {
       }
     };
     initializePage();
-  }, [currentPage, router]);
+  }, [currentPage]);
 
   if (isLoading) {
     return (

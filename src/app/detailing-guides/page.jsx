@@ -49,7 +49,7 @@ const DetailingGuides = () => {
       }
     };
     initializePage();
-  }, [currentPage, router]);
+  }, [currentPage]);
 
   return (
     <>
