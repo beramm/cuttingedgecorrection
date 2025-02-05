@@ -57,11 +57,7 @@ export const POST = async (req) => {
   }
 };
 
-export const config = {
-  api: {
-    bodyParser: false, // Required for handling file uploads
-  },
-};
+export const runtime = 'nodejs'
 
 export const GET = async (req) => {
   try {
