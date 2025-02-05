@@ -32,7 +32,7 @@ const BlogCard = ({ blogData }) => {
             {blogData.title}
           </h1>
           <p className="font-normal text-sm mt-1 mb-4 text-highlight">
-            {new Date(blogData.createdAt)
+            {new Date(blogData.created_at)
               .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
               .toUpperCase()}
           </p>
