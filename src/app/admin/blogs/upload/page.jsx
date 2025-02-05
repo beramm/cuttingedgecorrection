@@ -97,7 +97,8 @@ const BlogAdminUpload = () => {
     return (
         <>
             <title>Upload Blogs - Cutting Edge Correction</title>
-            <meta name="description" content="Upload blogs Page" />
+            <meta name="description" content="Upload blog to display on detailing guides page" />
+
             <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
                 <style>{`
         trix-toolbar [data-trix-button-group="file-tools"] {
