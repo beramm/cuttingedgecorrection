@@ -50,7 +50,7 @@ const BlogAdminEdit = () => {
       }
     };
     fetchBlog();
-  }, [slug]);
+  }, [slug , router]);
 
   useEffect(() => {
     const handleTrixInitialize = (event) => {
@@ -94,7 +94,7 @@ const BlogAdminEdit = () => {
       }
     };
     initializePage();
-  }, []);
+  }, [router]);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);

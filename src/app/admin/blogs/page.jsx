@@ -17,7 +17,7 @@ const BlogAdmin = () => {
   const [alertType, setAlertType] = useState("error");
   const router = useRouter();
 
-  const fetchBlogs = async () => {
+  const fetchBlogs = useCallback(async () => {
     try {
       const resp = await axios.get(`/api/v1/blog?page=${currentPage}`);
       setBlogs(resp.data.data);
@@ -28,8 +28,8 @@ const BlogAdmin = () => {
       setAlertMessage("Error fetching blogs. Please try again.");
       setShowAlert(true);
     }
-  };
-
+  }, [currentPage]);
+  
   useEffect(() => {
     const initializePage = async () => {
       try {
@@ -46,7 +46,7 @@ const BlogAdmin = () => {
       }
     };
     initializePage();
-  }, [currentPage]);
+  }, [currentPage, fetchBlogs, router]);
 
   if (isLoading) {
     return (

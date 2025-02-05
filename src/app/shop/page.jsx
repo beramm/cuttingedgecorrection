@@ -1,5 +1,6 @@
 "use client"
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
+import Image from "next/image";
 import React from "react";
 
 const products = [
@@ -64,7 +65,9 @@ const ShopPage = () => {
               className="bg-primary shadow-neutral-800 rounded-t-xl"
             >
               <CardHeader className="h-80">
-                <img
+                <Image
+                width={400}
+                height={400}
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover"

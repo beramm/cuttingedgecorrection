@@ -23,12 +23,14 @@ const EachServicePage = ({ service, serviceName }) => {
       setResultPict(response.data.data)
     }
     fetchResults()
-  }, [])
+  }, [serviceName])
   
   return (
     <>
       <div ref={ref1} className="h-dvh w-full flex items-center justify-end overflow-hidden 2xl:overflow-visible">
-        <img
+        <Image
+          width={400}
+          height={400}
           className={`fixed top-0 md:left-0 right-0 object-cover block mx-auto 2xl:mx-0 h-[60dvh] md:h-dvh w-auto sm:w-full -z-20 transition-opacity duration-500 ease-in ${isVisible1 ? "opacity-100" : "opacity-0"}`}
           src={service.landingImage}
           alt="Background Image"

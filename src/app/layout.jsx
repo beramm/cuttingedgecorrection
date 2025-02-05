@@ -1,12 +1,11 @@
 import { Roboto } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import "swiper/css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import "swiper/css";
-import Image from "next/image";
-
-
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -14,58 +13,54 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  // title: {
-  //   absolute: "", // to ignore the template
-  //   default: "Cutting Edge Correction",
-  //   template: "%s | CEC" // using %s so it can be dynamic title name
-  // },
-  // description: "Cutting Edge Correction, AU",
+  title: {
+    default: "Cutting Edge Correction",
+    template: "%s | CEC"
+  },
+  description: "Professional Detailing Services in Australia",
   icons: {
     icon: '/favicon.ico',
     sizes: 'any',
-    rel: 'icon',
   },
+  openGraph: {
+    title: "Cutting Edge Correction",
+    description: "Professional Automotive Detailing",
+    url: "https://cecdetailing.com.au",
+    siteName: "CEC Detailing",
+    type: "website"
+  }
 };
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
+  "@type": "LocalBusiness",
+  "name": "Cutting Edge Correction",
+  "description": "Professional Automotive Detailing Services",
+  "url": "https://cecdetailing.com.au",
+  "telephone": "+61 PHONE_NUMBER",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "YOUR_ADDRESS",
+    "addressLocality": "CITY",
+    "addressRegion": "STATE",
+    "postalCode": "POSTCODE",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "YOUR_LATITUDE",
+    "longitude": "YOUR_LONGITUDE"
+  },
+  "service": [
     {
-      "@type": "ListItem",
-      "position": 1,
+      "@type": "Service",
       "name": "Ceramic Coating",
-      "url": "https://www.cecdetailing.com.au/services/ceramic-coating"
+      "description": "Professional ceramic coating application"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Decontamination",
-      "url": "https://www.cecdetailing.com.au/services/decontamination"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "Service", 
       "name": "Paint Correction",
-      "url": "https://www.cecdetailing.com.au/services/paint-correction"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Headlight Restoration",
-      "url": "https://www.cecdetailing.com.au/services/headlight-restoration"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Interior Detailing",
-      "url": "https://www.cecdetailing.com.au/services/interior-detailing"
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "name": "Engine Bay Detail",
-      "url": "https://www.cecdetailing.com.au/services/engine-bay-detail"
+      "description": "Comprehensive paint restoration"
     }
   ]
 };
@@ -74,34 +69,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16655963362"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16655963362');
-            `,
-          }}
         />
-
-        <script
+        <Script 
+          id="google-analytics" 
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16655963362');
+          `}
+        </Script>
+        <Script
+          id="structured-data"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify(structuredData)}
+        </Script>
       </head>
-
       <body className={`${roboto.className} antialiased relative`}>
         <Navbar />
-        <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
+        <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full min-h-screen">
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

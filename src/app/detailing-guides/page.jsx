@@ -18,7 +18,7 @@ const DetailingGuides = () => {
   const [alertType, setAlertType] = useState("error");
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchBlogs = async () => {
+  const fetchBlogs  = useCallback( async() => {
     try {
       const resp = await axios.get(`/api/v1/blog?page=${currentPage}`);
       setGuides(resp.data.data);
@@ -30,7 +30,7 @@ const DetailingGuides = () => {
       setAlertMessage("Error fetching blogs. Please try again.");
       setShowAlert(true);
     }
-  };
+  } , [currentPage]);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -50,7 +50,7 @@ const DetailingGuides = () => {
       }
     };
     initializePage();
-  }, [currentPage]);
+  }, [currentPage , fetchBlogs]);
 
   return (
     <>

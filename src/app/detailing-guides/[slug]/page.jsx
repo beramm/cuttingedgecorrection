@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
 import { useIsVisible } from "../../hooks/useIsVisible";
 import { Alert, Button } from "@material-tailwind/react";
+import Image from 'next/image';
 
 
 const SingleBlog = ({ params }) => {
@@ -29,7 +30,7 @@ const SingleBlog = ({ params }) => {
             }
         }
         fetchResults()
-    }, [])
+    }, [slug])
 
     console.log(guide.content)
     return (
@@ -47,7 +48,9 @@ const SingleBlog = ({ params }) => {
                     <div className={`max-w-6xl mx-auto transition-all ease-in-out duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                         {/* Thumbnail */}
                         {guide?.thumbnail && (
-                            <img
+                            <Image
+                                width={400}
+                                height={400}
                                 src={guide.thumbnail}
                                 alt={guide.title}
                                 className="w-full max-h-[400px] object-cover rounded-lg mb-6"
