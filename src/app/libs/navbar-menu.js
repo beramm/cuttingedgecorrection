@@ -28,7 +28,7 @@ export const navbarMenu = [
     subMenu: true,
     submenuList: [
       { name: 'Our Location', link: '/our-location' },
-      { name: 'Gallery', link: '/gallery' },
+      { name: 'Detailing Guides', link: '/detailing-guides' },
       { name: 'FAQ', link: '/faq' },
       { name: 'Privacy Policy & TOS', link: '/privacy-policy-tos' },
     ]
