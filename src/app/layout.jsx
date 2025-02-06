@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
       </head>
 
-      <body className={`${roboto.className} antialiased relative`}>
+      <body className={`${roboto.className} antialiased relative overflow-x-hidden`}>
         <Navbar />
         <main className="flex flex-wrap flex-col items-center justify-between mx-auto w-full">
           {children}
