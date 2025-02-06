@@ -20,6 +20,7 @@ const BlogAdminEdit = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [blog, setBlog] = useState({});
+    const [thumbnail , setThumnail] = useState("")
     const params = useParams();
     const router = useRouter();
     const slug = params.slug;
@@ -55,6 +56,7 @@ const BlogAdminEdit = () => {
                 const blogData = response.data.blog;
                 setBlog(blogData);
                 setTitle(blogData.title);
+                setThumnail(blogData.thumbnail)
                 setContent(blogData.content);
             } catch (error) {
                 setError(error.response?.data?.message || "Error fetching blog");
@@ -89,6 +91,10 @@ const BlogAdminEdit = () => {
         setError(null);
     };
 
+    const handleTHumbnail = (e)=> { 
+        setThumnail(e.target.value) 
+        setError(null)
+    }
     const handleEditorChange = (newContent) => {
         setContent(newContent);
     };
@@ -108,6 +114,9 @@ const BlogAdminEdit = () => {
             }
             if (content !== blog.content) {
                 updatedData.content = content;
+            }
+            if(thumbnail !== blog.thumbnail) { 
+                updatedData.thumbnail = thumbnail
             }
 
             if (Object.keys(updatedData).length > 0) {
@@ -149,8 +158,25 @@ const BlogAdminEdit = () => {
             <title>Edit Blog - Cutting Edge Correction</title>
             <meta name="description" content="Edit blog to display on detailing guides page" />
 
-            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
-                {blog.thumbnail && (
+            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto overflow-auto mt-16">
+                <form onSubmit={handleSave} className="space-y-6">
+                <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground flex">
+                    <div className="flex-1">
+                    <label htmlFor="thumbnailUrl" className="block text-lg font-semibold">
+                            Thumbnail URL (Google Drive Link)
+                        </label>
+                        <textarea
+                            id="thumbnailUrl"
+                            name="thumbnailUrl"
+                            className="w-full p-2 mt-1 border rounded-lg bg-neutral-800 resize-none"
+                            placeholder="Insert Google Drive Image URL"
+                            value={thumbnail}
+                            onChange={handleTHumbnail}
+                            rows="4"
+                            required
+                        />
+                    </div>
+                         {blog.thumbnail && (
                     <Image
                         width={300}
                         height={300}
@@ -159,8 +185,8 @@ const BlogAdminEdit = () => {
                         className="w-32 h-32 object-cover rounded-lg self-center"
                     />
                 )}
-                <form onSubmit={handleSave} className="space-y-6">
-                    <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
+                    </div>
+                    <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
                         <label htmlFor="title" className="block text-lg font-semibold">
                             Title
                         </label>
@@ -170,13 +196,13 @@ const BlogAdminEdit = () => {
                             name="title"
                             value={title}
                             onChange={handleTitleChange}
-                            className="w-full p-2 mt-1 border rounded-lg bg-primary"
+                            className="w-full p-2 mt-1 border rounded-lg bg-neutral-800"
                             placeholder="Enter blog title"
                             required
                         />
                     </div>
 
-                    <div className="bg-primary p-4 shadow-md rounded-lg">
+                    <div className="bg-neutral-800 p-4 shadow-md rounded-lg">
                         <label className="block text-lg font-semibold text-foreground mb-2">
                             Content
                         </label>
@@ -187,7 +213,7 @@ const BlogAdminEdit = () => {
                                 onChange={handleEditorChange}
                                 modules={quillModules}
                                 formats={quillFormats}
-                                className="w-full h-[300px] overflow-y-auto mt-10 bg-white"
+                                className="w-full h-[250px] overflow-y-auto bg-white"
                                 style={{ color: "black" }}
 
                             />
