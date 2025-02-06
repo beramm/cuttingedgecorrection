@@ -81,7 +81,7 @@ const DetailingGuides = () => {
           <div className="max-w-screen-xl m-auto mt-20">
             {guides.length === 0 && !isLoading ? (
               <div className="overflow-y-auto h-[600px] flex items-center justify-center">
-                No guides available.
+                Detailing guides are loading...
               </div>
             ) : (
               <div className="flex items-center justify-center">
