@@ -188,6 +188,8 @@ const BlogAdminEdit = () => {
                                 modules={quillModules}
                                 formats={quillFormats}
                                 className="w-full h-[300px] overflow-y-auto mt-10 bg-white"
+                                style={{ color: "black" }}
+
                             />
                         </div>
                     </div>
