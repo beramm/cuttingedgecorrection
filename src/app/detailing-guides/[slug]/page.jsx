@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useIsVisible } from "../../hooks/useIsVisible";
 import { Alert, Button } from "@material-tailwind/react";
 
 
@@ -12,9 +11,6 @@ const SingleBlog = ({ params }) => {
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
     const [alertType, setAlertType] = useState("error");
-
-    const ref = useRef();
-    const isVisible = useIsVisible(ref);
 
     useEffect(() => {
         const fetchResults = async () => {
@@ -42,8 +38,8 @@ const SingleBlog = ({ params }) => {
             <div
                 className="h-full w-full px-8 md:px-12 xl:px-0 pt-28 pb-8"
             >
-                <div ref={ref} className="relative w-full mt-12">
-                    <div className={`max-w-6xl mx-auto transition-all ease-in-out duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+                <div  className="relative w-full mt-12">
+                    <div className={`max-w-6xl mx-auto`}>
                         {/* Thumbnail */}
                         {guide?.thumbnail && (
                             <img
