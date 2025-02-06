@@ -20,10 +20,14 @@ const BlogAdminEdit = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [blog, setBlog] = useState({});
-    const [thumbnail , setThumnail] = useState("")
+    const [thumbnail, setThumnail] = useState("")
     const params = useParams();
     const router = useRouter();
     const slug = params.slug;
+
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
+    const [alertType, setAlertType] = useState("error");
 
     const quillModules = {
         toolbar: [
@@ -91,8 +95,8 @@ const BlogAdminEdit = () => {
         setError(null);
     };
 
-    const handleTHumbnail = (e)=> { 
-        setThumnail(e.target.value) 
+    const handleTHumbnail = (e) => {
+        setThumnail(e.target.value)
         setError(null)
     }
     const handleEditorChange = (newContent) => {
@@ -115,8 +119,27 @@ const BlogAdminEdit = () => {
             if (content !== blog.content) {
                 updatedData.content = content;
             }
-            if(thumbnail !== blog.thumbnail) { 
-                updatedData.thumbnail = thumbnail
+            if (thumbnail !== blog.thumbnail) {
+                if (!thumbnail.match(/^https?:\/\/.+/)) {
+                    setAlertType("error");
+                    setAlertMessage("Invalid URL format. URL must start with http:// or https://");
+                    setShowAlert(true);
+                    return;
+                }
+                const driveRegex = /https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/view\?.*/;
+                const match = thumbnail.match(driveRegex);
+                let transformedUrl = "";
+
+                if (match) {
+                    const fileId = match[1];
+                    transformedUrl = `https://drive.google.com/uc?id=${fileId}`;
+                } else {
+                    setAlertType("error");
+                    setAlertMessage("Invalid Google Drive URL format.");
+                    setShowAlert(true);
+                    return;
+                }
+                updatedData.thumbnail = transformedUrl
             }
 
             if (Object.keys(updatedData).length > 0) {
@@ -160,31 +183,31 @@ const BlogAdminEdit = () => {
 
             <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto overflow-auto mt-16">
                 <form onSubmit={handleSave} className="space-y-6">
-                <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground flex">
-                    <div className="flex-1">
-                    <label htmlFor="thumbnailUrl" className="block text-lg font-semibold">
-                            Thumbnail URL (Google Drive Link)
-                        </label>
-                        <textarea
-                            id="thumbnailUrl"
-                            name="thumbnailUrl"
-                            className="w-full p-2 mt-1 border rounded-lg bg-neutral-800 resize-none"
-                            placeholder="Insert Google Drive Image URL"
-                            value={thumbnail}
-                            onChange={handleTHumbnail}
-                            rows="4"
-                            required
-                        />
-                    </div>
-                         {blog.thumbnail && (
-                    <Image
-                        width={300}
-                        height={300}
-                        src={blog.thumbnail}
-                        alt="Current Thumbnail"
-                        className="w-32 h-32 object-cover rounded-lg self-center"
-                    />
-                )}
+                    <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground flex">
+                        <div className="flex-1">
+                            <label htmlFor="thumbnailUrl" className="block text-lg font-semibold">
+                                Thumbnail URL (Google Drive Link)
+                            </label>
+                            <textarea
+                                id="thumbnailUrl"
+                                name="thumbnailUrl"
+                                className="w-full p-2 mt-1 border rounded-lg bg-neutral-800 resize-none"
+                                placeholder="Insert Google Drive Image URL"
+                                value={thumbnail}
+                                onChange={handleTHumbnail}
+                                rows="4"
+                                required
+                            />
+                        </div>
+                        {blog.thumbnail && (
+                            <Image
+                                width={300}
+                                height={300}
+                                src={blog.thumbnail}
+                                alt="Current Thumbnail"
+                                className="w-32 h-32 object-cover rounded-lg self-center"
+                            />
+                        )}
                     </div>
                     <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
                         <label htmlFor="title" className="block text-lg font-semibold">
@@ -213,7 +236,7 @@ const BlogAdminEdit = () => {
                                 onChange={handleEditorChange}
                                 modules={quillModules}
                                 formats={quillFormats}
-                                className="w-full h-[250px] overflow-y-auto bg-white"
+                                className="w-full h-[220px] overflow-y-auto bg-white"
                                 style={{ color: "black" }}
 
                             />
