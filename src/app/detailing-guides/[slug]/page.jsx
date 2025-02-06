@@ -31,7 +31,6 @@ const SingleBlog = ({ params }) => {
         fetchResults()
     }, [])
 
-    console.log(guide.content)
     return (
         <>
             <title>{`${guide.title} - Cutting Edge Correction`}</title>
@@ -55,10 +54,16 @@ const SingleBlog = ({ params }) => {
                         )}
 
                         <p className="text-white-500 text-base mt-2 mb-8">
-                            {guide?.created_at
-                                ? new Date(guide.created_at).toLocaleDateString("en-GB", { day: "2-digit", month: "short" }) + " . Written By "
-                                : ""}
-                            <span className="text-[#00A2FF]">Cutting Edge Correction</span>
+                            {guide?.created_at && (
+                                <>
+                                    {new Date(guide.created_at).toLocaleDateString("en-GB", {
+                                        day: "2-digit",
+                                        month: "short",
+                                    })}{" "}
+                                    · Written By{" "}
+                                    <span className="text-[#00A2FF]">Cutting Edge Correction</span>
+                                </>
+                            )}
                         </p>
                         <h1 className="text-5xl font-bold mb-8">{guide ? guide.title : "Loading..."}</h1>
 
