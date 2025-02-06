@@ -16,7 +16,7 @@ const BlogCard = ({ blogData }) => {
       href={`/detailing-guides/${blogData.slug}`}
       passHref
       ref={ref}
-      className={`w-full md:w-[280px] xl:w-[400px] h-[500px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transform hover:scale-105 transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      className={`w-full md:w-[280px] xl:w-[400px] max-xs:h-[560px] h-[500px] flex flex-col items-start justify-start bg-[#1F1F22] rounded-lg cursor-pointer transform hover:scale-105 transition-all ease-in-out duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
       <div className="w-full min-h-[256px] relative overflow-hidden rounded-t-lg">
         <Image
