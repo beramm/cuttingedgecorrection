@@ -88,19 +88,7 @@ const BlogAdminUpload = () => {
             ['clean'],
         ],
     };
-    // const quillFormats = [
-    //     'header',
-    //     'bold',
-    //     'italic',
-    //     'underline',
-    //     'strike',
-    //     'blockquote',
-    //     'list',
-    //     'bullet',
-    //     'link',
-    //     'align',
-    //     'color',
-    // ];
+ 
 
     const handleEditorChange = (newContent) => {
         setContent(newContent);
