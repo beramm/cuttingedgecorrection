@@ -170,7 +170,7 @@ const BlogAdminUpload = () => {
                                 'align',
                                 'color',
                             ]}
-                            className="w-full h-[350px] overflow-y-auto mt-10 bg-white"
+                            className="w-full h-[300px] overflow-y-auto mt-10 bg-white"
                             style={{ color: "black" }}
                         />
 

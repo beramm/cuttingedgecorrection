@@ -8,7 +8,7 @@ import slugify from "slugify";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 
-const QuillEditor = dynamic(() => import('react-quill'), { 
+const QuillEditor = dynamic(() => import('react-quill'), {
     ssr: false,
     loading: () => <p>Loading editor...</p>,
 });
@@ -187,7 +187,7 @@ const BlogAdminEdit = () => {
                                 onChange={handleEditorChange}
                                 modules={quillModules}
                                 formats={quillFormats}
-                                className="min-h-[350px] text-primary"
+                                className="w-full h-[300px] overflow-y-auto mt-10 bg-white"
                             />
                         </div>
                     </div>
