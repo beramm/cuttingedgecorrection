@@ -1,7 +1,6 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
 import { LoadingSpinner } from "../../../components/icon";
 import axios from "axios";
 import Image from "next/image";
@@ -9,8 +8,10 @@ import slugify from "slugify";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 
-const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
-
+const QuillEditor = dynamic(() => import('react-quill'), { 
+    ssr: false,
+    loading: () => <p>Loading editor...</p>,
+});
 
 const BlogAdminEdit = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +23,21 @@ const BlogAdminEdit = () => {
     const params = useParams();
     const router = useRouter();
     const slug = params.slug;
+
+    const quillModules = {
+        toolbar: [
+            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+            ['link'],
+            [{ 'align': [] }],
+            [{ 'color': [] }],
+            ['clean'],
+        ],
+    };
+
+    const quillFormats = [
+        'bold', 'italic', 'underline', 'strike', 'blockquote',
+        'link', 'align', 'color',
+    ];
 
     useEffect(() => {
         if (error) {
@@ -40,73 +56,16 @@ const BlogAdminEdit = () => {
                 setBlog(blogData);
                 setTitle(blogData.title);
                 setContent(blogData.content);
-
-                const trixEditor = document.querySelector("trix-editor");
-                if (trixEditor) {
-                    trixEditor.editor.loadHTML(blogData.content);
-                }
             } catch (error) {
                 setError(error.response?.data?.message || "Error fetching blog");
                 console.error("Fetch error:", error);
-                router.push("/admin/blogs")
+                router.push("/admin/blogs");
             } finally {
                 setIsLoading(false);
             }
         };
         fetchBlog();
-    }, [slug]);
-
-    useEffect(() => {
-        let quillInstance = null;
-
-        const initializeQuill = () => {
-            quillInstance = new Quill("#quill-editor", {
-                theme: "snow",
-                modules: {
-                    toolbar: [
-                        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-                        ['link'],
-                        [{ align: [] }],
-                        [{ color: [] }],
-                        ['clean'],
-                    ],
-                },
-            });
-
-            if (content) {
-                quillInstance.root.innerHTML = content;  // Load existing content into Quill
-            }
-
-            // Handle content changes
-            quillInstance.on("text-change", () => {
-                setContent(quillInstance.root.innerHTML);
-            });
-        };
-
-        initializeQuill();
-
-        // Cleanup when the component unmounts
-        return () => {
-            if (quillInstance) {
-                quillInstance.off("text-change");
-            }
-        };
-    }, [content]);
-
-
-    const quillModules = {
-        toolbar: [
-            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-            ['link'],
-            [{ align: [] }],
-            [{ color: [] }],
-            ['clean'],
-        ],
-    };
-
-    const handleEditorChange = (newContent) => {
-        setContent(newContent);
-    };
+    }, [slug, router]);
 
     useEffect(() => {
         const initializePage = async () => {
@@ -123,11 +82,15 @@ const BlogAdminEdit = () => {
             }
         };
         initializePage();
-    }, []);
+    }, [router]);
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
         setError(null);
+    };
+
+    const handleEditorChange = (newContent) => {
+        setContent(newContent);
     };
 
     const handleSave = async (event) => {
@@ -147,11 +110,10 @@ const BlogAdminEdit = () => {
                 updatedData.content = content;
             }
 
-            // Only send request if there's something to update
             if (Object.keys(updatedData).length > 0) {
                 const response = await axios.patch(
                     `/api/v1/blog/${blog.id}`,
-                    updatedData, // Send JSON object
+                    updatedData,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -187,7 +149,6 @@ const BlogAdminEdit = () => {
             <title>Edit Blog - Cutting Edge Correction</title>
             <meta name="description" content="Edit blog to display on detailing guides page" />
 
-
             <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
                 {blog.thumbnail && (
                     <Image
@@ -198,8 +159,7 @@ const BlogAdminEdit = () => {
                         className="w-32 h-32 object-cover rounded-lg self-center"
                     />
                 )}
-                <form onSubmit={handleSave}>
-                    {/* Title Input */}
+                <form onSubmit={handleSave} className="space-y-6">
                     <div className="bg-primary p-4 shadow-md rounded-lg text-foreground">
                         <label htmlFor="title" className="block text-lg font-semibold">
                             Title
@@ -216,34 +176,22 @@ const BlogAdminEdit = () => {
                         />
                     </div>
 
-                    {/* Trix Editor */}
-                    <div className="p-4 shadow-md rounded-lg">
-                        <label
-                            htmlFor="my_input"
-                            className="block text-lg font-semibold text-foreground"
-                        >
+                    <div className="bg-primary p-4 shadow-md rounded-lg">
+                        <label className="block text-lg font-semibold text-foreground mb-2">
                             Content
                         </label>
-                        <QuillEditor
-                            value={content}
-                            onChange={handleEditorChange}
-                            modules={quillModules}
-                            formats={[
-                                'bold',
-                                'italic',
-                                'underline',
-                                'strike',
-                                'blockquote',
-                                'link',
-                                'align',
-                                'color',
-                            ]}
-                            className="w-full h-[70%] mt-10 bg-white"
-                            style={{ color: "black" }}
-                        />
+                        <div className="bg-white rounded-lg">
+                            <QuillEditor
+                                theme="snow"
+                                value={content}
+                                onChange={handleEditorChange}
+                                modules={quillModules}
+                                formats={quillFormats}
+                                className="min-h-[350px] text-primary"
+                            />
+                        </div>
                     </div>
 
-                    {/* Navigation Buttons */}
                     <div className="flex justify-between">
                         <a
                             href="/admin/blogs"
@@ -262,7 +210,6 @@ const BlogAdminEdit = () => {
                     </div>
                 </form>
 
-                {/* Error Alert */}
                 {error && (
                     <div
                         className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-100 border border-red-400 text-red-700 px-6 py-3 rounded-lg shadow-lg"

@@ -112,13 +112,9 @@ const BlogAdminUpload = () => {
             <meta name="description" content="Upload blog to display on detailing guides page" />
 
             <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
-                <style>{`
-        trix-toolbar [data-trix-button-group="file-tools"] {
-          display: none !important;
-        }
-      `}</style>
+            
 
-                <form onSubmit={handleUpload} className="space-y-6">
+                <form onSubmit={handleUpload} className="space-y-2">
                     {/* Thumbnail */}
                     <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
                         <label htmlFor="image" className="block text-lg font-semibold">
@@ -174,7 +170,7 @@ const BlogAdminUpload = () => {
                                 'align',
                                 'color',
                             ]}
-                            className="w-full h-[70%] mt-10 bg-white"
+                            className="w-full h-[350px] overflow-y-auto mt-10 bg-white"
                             style={{ color: "black" }}
                         />
 
