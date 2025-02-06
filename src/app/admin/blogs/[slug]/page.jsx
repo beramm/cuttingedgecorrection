@@ -1,12 +1,16 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-// import "trix";
-// import "trix/dist/trix.css";
+
 import { LoadingSpinner } from "../../../components/icon";
 import axios from "axios";
 import Image from "next/image";
 import slugify from "slugify";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css";
+
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
+
 
 const BlogAdminEdit = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -28,56 +32,81 @@ const BlogAdminEdit = () => {
         }
     }, [error]);
 
-    //   useEffect(() => {
-    //     const fetchBlog = async () => {
-    //       try {
-    //         const response = await axios.get(`/api/v1/blog/${slug}`);
-    //         const blogData = response.data.blog;
-    //         setBlog(blogData);
-    //         setTitle(blogData.title);
-    //         setContent(blogData.content);
+    useEffect(() => {
+        const fetchBlog = async () => {
+            try {
+                const response = await axios.get(`/api/v1/blog/${slug}`);
+                const blogData = response.data.blog;
+                setBlog(blogData);
+                setTitle(blogData.title);
+                setContent(blogData.content);
 
-    //         const trixEditor = document.querySelector("trix-editor");
-    //         if (trixEditor) {
-    //           trixEditor.editor.loadHTML(blogData.content);
-    //         }
-    //       } catch (error) {
-    //         setError(error.response?.data?.message || "Error fetching blog");
-    //         console.error("Fetch error:", error);
-    //         router.push("/admin/blogs")
-    //       } finally {
-    //         setIsLoading(false);
-    //       }
-    //     };
-    //     fetchBlog();
-    //   }, [slug]);
+                const trixEditor = document.querySelector("trix-editor");
+                if (trixEditor) {
+                    trixEditor.editor.loadHTML(blogData.content);
+                }
+            } catch (error) {
+                setError(error.response?.data?.message || "Error fetching blog");
+                console.error("Fetch error:", error);
+                router.push("/admin/blogs")
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchBlog();
+    }, [slug]);
 
-    //   useEffect(() => {
-    //     const handleTrixInitialize = (event) => {
-    //       const trixEditor = event.target;
-    //       if (content && trixEditor) {
-    //         trixEditor.editor.loadHTML(content);
-    //       }
-    //     };
+    useEffect(() => {
+        let quillInstance = null;
 
-    //     const handleTrixFileAccept = (event) => {
-    //       event.preventDefault();
-    //     };
+        const initializeQuill = () => {
+            quillInstance = new Quill("#quill-editor", {
+                theme: "snow",
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                        ['link'],
+                        [{ align: [] }],
+                        [{ color: [] }],
+                        ['clean'],
+                    ],
+                },
+            });
 
-    //     const handleTrixChange = (event) => {
-    //       setContent(event.target.innerHTML);
-    //     };
+            if (content) {
+                quillInstance.root.innerHTML = content;  // Load existing content into Quill
+            }
 
-    //     document.addEventListener("trix-initialize", handleTrixInitialize);
-    //     document.addEventListener("trix-file-accept", handleTrixFileAccept);
-    //     document.addEventListener("trix-change", handleTrixChange);
+            // Handle content changes
+            quillInstance.on("text-change", () => {
+                setContent(quillInstance.root.innerHTML);
+            });
+        };
 
-    //     return () => {
-    //       document.removeEventListener("trix-initialize", handleTrixInitialize);
-    //       document.removeEventListener("trix-file-accept", handleTrixFileAccept);
-    //       document.removeEventListener("trix-change", handleTrixChange);
-    //     };
-    //   }, [content]);
+        initializeQuill();
+
+        // Cleanup when the component unmounts
+        return () => {
+            if (quillInstance) {
+                quillInstance.off("text-change");
+            }
+        };
+    }, [content]);
+
+
+    const quillModules = {
+        toolbar: [
+            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+            ['link'],
+            [{ align: [] }],
+            [{ color: [] }],
+            ['clean'],
+        ],
+    };
+
+    const handleEditorChange = (newContent) => {
+        setContent(newContent);
+    };
 
     useEffect(() => {
         const initializePage = async () => {
@@ -188,27 +217,31 @@ const BlogAdminEdit = () => {
                     </div>
 
                     {/* Trix Editor */}
-                    {/* <div className="p-4 shadow-md rounded-lg">
-            <label
-              htmlFor="my_input"
-              className="block text-lg font-semibold text-foreground"
-            >
-              Content
-            </label>
-            <trix-toolbar id="my_toolbar" style={{ backgroundColor: "white" }}></trix-toolbar>
-            <trix-editor
-              id="my_input"
-              toolbar="my_toolbar"
-              style={{
-                height: "300px",
-                overflowY: "auto",
-                backgroundColor: "#141416",
-                color: "white",
-                fontSize: "20px",
-              }}
-              required
-            ></trix-editor>
-          </div> */}
+                    <div className="p-4 shadow-md rounded-lg">
+                        <label
+                            htmlFor="my_input"
+                            className="block text-lg font-semibold text-foreground"
+                        >
+                            Content
+                        </label>
+                        <QuillEditor
+                            value={content}
+                            onChange={handleEditorChange}
+                            modules={quillModules}
+                            formats={[
+                                'bold',
+                                'italic',
+                                'underline',
+                                'strike',
+                                'blockquote',
+                                'link',
+                                'align',
+                                'color',
+                            ]}
+                            className="w-full h-[70%] mt-10 bg-white"
+                            style={{ color: "black" }}
+                        />
+                    </div>
 
                     {/* Navigation Buttons */}
                     <div className="flex justify-between">

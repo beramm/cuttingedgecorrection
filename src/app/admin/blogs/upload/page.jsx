@@ -1,11 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import "trix";
-import "trix/dist/trix.css";
 import { LoadingSpinner } from "../../../components/icon";
 import axios from "axios";
 import slugify from "slugify";
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+import dynamic from 'next/dynamic';
+
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
+
+
+
 
 const BlogAdminUpload = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,26 +20,6 @@ const BlogAdminUpload = () => {
     const [content, setContent] = useState("");
 
     const router = useRouter();
-
-    useEffect(() => {
-        const handleTrixChange = (event) => setContent(event.target.innerHTML);
-        const handleTrixInit = () => console.log("Trix Editor Initialized");
-        const handleTrixFileAccept = (event) => event.preventDefault();
-
-        // Attach event listeners only once, during initial mount
-        if (document.querySelector("trix-editor")) {
-            document.addEventListener("trix-initialize", handleTrixInit);
-            document.addEventListener("trix-file-accept", handleTrixFileAccept);
-            document.addEventListener("trix-change", handleTrixChange);
-        }
-
-        // Cleanup event listeners on unmount
-        return () => {
-            document.removeEventListener("trix-initialize", handleTrixInit);
-            document.removeEventListener("trix-file-accept", handleTrixFileAccept);
-            document.removeEventListener("trix-change", handleTrixChange);
-        };
-    }, []);  // Empty dependency array ensures this runs once, when the component mounts
 
 
     useEffect(() => {
@@ -94,6 +79,33 @@ const BlogAdminUpload = () => {
         );
     }
 
+    const quillModules = {
+        toolbar: [
+            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+            ['link'],
+            [{ align: [] }],
+            [{ color: [] }],
+            ['clean'],
+        ],
+    };
+    // const quillFormats = [
+    //     'header',
+    //     'bold',
+    //     'italic',
+    //     'underline',
+    //     'strike',
+    //     'blockquote',
+    //     'list',
+    //     'bullet',
+    //     'link',
+    //     'align',
+    //     'color',
+    // ];
+
+    const handleEditorChange = (newContent) => {
+        setContent(newContent);
+    };
+
     return (
         <>
             <title>Upload Blogs - Cutting Edge Correction</title>
@@ -148,22 +160,24 @@ const BlogAdminUpload = () => {
                         >
                             Content
                         </label>
-                        <trix-toolbar
-                            id="my_toolbar"
-                            style={{ backgroundColor: "white", fontSize: '16px', padding: '10px' }}
-                        ></trix-toolbar>
-                        <trix-editor
-                            id="my_input"
-                            toolbar="my_toolbar"
-                            style={{
-                                height: "300px",
-                                overflowY: "auto",
-                                backgroundColor: "#262626",
-                                color: "white",
-                                fontSize: "20px",
-                            }}
-                            required
-                        ></trix-editor>
+                        <QuillEditor
+                            value={content}
+                            onChange={handleEditorChange}
+                            modules={quillModules}
+                            formats={[
+                                'bold',
+                                'italic',
+                                'underline',
+                                'strike',
+                                'blockquote',
+                                'link',
+                                'align',
+                                'color',
+                            ]}
+                            className="w-full h-[70%] mt-10 bg-white"
+                            style={{ color: "black" }}
+                        />
+
                     </div>
 
                     {/* Submit Button */}
