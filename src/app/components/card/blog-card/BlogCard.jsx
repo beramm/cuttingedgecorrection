@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React, { useRef,useState } from 'react'
 import { ArrowRightCircleSolid } from '../../icon'
 import { useIsVisible } from "../../../hooks/useIsVisible";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import Link from "next/link";
 const BlogCard = ({ blogData }) => {
   const ref = useRef();
   const isVisible = useIsVisible(ref);
+  const [imgSrc, setImgSrc] = useState(blogData.thumbnail);
 
   return (
     <Link
@@ -20,11 +21,12 @@ const BlogCard = ({ blogData }) => {
     >
       <div className="w-full min-h-[256px] relative overflow-hidden rounded-t-lg">
         <Image
-          src={blogData.thumbnail}
+          src={imgSrc}
           alt={`thumbnail ${blogData.title}`}
           fill
           sizes='auto'
           className="object-cover"
+          onError={() => setImgSrc("/picture-loading-failed.png")}
         />
       </div>
       <div className="flex flex-col items-start justify-start w-full h-full p-4">
