@@ -14,7 +14,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  
+
   description: "Cutting Edge Correction, AU",
   icons: {
     icon: '/favicon.ico',
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
       <head>
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16655963362"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16846417732"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -80,8 +80,27 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-16655963362');
+              gtag('config', 'AW-16846417732');
             `,
+          }}
+
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        function gtag_report_conversion(url) {
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', 'conversion', {
+            'send_to': 'AW-16846417732/LjyuCN3qzp8aEMTe_-A-',
+            'event_callback': callback
+          });
+          return false;
+        }
+      `,
           }}
         />
 
