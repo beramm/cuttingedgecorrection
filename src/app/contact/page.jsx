@@ -9,6 +9,7 @@ const ContactUsForm = () => {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [service, setService] = useState("")
+    const [model, setModel] = useState("")
     const [notes, setNotes] = useState("")
     const [showAlert, setShowAlert] = useState(false)
     const [alertMessage, setAlertMessage] = useState("")
@@ -17,6 +18,14 @@ const ContactUsForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        if (!fullName.trim() || !email.trim() || !phone.trim() || !model.trim()) {
+            setAlertType("error");
+            setAlertMessage("Please fill in all required fields.");
+            setShowAlert(true);
+            setTimeout(() => setShowAlert(false), 3000);
+            return;
+        }
+        
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             setAlertType("error");
@@ -31,7 +40,8 @@ const ContactUsForm = () => {
                 fullName,
                 email,
                 phone,
-                service
+                service,
+                model
             }
 
             if (notes.trim() !== "") {
@@ -62,6 +72,7 @@ const ContactUsForm = () => {
             setFullName("")
             setEmail("")
             setPhone("")
+            setModel("")
             setService("")
             setNotes("")
 
@@ -141,6 +152,13 @@ const ContactUsForm = () => {
                         placeholder="Phone number *"
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
+                        className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Model of your car *"
+                        onChange={(e) => setModel(e.target.value)}
+                        value={model}
                         className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
                     />
                     <input
