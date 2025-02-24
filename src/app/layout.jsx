@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
             }
           };
           gtag('event', 'conversion', {
-            'send_to': 'AW-16846417732/keUTCOvlqaIaEMTe_-A-',
+            'send_to': 'AW-16846417732/cyNXCN_imaIaEMTe_-A-',
             'event_callback': callback
           });
           return false;
