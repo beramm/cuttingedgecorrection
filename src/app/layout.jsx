@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
           }}
 
         />
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
         function gtag_report_conversion(url) {
@@ -95,14 +95,14 @@ export default function RootLayout({ children }) {
             }
           };
           gtag('event', 'conversion', {
-            'send_to': 'AW-16846417732/LjyuCN3qzp8aEMTe_-A-',
+            'send_to': 'AW-16846417732/keUTCOvlqaIaEMTe_-A-',
             'event_callback': callback
           });
           return false;
         }
       `,
           }}
-        />
+        /> */}
 
         <script
           type="application/ld+json"

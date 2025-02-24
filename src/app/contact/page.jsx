@@ -54,7 +54,7 @@ const ContactUsForm = () => {
                 try {
                     console.log("Sending Google Ads conversion event...");
                     window.gtag("event", "conversion", {
-                        send_to: "AW-16655963362/o3VECMmO7JQaEOKpl4Y-",
+                        send_to: "AW-16846417732/keUTCOvlqaIaEMTe_-A-",
                         event_category: "Submit lead form",
                         event_label: "Form Submitted",
                         value: 1.0

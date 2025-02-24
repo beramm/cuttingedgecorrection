@@ -131,7 +131,7 @@ const Footer = () => {
                 <h3 className="text-xs font-light">Phone</h3>
                 <p className="text-l font-extrabold">
                   
-                  <a onclick="return gtag_report_conversion('tel:0450-649-257');" href="tel:0450649257" className=" hover:text-[#00A2FF] text-l font-extrabold">
+                  <a onclick="return gtag_report_conversion('tel:0450649257');" href="tel:0450649257" className=" hover:text-[#00A2FF] text-l font-extrabold">
                     0450 649 257
                   </a>
                 </p>
