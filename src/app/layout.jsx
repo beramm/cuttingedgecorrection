@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
           }}
 
         />
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
         function gtag_report_conversion(url) {
@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
         }
       `,
           }}
-        /> */}
+        />
 
         <script
           type="application/ld+json"
