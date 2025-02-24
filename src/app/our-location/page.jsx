@@ -75,9 +75,24 @@ const OurLocation = () => {
                     <h1 className="text-4xl font-bold">PHONE</h1>
                   </div>
                   <p className="hover:underline text-sm font-light mt-2">
-                    <a onclick="return gtag_report_conversion('tel:0450649257');" href="tel:0450649257" className="text-sm font-light">
+                    <a
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (typeof gtag !== 'undefined') {
+                          gtag('event', 'conversion', {
+                            send_to: 'AW-16846417732/cyNXCN_imaIaEMTe_-A-',
+                            event_callback: () => (window.location.href = 'tel:0450649257'),
+                          });
+                        } else {
+                          window.location.href = 'tel:0450649257'; // Fallback if gtag isn't loaded
+                        }
+                      }}
+                      href="tel:0450649257"
+                      className="hover:text-[#00A2FF] text-l font-extrabold"
+                    >
                       0450 649 257
                     </a>
+
                   </p>
                 </div>
 
