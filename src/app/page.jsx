@@ -40,7 +40,7 @@ export default function Home() {
           loop
           muted
         ></video>
-        <div className="relative z-20 top-16 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
+        <div className="relative z-20 top-20 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
           <h1 className="hidden md:block text-6xl font-black">
             CUTTING EDGE CORRECTION
           </h1>
@@ -62,7 +62,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative -top-10 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
-        <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-1 md:gap-y-2">
+        <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
           <h1>EXCELLENCE IN DETAILING.</h1>
           <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
