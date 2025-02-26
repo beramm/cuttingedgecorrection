@@ -2,6 +2,7 @@
 
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
 import ContactUsButton from "./components/button/ContactUsButton";
+import BookNowButton from "./components/button/BookNowButton";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -57,11 +58,11 @@ export default function Home() {
               expectations.
             </p>
           </div>
-          <ContactUsButton />
+          <BookNowButton />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-24 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
+      {/* <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative top-24 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
         <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
           <h1>PASSION FOR CARS,</h1>
           <h1>EXCELLENCE IN DETAILING.</h1>
@@ -81,20 +82,20 @@ export default function Home() {
             <ContactUsButton />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Our Services */}
       <div className="relative w-full bg-black">
 
         {/* Transition between sections: Landing Page and Our Services */}
-        <div className="absolute w-full h-[496px] md:h-96 3xl:h-[320px] -top-[900px] md:-top-80 3xl:-top-80">
+        <div className="absolute w-full h-[200px] md:h-40 3xl:h-[100px] -top-[400px] md:-top-24 3xl:-top-32">
           <div
             className="absolute -top-4 inset-0 z-10 bg-gradient-to-b from-transparent to-black to-30%"
           // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
           ></div>
         </div>
 
-        <div className="text-center text-4xl md:text-5xl font-extrabold mt-96 md:mt-60 mb-12">
+        <div className="text-center text-4xl md:text-5xl font-extrabold mt-8 md:mt-24 mb-12">
           <h1>
             OUR{" "}
             <span className="bg-radial-gradient bg-clip-text text-transparent">
@@ -104,8 +105,30 @@ export default function Home() {
         </div>
         <ServicesCarousel />
 
+        <div className="grid grid-cols-1 md:grid-cols-[600px_auto] z-30 relative mx-0 mb-24 md:mb-0 md:mx-40 top-24 md:top-12 w-full max-w-screen-xl px-10 md:p-16 xl:p-0">
+          <div className="flex flex-col items-start justify-start text-xl md:text-3xl font-bold gap-y-2">
+            <h1>PASSION FOR CARS,</h1>
+            <h1>EXCELLENCE IN DETAILING.</h1>
+            <h1 className="mt-8">EXPERIENCE THE CUTTING EDGE.</h1>
+          </div>
+          <div className="flex flex-col justify-between mt-10 md:mt-0">
+            <p>
+              Delivering a 5-star finish is our standard, and we never settle for
+              less. Our unwavering dedication means your car&apos;s brilliance
+              will stand the test of time.
+            </p>
+            <div>
+              <p className="mb-4">
+                Want to see what all the hype&apos;s about? Tap the button and
+                let&apos;s chat.
+              </p>
+              <ContactUsButton />
+            </div>
+          </div>
+        </div>
+        
         {/* Transition between sections: Our Services and Our Commitment */}
-        <div className="absolute w-full h-40 -bottom-40 z-20">
+        <div className="absolute w-full h-48 -bottom-48 z-20">
           <div
             className="absolute inset-0 bg-gradient-to-t from-transparent to-black to-40%"
           // style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1))" }}
