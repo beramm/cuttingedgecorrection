@@ -31,7 +31,7 @@ export default function Home() {
       <title>Cutting Edge Correction</title>
       <meta
         name="description"
-        content="At CEC, we provide exceptional car detailing services right here in Geelong. Our home-based business ensures personalized care and attention to detail, bringing top-tier results that exceed your expectations."
+        content="Cutting Edge Correction - Geelong's Finest Car Detailing"
       />
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
         <video
