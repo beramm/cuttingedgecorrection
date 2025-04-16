@@ -15,7 +15,6 @@ const roboto = Roboto({
 
 export const metadata = {
 
-  description: "Cutting Edge Correction, AU",
   icons: {
     icon: '/favicon.ico',
     sizes: 'any',
