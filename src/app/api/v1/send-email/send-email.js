@@ -9,8 +9,8 @@ export async function sendAppointmentEmail(formData) {
     "MS_8gv0nY@test-eqvygm00kd5l0p7w.mlsender.net",
     "Appointment Booking"
   );
-  // const recipients = [new Recipient("info@cecdetailing.com.au")];
-  const recipients = [new Recipient("bramraysky232@gmail.com")];
+  const recipients = [new Recipient("info@cecdetailing.com.au")];
+  // const recipients = [new Recipient("bramraysky232@gmail.com")];
 
   const htmlContent = `
   <!DOCTYPE html>
