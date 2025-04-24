@@ -17,7 +17,6 @@ const ContactUsForm = () => {
         e.preventDefault()
 
         if (!fullName.trim() || !phone.trim() || !model.trim()) {
-        if (!fullName.trim() || !phone.trim() || !model.trim()) {
             setAlertType("error");
             setAlertMessage("Please fill in all required fields.");
             setShowAlert(true);
