@@ -2,7 +2,7 @@
 
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
 import ContactUsButton from "./components/button/ContactUsButton";
-import BookNowButton from "./components/button/BookNowButton";
+import BookNowButtonCon from "./components/button/BookNowButtonCon";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -58,7 +58,7 @@ export default function Home() {
               expectations.
             </p>
           </div>
-          <BookNowButton />
+          <BookNowButtonCon />
         </div>
       </div>
 

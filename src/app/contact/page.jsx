@@ -6,9 +6,7 @@ import { Alert, Button } from "@material-tailwind/react"
 
 const ContactUsForm = () => {
     const [fullName, setFullName] = useState("")
-    const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
-    const [service, setService] = useState("")
     const [model, setModel] = useState("")
     const [notes, setNotes] = useState("")
     const [showAlert, setShowAlert] = useState(false)
@@ -18,7 +16,7 @@ const ContactUsForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!fullName.trim() || !email.trim() || !phone.trim() || !model.trim()) {
+        if (!fullName.trim() || !phone.trim() || !model.trim()) {
             setAlertType("error");
             setAlertMessage("Please fill in all required fields.");
             setShowAlert(true);
@@ -26,21 +24,19 @@ const ContactUsForm = () => {
             return;
         }
         
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setAlertType("error");
-            setAlertMessage("Please enter a valid email address.");
-            setShowAlert(true);
-            setTimeout(() => setShowAlert(false), 3000);
-            return;
-        }
+        // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // if (!emailRegex.test(email)) {
+        //     setAlertType("error");
+        //     setAlertMessage("Please enter a valid email address.");
+        //     setShowAlert(true);
+        //     setTimeout(() => setShowAlert(false), 3000);
+        //     return;
+        // }
 
         try {
             const requestBody = {
                 fullName,
-                email,
                 phone,
-                service,
                 model
             }
 
@@ -70,10 +66,8 @@ const ContactUsForm = () => {
             setShowAlert(true)
 
             setFullName("")
-            setEmail("")
             setPhone("")
             setModel("")
-            setService("")
             setNotes("")
 
             // Automatically hide the alert after 3 seconds
@@ -141,13 +135,6 @@ const ContactUsForm = () => {
                         className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
                     />
                     <input
-                        type="email"
-                        placeholder="Email *"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
-                    />
-                    <input
                         type="tel"
                         placeholder="Phone number *"
                         onChange={(e) => setPhone(e.target.value)}
@@ -159,13 +146,6 @@ const ContactUsForm = () => {
                         placeholder="Model of your car *"
                         onChange={(e) => setModel(e.target.value)}
                         value={model}
-                        className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Type of service required"
-                        onChange={(e) => setService(e.target.value)}
-                        value={service}
                         className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
                     />
                     <textarea

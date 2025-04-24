@@ -6,11 +6,11 @@ const mailersend = new MailerSend({
 
 export async function sendAppointmentEmail(formData) {
   const sender = new Sender(
-    "noreply@trial-pr9084zq9zx4w63d.mlsender.net",
+    "MS_8gv0nY@test-eqvygm00kd5l0p7w.mlsender.net",
     "Appointment Booking"
   );
-  const recipients = [new Recipient("info@cecdetailing.com.au")];
-  // const recipients = [new Recipient("bramraysky232@gmail.com")];
+  // const recipients = [new Recipient("info@cecdetailing.com.au")];
+  const recipients = [new Recipient("bramraysky232@gmail.com")];
 
   const htmlContent = `
   <!DOCTYPE html>
@@ -67,20 +67,12 @@ export async function sendAppointmentEmail(formData) {
           <span style="display: inline-block; width: 100%;">${formData.fullName}</span>
         </div>
         <div class="detail">
-          <span class="label">Email:</span><br>
-          <span style="display: inline-block; width: 100%;"><a href="mailto:${formData.email}">${formData.email}</a></span>
-        </div>
-        <div class="detail">
           <span class="label">Phone Number:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.phone}</span>
         </div>
         <div class="detail">
-          <span class="label">Phone Number:</span><br>
+          <span class="label">Model:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.model}</span>
-        </div>
-        <div class="detail">
-          <span class="label">Type of Service Required:</span><br>
-          <span style="display: inline-block; width: 100%;">${formData.service}</span>
         </div>
         <div class="detail">
           <span class="label">Please provide us any further information you think is important:</span><br>
