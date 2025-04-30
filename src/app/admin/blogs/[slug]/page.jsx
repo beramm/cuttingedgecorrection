@@ -181,9 +181,9 @@ const BlogAdminEdit = () => {
             <title>Edit Blog - Cutting Edge Correction</title>
             <meta name="description" content="Edit blog to display on detailing guides page" />
 
-            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto overflow-auto mt-16">
-                <form onSubmit={handleSave} className="space-y-6">
-                    <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground flex">
+            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto overflow-auto mt-20">
+                <form onSubmit={handleSave} className="space-y-4">
+                    <div className="bg-neutral-800 px-4 py-2 shadow-md rounded-lg text-foreground flex">
                         <div className="flex-1">
                             <label htmlFor="thumbnailUrl" className="block text-lg font-semibold">
                                 Thumbnail URL (Google Drive Link)
@@ -195,7 +195,7 @@ const BlogAdminEdit = () => {
                                 placeholder="Insert Google Drive Image URL"
                                 value={thumbnail}
                                 onChange={handleTHumbnail}
-                                rows="4"
+                                rows="1"
                                 required
                             />
                         </div>
@@ -225,7 +225,7 @@ const BlogAdminEdit = () => {
                         />
                     </div>
 
-                    <div className="bg-neutral-800 p-4 shadow-md rounded-lg">
+                    <div className="bg-neutral-800 px-4 py-2 shadow-md rounded-lg">
                         <label className="block text-lg font-semibold text-foreground mb-2">
                             Content
                         </label>

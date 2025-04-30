@@ -95,7 +95,7 @@ const BlogAdmin = () => {
                         No blogs available.
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[600px] items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 overflow-y-auto h-[500px] items-center justify-center">
                         {blogs.map((blog) => (
                             <BlogCardAdmin
                                 blogData={blog}

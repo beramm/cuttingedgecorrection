@@ -134,7 +134,7 @@ const BlogAdminUpload = () => {
             <title>Upload Blogs - Cutting Edge Correction</title>
             <meta name="description" content="Upload blog to display on detailing guides page" />
 
-            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-16">
+            <div className="flex flex-col w-full min-h-screen p-6 max-w-screen-xl mx-auto space-y-6 overflow-auto mt-20">
                 <form onSubmit={handleUpload} className="space-y-2">
                     {/* Thumbnail URL Input */}
                     <div className="bg-neutral-800 p-4 shadow-md rounded-lg text-foreground">
@@ -148,7 +148,7 @@ const BlogAdminUpload = () => {
                             onChange={handleThumbnailChange}
                             className="w-full p-2 mt-1 border rounded-lg bg-neutral-800 resize-none"
                             placeholder="Insert Google Drive Image URL"
-                            rows="4"
+                            rows="1"
                             required
                         />
                     </div>
@@ -192,7 +192,7 @@ const BlogAdminUpload = () => {
                                 'align',
                                 'color',
                             ]}
-                            className="w-full h-[300px] overflow-y-auto mt-10 bg-white"
+                            className="w-full h-[300px] overflow-y-auto bg-white"
                             style={{ color: "black" }}
                         />
                     </div>
