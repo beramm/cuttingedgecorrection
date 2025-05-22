@@ -29,7 +29,7 @@ export const subscriptionPlansContent = [
     bestValue: true,
     content: [
       '4 wash and waxes per month',
-      '2 full interior details per month',
+      '1 full interior details per month',
       'priority scheduling',
       'free air fresher with every wash',
       '15% off for any additional services'
