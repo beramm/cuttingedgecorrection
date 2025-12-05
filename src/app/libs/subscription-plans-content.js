@@ -1,12 +1,12 @@
 export const subscriptionPlansContent = [
   {
-    type: 'Basic',
-    price: 60,
+    type: 'Entry',
+    price: 50,
     bestValue: false,
     content: [
-      '2 wash and waxes per month',
+      '1 basic wash per month',
       'thorough interior vacuuming',
-      'free air fresher with every wash'
+      'free air freshener'
     ],
     bgColor: 'bg-gradient-to-tr from-[#B34D9C] to-[#5F3E6B]',
     highlightTextColor: 'text-[#B34D9C]'
@@ -16,23 +16,26 @@ export const subscriptionPlansContent = [
     price: 120,
     bestValue: false,
     content: [
-      '3 wash and waxes per month',
-      '1 full interior detail per month',
-      'free air fresher with every wash'
+      '1 thorough wash per month',
+      'spray wax for protection',
+      'interior vacuuming & wipe-down',
+      'windows cleaned',
+      'free air freshener'
     ],
     bgColor: 'bg-gradient-to-tr from-[#379CB7] to-[#3C5397]',
     highlightTextColor: 'text-[#379CB7]'
   },
   {
-    type: 'Premium',
-    price: 200,
+    type: 'Enthusiast',
+    price: 250,
     bestValue: true,
     content: [
-      '4 wash and waxes per month',
-      '1 full interior detail per month',
-      'priority scheduling',
-      'free air fresher with every wash',
-      '15% off for any additional services'
+      '2 thorough washes per month',
+      'ceramic spray for protection',
+      'interior vacuuming & wipe-down',
+      'windows cleaned',
+      // 'free air freshener',
+      '10% off for any additional services'
     ],
     bgColor: 'bg-gradient-to-tr from-[#DAA550] to-[#B53534]',
     highlightTextColor: 'text-[#DAA550]'

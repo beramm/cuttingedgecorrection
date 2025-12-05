@@ -13,8 +13,8 @@ const SubscriptionPlansCard = ({ data }) => {
       data.type === "Basic"
         ? "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/VPXZ2MS7U4WY6I4YLYWMCYYK"
         : data.type === "Standard"
-        ? "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/LCGAYWSNFIFQPRSDEPXWFYCW"
-        : "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/CORBIMNKMTKZUQEXTUJEMLVQ";
+          ? "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/LCGAYWSNFIFQPRSDEPXWFYCW"
+          : "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/CORBIMNKMTKZUQEXTUJEMLVQ";
 
     router.push(redirectPayment);
   };
@@ -32,6 +32,7 @@ const SubscriptionPlansCard = ({ data }) => {
     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
       <div className="w-full max-w-80 h-[560px] rounded-[40px] flex flex-col items-center relative">
+        {/* <div className="w-full max-w-96 h-[620px] rounded-[40px] flex flex-col items-center relative"> */}
         <div
           className={`flex flex-col items-center justify-center w-full h-[150px] ${data.bgColor} rounded-t-[40px]`}
         >
@@ -44,30 +45,54 @@ const SubscriptionPlansCard = ({ data }) => {
         </div>
         <div className="bg-[#1F1F22] w-full h-[346px] flex flex-col p-6">
           {data.content.map((eachContent, index) => {
+            // const words = eachContent.split(" ");
+
+            // const firstWord = words.slice(0, 1).join(" ");
+            // const remainingWords = words.slice(1).join(" ");
+
+            // const secWord = words.slice(1, 2).join(" ");
+
+            // const highlightWords = ["free", "priority", "10%", "off"];
+            // const isHighlighted = highlightWords.some((word) =>
+            //   firstWord.includes(word)
+            // );
+
+
+            const highlightWords = ["free", "priority", "10%", "off"];
             const words = eachContent.split(" ");
 
-            const firstWord = words.slice(0, 1).join(" ");
-            const remainingWords = words.slice(1).join(" ");
-
-            const highlightWords = ["free", "priority", "15%"];
-            const isHighlighted = highlightWords.some((word) =>
-              firstWord.includes(word)
-            );
-            
             return (
               <div key={index} className="flex items-start mb-3">
                 <div className="w-[24px]">
                   <GearIcon size={24} hexColor={"#E8E6DE"} />
                 </div>
-                <p className="ms-2 text-lg">
+                {/* <p className="ms-2 text-lg">
                   {isHighlighted ? (
                     <span className={`${data.highlightTextColor}`}>
                       {firstWord.toUpperCase()}
                     </span>
+                    
                   ) : (
                     <span>{firstWord.toUpperCase()}</span>
                   )}{" "}
                   {remainingWords.toUpperCase()}
+                </p> */}
+                <p className="ms-2 text-lg flex flex-wrap gap-1">
+                  {words.map((word, i) => {
+                    const match = highlightWords.some(h =>
+                      word.toLowerCase().includes(h.toLowerCase())
+                    );
+
+                    return (
+                      <span
+                        key={i}
+                        className={match ? data.highlightTextColor : ""}
+                      >
+                        {word.toUpperCase()}
+                        {" "}
+                      </span>
+                    );
+                  })}
                 </p>
               </div>
             );
@@ -80,7 +105,7 @@ const SubscriptionPlansCard = ({ data }) => {
           SUBSCRIBE
         </button>
         {data.bestValue && (
-          <div className="absolute -top-10 -right-10">
+          <div className="absolute -top-10 -right-16">
             <Image
               src={"/bestvalue_banner.png"}
               width={120}

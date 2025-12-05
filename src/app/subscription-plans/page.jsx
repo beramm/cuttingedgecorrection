@@ -42,11 +42,18 @@ const SubscriptionPlans = () => {
           </div>
 
           <div className="justify-center text-center text-5xl lg:text-6xl font-extrabold mt-12 max-w-80 mx-auto">
-            <p className="text-sm font-bold mt-8" style={{ color: '#515151' }}>
+
+            <p className="text-sm font-medium mt-8" style={{ color: '#00A2FF' }}>
+              We operate on a 2-month minimum commitment. The first two months are billed upfront, with monthly billing following from there.
+              </p>
+
+
+            <p className="text-sm font-bold mt-2" style={{ color: '#515151' }}>
               <b>
                 Subscription Terms & Conditions
               </b>
             </p>
+
             <p className="text-sm font-medium" style={{ color: '#515151' }}>
               Please refer to the &quot;Privacy Policy & TOS&quot; page via our website
               for in-depth information regarding our subscription services.
