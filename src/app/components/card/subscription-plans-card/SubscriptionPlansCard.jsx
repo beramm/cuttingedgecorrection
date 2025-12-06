@@ -10,7 +10,7 @@ const SubscriptionPlansCard = ({ data }) => {
   const router = useRouter();
   const handleSubscribe = () => {
     const redirectPayment =
-      data.type === "Basic"
+      data.type === "Entry"
         ? "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/VPXZ2MS7U4WY6I4YLYWMCYYK"
         : data.type === "Standard"
           ? "https://checkout.square.site/merchant/ML6CXJF39N1F8/checkout/LCGAYWSNFIFQPRSDEPXWFYCW"
