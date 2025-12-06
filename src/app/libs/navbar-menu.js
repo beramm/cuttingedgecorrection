@@ -18,7 +18,8 @@ export const navbarMenu = [
     subMenu: true,
     submenuList: [
       { name: 'Subscription Plans', link: '/subscription-plans' },
-      { name: 'Gift Cards', link: 'https://cuttingedgestore.square.site/s/gift-cards' }
+      // { name: 'Gift Cards', link: 'https://cuttingedgestore.square.site/s/gift-cards' }
+      {name: 'Gift Cards', link: 'https://cecdetailing-store.square.site/s/gift-cards' }
 
     ]
   },
