@@ -4,6 +4,8 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import "swiper/css";
 import Image from "next/image";
+import { Analytics } from '@vercel/analytics/next';
+
 
 
 
@@ -116,6 +118,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
