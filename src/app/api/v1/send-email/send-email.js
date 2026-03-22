@@ -6,11 +6,11 @@ const mailersend = new MailerSend({
 
 export async function sendAppointmentEmail(formData) {
   const sender = new Sender(
-    "MS_8gv0nY@test-eqvygm00kd5l0p7w.mlsender.net",
+    "MS_8gv0nY@test-r6ke4n16k23gon12.mlsender.net",
     "Appointment Booking"
   );
-  const recipients = [new Recipient("info@cecdetailing.com.au")];
-  // const recipients = [new Recipient("bramraysky232@gmail.com")];
+  // const recipients = [new Recipient("info@cecdetailing.com.au")];
+  const recipients = [new Recipient("bramraysky232@gmail.com")];
 
   const htmlContent = `
   <!DOCTYPE html>
