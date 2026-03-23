@@ -34,7 +34,7 @@ const SingleBlog = ({ params }) => {
 
     if (isLoading) {
         return (<div className='w-full h-[100vh] flex items-center justify-center'>
-        <LoadingSpinner/>;
+        <LoadingSpinner/>
         </div>
         )
     }
