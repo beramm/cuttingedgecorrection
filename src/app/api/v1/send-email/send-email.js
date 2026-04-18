@@ -91,8 +91,38 @@ export async function sendAppointmentEmail(formData) {
     .setHtml(htmlContent);
 
   try {
+
+    // 1. Send email 
     const response = await mailersend.email.send(emailParams);
-    return response;
+
+    // 2. Send data to CRM (NEW)
+    const webhookUrl =
+      "https://services.leadconnectorhq.com/hooks/WPFdwF2Fw2JYVSuyoKur/webhook-trigger/1a25cc4f-0cfa-419e-ba54-647b898d114c";
+
+    const crmPayload = {
+      name: formData.fullName,
+      phone: formData.phone,
+      model: formData.model,
+      notes: formData.notes,
+    };
+
+    const crmResponse = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(crmPayload),
+    });
+
+    const crmResult = await crmResponse.text();
+
+    console.log("CRM response:", crmResult);
+
+    return {
+      email: response,
+      crm: crmResult,
+    };
+
   } catch (error) {
     console.error("Appointment email sending failed:", error);
     throw error;
