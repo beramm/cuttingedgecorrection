@@ -123,6 +123,8 @@ export async function sendAppointmentEmail(formData) {
 
     console.log("CRM response:", crmResult);
 
+    handler(name, email, phone);
+
     return {
       email: response,
       crm: crmResult,
@@ -133,3 +135,30 @@ export async function sendAppointmentEmail(formData) {
     throw error;
   }
 }
+
+export default async function handler(name, email, phone) {
+  const { name, email, phone } = { name, email, phone };
+
+  const [firstName, ...rest] = name.split(" ");
+  const lastName = rest.join(" ");
+
+  const response = await fetch("https://connect.squareup.com/v2/customers", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.SQUARE_ACCESS_TOKEN}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      given_name: firstName,
+      family_name: lastName,
+      email_address: email,
+      phone_number: phone
+    })
+  });
+
+  const data = await response.json();
+
+  res.status(200).json(data);
+}
+
+
