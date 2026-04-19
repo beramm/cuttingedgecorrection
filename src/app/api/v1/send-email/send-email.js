@@ -70,6 +70,10 @@ export async function sendAppointmentEmail(formData) {
           <span class="label">Phone Number:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.phone}</span>
         </div>
+         <div class="detail">
+          <span class="label">Email:</span><br>
+          <span style="display: inline-block; width: 100%;">${formData.email}</span>
+        </div>
         <div class="detail">
           <span class="label">Model:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.model}</span>
@@ -104,6 +108,7 @@ export async function sendAppointmentEmail(formData) {
       phone: formData.phone,
       model: formData.model,
       notes: formData.notes,
+      email: formData.email
     };
 
     const crmResponse = await fetch(webhookUrl, {
