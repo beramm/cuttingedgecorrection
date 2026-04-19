@@ -123,7 +123,7 @@ export async function sendAppointmentEmail(formData) {
 
     console.log("CRM response:", crmResult);
 
-    await handlerSquare(formData.fullName, formData.email, ("+" + formData.phone));
+    await handlerSquare(formData.fullName, formData.email, ("+" + formData.phone), ("Model: " + formData.model + " || Notes: " + formData.notes));
 
     return {
 
@@ -137,8 +137,8 @@ export async function sendAppointmentEmail(formData) {
   }
 }
 
-export default async function handlerSquare(nameData, emailData, phoneData) {
-  const { name, email, phone } = { name: nameData, email: emailData, phone: phoneData };
+export default async function handlerSquare(nameData, emailData, phoneData, notesCareData) {
+  const { name, email, phone, notes } = { name: nameData, email: emailData, phone: phoneData, notes: notesCareData };
 
   const [firstName, ...rest] = name.split(" ");
   const lastName = rest.join(" ");
@@ -153,7 +153,8 @@ export default async function handlerSquare(nameData, emailData, phoneData) {
       given_name: firstName,
       family_name: lastName,
       email_address: email,
-      phone_number: phone
+      phone_number: phone,
+      note: notes
     })
   });
 

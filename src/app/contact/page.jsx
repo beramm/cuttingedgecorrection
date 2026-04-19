@@ -146,7 +146,7 @@ const ContactUsForm = () => {
                     />
                     <input
                         type="tel"
-                        placeholder="Phone number *"
+                        placeholder="Phone number (61xxxxxxxxx) *"
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
                         className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
