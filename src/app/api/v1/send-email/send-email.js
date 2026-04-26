@@ -70,10 +70,6 @@ export async function sendAppointmentEmail(formData) {
           <span class="label">Phone Number:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.phone}</span>
         </div>
-         <div class="detail">
-          <span class="label">Email:</span><br>
-          <span style="display: inline-block; width: 100%;">${formData.email}</span>
-        </div>
         <div class="detail">
           <span class="label">Model:</span><br>
           <span style="display: inline-block; width: 100%;">${formData.model}</span>
@@ -108,7 +104,6 @@ export async function sendAppointmentEmail(formData) {
       phone: formData.phone,
       model: formData.model,
       notes: formData.notes,
-      email: formData.email
     };
 
     const crmResponse = await fetch(webhookUrl, {
@@ -123,7 +118,7 @@ export async function sendAppointmentEmail(formData) {
 
     console.log("CRM response:", crmResult);
 
-    await handlerSquare(formData.fullName, formData.email, ("+" + formData.phone), ("Model: " + formData.model + " || Notes: " + formData.notes));
+    await handlerSquare(formData.fullName, ("+" + formData.phone), ("Model: " + formData.model + " || Notes: " + formData.notes));
 
     return {
 
@@ -137,8 +132,8 @@ export async function sendAppointmentEmail(formData) {
   }
 }
 
-export default async function handlerSquare(nameData, emailData, phoneData, notesCareData) {
-  const { name, email, phone, notes } = { name: nameData, email: emailData, phone: phoneData, notes: notesCareData };
+export default async function handlerSquare(nameData, phoneData, notesCareData) {
+  const { name, phone, notes } = { name: nameData, phone: phoneData, notes: notesCareData };
 
   const [firstName, ...rest] = name.split(" ");
   const lastName = rest.join(" ");
@@ -152,7 +147,6 @@ export default async function handlerSquare(nameData, emailData, phoneData, note
     body: JSON.stringify({
       given_name: firstName,
       family_name: lastName,
-      email_address: email,
       phone_number: phone,
       note: notes
     })

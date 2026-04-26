@@ -7,7 +7,6 @@ import { Alert, Button } from "@material-tailwind/react"
 const ContactUsForm = () => {
     const [fullName, setFullName] = useState("")
     const [phone, setPhone] = useState("")
-    const [email, setEmail] = useState("")
     const [model, setModel] = useState("")
     const [notes, setNotes] = useState("")
     const [showAlert, setShowAlert] = useState(false)
@@ -17,7 +16,7 @@ const ContactUsForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!fullName.trim() || !phone.trim() || !email.trim() || !model.trim()) {
+        if (!fullName.trim() || !phone.trim() || !model.trim()) {
             setAlertType("error");
             setAlertMessage("Please fill in all required fields.");
             setShowAlert(true);
@@ -39,7 +38,6 @@ const ContactUsForm = () => {
                 fullName,
                 phone,
                 model,
-                email
             }
 
             if (notes.trim() !== "") {
@@ -71,7 +69,6 @@ const ContactUsForm = () => {
             setPhone("")
             setModel("")
             setNotes("")
-            setEmail("")
 
             // Automatically hide the alert after 3 seconds
             setTimeout(() => setShowAlert(false), 3000)
@@ -135,13 +132,6 @@ const ContactUsForm = () => {
                         placeholder="Full name *"
                         onChange={(e) => setFullName(e.target.value)}
                         value={fullName}
-                        className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
-                    />
-                    <input
-                        type="email"
-                        placeholder="Email *"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
                         className="w-full border border-gray-500 rounded-lg p-3 text-white bg-transparent focus:outline-none focus:ring focus:ring-gray-700"
                     />
                     <input
