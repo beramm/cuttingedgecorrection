@@ -52,10 +52,10 @@ export default function Home() {
           </div>
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl">
             <p>
-              At CEC, we provide exceptional car detailing services right here
-              in Geelong. Our home-based business ensures personalized care and
-              attention to detail, bringing top-tier results that exceed your
-              expectations.
+              At CEC, we specialise in premium car detailing, paint correction, 
+              and ceramic coatings from our professional detail studio in Geelong. 
+              Our goal is simple: to deliver exceptional results through careful workmanship, 
+              honest service, and attention to every detail.
             </p>
           </div>
           <BookNowButtonCon />
