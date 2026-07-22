@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react'
 import ContactUsButton from "../button/ContactUsButton"
+import ViewPricesButton from "../button/ViewPrices"
+import BookServiceButton from "../button/BookService"
 import Image from "next/image"
 import ServiceHeadline from '../text/ServiceHeadline'
 import TheResultsCarousel from '../carousels/TheResultsCarousel'
@@ -45,7 +47,8 @@ const EachServicePage = ({ service, serviceName }) => {
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl text-right">
             <p>{service.description}.</p>
           </div>
-          <ContactUsButton />
+          {/* <ContactUsButton /> */}
+          <ViewPricesButton />
         </div>
       </div>
 
@@ -112,7 +115,8 @@ const EachServicePage = ({ service, serviceName }) => {
                 </div>
 
                 <div className="flex items-center mt-6 justify-start md:justify-end">
-                  <ContactUsButton />
+                  {/* <ContactUsButton /> */}
+                  <BookServiceButton/>
                 </div>
               </div>
 

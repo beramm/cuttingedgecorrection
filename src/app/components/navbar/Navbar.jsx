@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import ContactUsButton from '../button/ContactUsButton'
 import NavbarLinks from './NavbarLinks'
+import BookOnlineButton from '../button/BookOnlineButton'
 import { CloseIcon, HamburgerIcon } from '../icon'
 import Link from 'next/link'
 
@@ -30,7 +31,9 @@ const Navbar = () => {
               <NavbarLinks handleOpenMobileNav={handleOpenMobileNav} />
             </div>
             <div className="hidden md:block">
-              <ContactUsButton />
+              {/* <ContactUsButton /> */}
+              <BookOnlineButton />
+
             </div>
             <div className="block md:hidden" onClick={handleOpenMobileNav}>
               <HamburgerIcon size={32} hexColor={"#E8E6DE"} />

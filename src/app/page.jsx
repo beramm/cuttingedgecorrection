@@ -3,6 +3,7 @@
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
 import ContactUsButton from "./components/button/ContactUsButton";
 import BookNowButtonCon from "./components/button/BookNowButtonCon";
+import BookOnlineButtonXL from "./components/button/BookOnlineButtonXL";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -58,7 +59,8 @@ export default function Home() {
               expectations.
             </p>
           </div>
-          <BookNowButtonCon />
+          {/* <BookNowButtonCon /> */}
+          <BookOnlineButtonXL />
         </div>
       </div>
 
@@ -126,7 +128,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+
         {/* Transition between sections: Our Services and Our Commitment */}
         <div className="absolute w-full h-48 -bottom-48 z-20">
           <div

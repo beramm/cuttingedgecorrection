@@ -34,4 +34,14 @@ export const navbarMenu = [
       { name: 'Privacy Policy & TOS', link: '/privacy-policy-tos' },
     ]
   }
+  ,
+  {
+    name: 'Contact Us',
+    showArrow: false,
+    subMenu: false,
+    submenuList: [
+    ],
+    link: '/contact'
+  }
+
 ]
