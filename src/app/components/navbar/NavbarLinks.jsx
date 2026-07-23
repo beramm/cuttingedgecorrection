@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { NavArrowDown } from '../icon'
 import ContactUsButton from '../button/ContactUsButton'
+import BookOnlineButton from '../button/BookOnlineButton'
 
 const NavbarLinks = ({ handleOpenMobileNav }) => {
   const [openSubmenu, setOpenSubmenu] = useState("")
@@ -83,7 +84,8 @@ const NavbarLinks = ({ handleOpenMobileNav }) => {
           <span className="bg-accent h-0.5 w-full"></span>
         </div>
         <div className="mt-10" onClick={handleOpenMobileNav}>
-          <ContactUsButton />
+          {/* <ContactUsButton /> */}
+          <BookOnlineButton />
         </div>
       </div>
     </>
