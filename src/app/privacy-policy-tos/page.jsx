@@ -204,7 +204,7 @@ const PrivacyPolicyTos = () => {
               </p>
               <address>
                 Cutting Edge Correction <br />
-                67 Walsgott Street, North Geelong, VIC 3215 <br />
+                9/118 Bellarine Highway, Newcomb <br />
                 info@cecdetailing.com.au <br />
                 0450 649 257
               </address>
