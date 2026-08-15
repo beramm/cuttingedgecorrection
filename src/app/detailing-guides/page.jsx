@@ -58,7 +58,7 @@ const DetailingGuides = () => {
       <meta name="description" content="Read our latest guides on professional vehicle detailing, expert car care tips, and industry insights. Stay informed and keep your ride in top condition with Cutting Edge Correction." />
 
       <div
-        style={{ backgroundImage: `url(/carbon_background.png)`, backgroundPosition: 'center' }}
+        style={{ backgroundImage: `url(/carbon_background.webp)`, backgroundPosition: 'center' }}
         className="h-full w-full px-8 md:px-12 xl:px-0 pt-28 pb-8"
       >
         <div className="relative w-full mt-12">

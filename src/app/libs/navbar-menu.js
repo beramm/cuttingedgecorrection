@@ -35,13 +35,5 @@ export const navbarMenu = [
     ]
   }
   ,
-  {
-    name: 'Contact Us',
-    showArrow: false,
-    subMenu: false,
-    submenuList: [
-    ],
-    link: '/contact'
-  }
 
 ]

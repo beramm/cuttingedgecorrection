@@ -63,6 +63,7 @@ const TheResultsCarousel = ({ serviceImage }) => {
                         alt={service.service_name}
                         width={800}
                         height={600}
+                        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 67vw, 40vw"
                         className="w-full h-full object-cover brightness-75 transition-transform duration-300 hover:scale-105"
                       />
                     </div>

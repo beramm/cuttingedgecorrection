@@ -11,7 +11,7 @@ const SubscriptionPlans = () => {
       <meta name="description" content="Explore our exclusive subscription plans designed for premium vehicle care. Enjoy consistent detailing, hassle-free monthly payments, and exclusive benefits. Learn more about our services and terms at our Privacy Policy & TOS page" />
 
       <div
-        style={{ backgroundImage: `url(/carbon_background.png)`, backgroundPosition: 'center' }}
+        style={{ backgroundImage: `url(/carbon_background.webp)`, backgroundPosition: 'center' }}
         className="h-full w-full px-8 md:px-12 xl:px-0 pt-28 pb-8"
       >
         <div className="relative w-full mt-12">

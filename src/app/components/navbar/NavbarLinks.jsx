@@ -84,8 +84,8 @@ const NavbarLinks = ({ handleOpenMobileNav }) => {
           <span className="bg-accent h-0.5 w-full"></span>
         </div>
         <div className="mt-10" onClick={handleOpenMobileNav}>
-          {/* <ContactUsButton /> */}
-          <BookOnlineButton />
+          <ContactUsButton />
+          {/* <BookOnlineButton /> */}
         </div>
       </div>
     </>

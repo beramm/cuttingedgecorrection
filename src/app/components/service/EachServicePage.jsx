@@ -47,8 +47,8 @@ const EachServicePage = ({ service, serviceName }) => {
           <div className="text-base mb-8 mt-8 md:mt-0 w-full max-w-full md:max-w-xl text-right">
             <p>{service.description}.</p>
           </div>
-          {/* <ContactUsButton /> */}
-          <ViewPricesButton />
+          <ContactUsButton />
+          {/* <ViewPricesButton /> */}
         </div>
       </div>
 
@@ -115,8 +115,8 @@ const EachServicePage = ({ service, serviceName }) => {
                 </div>
 
                 <div className="flex items-center mt-6 justify-start md:justify-end">
-                  {/* <ContactUsButton /> */}
-                  <BookServiceButton/>
+                  <ContactUsButton />
+                  {/* <BookServiceButton/> */}
                 </div>
               </div>
 
@@ -135,7 +135,7 @@ const EachServicePage = ({ service, serviceName }) => {
 
       <div
         style={{
-          backgroundImage: `url(/carbon_background.png)`,
+          backgroundImage: `url(/carbon_background.webp)`,
           backgroundPosition: "center",
         }}
         className="h-full w-full"

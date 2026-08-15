@@ -15,14 +15,10 @@ const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
-export const metadata = {
-
-  icons: {
-    icon: '/favicon.ico',
-    sizes: 'any',
-    rel: 'icon',
-  },
-};
+// `src/app/favicon.ico` is picked up automatically by the App Router, which
+// emits the <link rel="icon"> itself. Declaring it again here (or by hand in
+// <head>) made the browser fetch the icon twice.
+export const metadata = {};
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -109,7 +105,6 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
       </head>
 
       <body className={`${roboto.className} antialiased relative overflow-x-hidden lg:overflow-x-visible`}>

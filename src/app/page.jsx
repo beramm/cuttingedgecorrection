@@ -1,6 +1,7 @@
 "use client";
 
 import ServicesCarousel from "./components/carousels/ServicesCarousel";
+import HeroVideo from "./components/hero/HeroVideo";
 import ContactUsButton from "./components/button/ContactUsButton";
 import BookNowButtonCon from "./components/button/BookNowButtonCon";
 import BookOnlineButtonXL from "./components/button/BookOnlineButtonXL";
@@ -35,13 +36,7 @@ export default function Home() {
         content="Cutting Edge Correction - Geelong's Finest Car Detailing"
       />
       <div className="h-dvh w-full flex items-center justify-start overflow-hidden 2xl:overflow-visible">
-        <video
-          className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[60dvh] md:h-auto w-auto sm:w-full z-0"
-          src="/montage_video.mp4"
-          autoPlay
-          loop
-          muted
-        ></video>
+        <HeroVideo className="absolute top-0 md:left-0 right-0 object-cover 2xl:object-contain block mx-auto 2xl:mx-0 h-[60dvh] md:h-auto w-auto sm:w-full z-0" />
         <div className="relative z-20 top-24 md:top-auto w-full mx-8 md:mx-16 lg:mx-36">
           <h1 className="hidden md:block text-6xl font-black">
             CUTTING EDGE CORRECTION
@@ -59,8 +54,8 @@ export default function Home() {
               honest service, and attention to every detail.
             </p>
           </div>
-          {/* <BookNowButtonCon /> */}
-          <BookOnlineButtonXL />
+          <BookNowButtonCon />
+          {/* <BookOnlineButtonXL /> */}
         </div>
       </div>
 
@@ -140,7 +135,7 @@ export default function Home() {
 
       <div
         style={{
-          backgroundImage: `url(/carbon_background.png)`,
+          backgroundImage: `url(/carbon_background.webp)`,
           backgroundPosition: "center",
         }}
         className="h-full w-full"
@@ -189,6 +184,7 @@ export default function Home() {
                 src={"/our_commitment_image.webp"}
                 width={1920}
                 height={1080}
+                sizes="(max-width: 1023px) 100vw, 1024px"
                 alt="image"
                 className="w-full lg:w-[1024px] h-[350px] lg:h-[650px] object-cover object-left"
               />

@@ -31,8 +31,8 @@ const Navbar = () => {
               <NavbarLinks handleOpenMobileNav={handleOpenMobileNav} />
             </div>
             <div className="hidden md:block">
-              {/* <ContactUsButton /> */}
-              <BookOnlineButton />
+              <ContactUsButton />
+              {/* <BookOnlineButton /> */}
 
             </div>
             <div className="block md:hidden" onClick={handleOpenMobileNav}>
